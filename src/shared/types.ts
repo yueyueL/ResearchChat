@@ -127,7 +127,7 @@ export interface Settings extends ModelSettings {
     enableMarkdownRendering: boolean
 }
 
-export type Language = 'en' | 'zh-Hans' | 'zh-Hant' | 'ja' | 'ko' | 'ru' | 'de' | 'fr'
+export type Language = 'en' | 'zh-Hans' 
 
 export interface Config {
     uuid: string

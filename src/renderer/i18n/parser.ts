@@ -10,30 +10,5 @@ export function parseLocale(locale: string): Language {
     ) {
         return 'zh-Hans'
     }
-    if (
-        locale.startsWith('zh_HK') ||
-        locale.startsWith('zh-HK') ||
-        locale.startsWith('zh_TW') ||
-        locale.startsWith('zh-TW') ||
-        locale.startsWith('zh_Hant') ||
-        locale.startsWith('zh-Hant')
-    ) {
-        return 'zh-Hant'
-    }
-    if (locale.startsWith('ja')) {
-        return 'ja'
-    }
-    if (locale.startsWith('ko')) {
-        return 'ko'
-    }
-    if (locale.startsWith('ru')) {
-        return 'ru'
-    }
-    if (locale.startsWith('de')) {
-        return 'de'
-    }
-    if (locale.startsWith('fr')) {
-        return 'fr'
-    }
     return 'en'
 }

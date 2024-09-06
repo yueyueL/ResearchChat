@@ -169,13 +169,7 @@ For more information: [chatboxai.app](https://chatboxai.app/)
 
     -   English
     -   简体中文 (Simplified Chinese)
-    -   繁體中文 (Traditional Chinese)
-    -   日本語 (Japanese)
-    -   한국어 (Korean)
-    -   Français (French)
-    -   Deutsch (German)
-    -   Русский (Russian)
-
+    
 -   **And More...**  
     :sparkles: Constantly enhancing the experience with new features!
 
