@@ -17,6 +17,8 @@ import { useAtom, useAtomValue } from 'jotai'
 import * as atoms from './stores/atoms'
 import Sidebar from './Sidebar'
 import * as premiumActions from './stores/premiumActions'
+import PaperCollectionWindow from './pages/PaperCollectionWindow'
+import PaperLibraryWindow from './pages/PaperLibraryWindow'
 
 function Main() {
     const spellCheck = useAtomValue(atoms.spellCheckAtom)
@@ -27,6 +29,10 @@ function Main() {
 
     const [openCopilotWindow, setOpenCopilotWindow] = React.useState(false)
 
+    const [openPaperCollectionWindow, setOpenPaperCollectionWindow] = React.useState(false)
+
+    const [openPaperLibraryWindow, setOpenPaperLibraryWindow] = React.useState(false)
+
     return (
         <Box className="box-border App" spellCheck={spellCheck}>
             <Grid container className="h-full">
@@ -34,6 +40,8 @@ function Main() {
                     openCopilotWindow={() => setOpenCopilotWindow(true)}
                     openAboutWindow={() => setOpenAboutWindow(true)}
                     setOpenSettingWindow={setOpenSettingWindow}
+                    openPaperCollectionWindow={() => setOpenPaperCollectionWindow(true)}
+                    openPaperLibraryWindow={() => setOpenPaperLibraryWindow(true)}
                 />
                 <MainPane />
             </Grid>
@@ -46,6 +54,8 @@ function Main() {
             <ChatConfigWindow />
             <CleanWidnow />
             <CopilotWindow open={openCopilotWindow} close={() => setOpenCopilotWindow(false)} />
+            <PaperCollectionWindow open={openPaperCollectionWindow} close={() => setOpenPaperCollectionWindow(false)} />
+            <PaperLibraryWindow open={openPaperLibraryWindow} close={() => setOpenPaperLibraryWindow(false)} />
             <RemoteDialogWindow />
             <Toasts />
         </Box>

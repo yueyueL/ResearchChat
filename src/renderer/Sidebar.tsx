@@ -22,6 +22,8 @@ import useVersion from './hooks/useVersion'
 import SessionList from './components/SessionList'
 import * as sessionActions from './stores/sessionActions'
 import { trackingEvent } from './packages/event'
+import LibraryBooksIcon from '@mui/icons-material/LibraryBooks' // Add this import
+import MenuBookIcon from '@mui/icons-material/MenuBook' // Add this import
 
 export const drawerWidth = 240
 
@@ -29,6 +31,8 @@ interface Props {
     openCopilotWindow(): void
     openAboutWindow(): void
     setOpenSettingWindow(name: 'ai' | 'display' | null): void
+    openPaperCollectionWindow(): void // Add this prop
+    openPaperLibraryWindow(): void // Add this prop
 }
 
 export default function Sidebar(props: Props) {
@@ -91,6 +95,28 @@ export default function Sidebar(props: Props) {
                             </Typography>
                         </MenuItem>
 
+                        <MenuItem onClick={props.openPaperCollectionWindow} sx={{ padding: '0.2rem 0.1rem', margin: '0.1rem' }}>
+                            <ListItemIcon>
+                                <IconButton>
+                                    <LibraryBooksIcon fontSize="small" />
+                                </IconButton>
+                            </ListItemIcon>
+                            <ListItemText>
+                                <Typography>{t('Paper Collection')}</Typography>
+                            </ListItemText>
+                        </MenuItem>
+
+                        <MenuItem onClick={props.openPaperLibraryWindow} sx={{ padding: '0.2rem 0.1rem', margin: '0.1rem' }}>
+                            <ListItemIcon>
+                                <IconButton>
+                                    <MenuBookIcon fontSize="small" />
+                                </IconButton>
+                            </ListItemIcon>
+                            <ListItemText>
+                                <Typography>{t('My Paper Library')}</Typography>
+                            </ListItemText>
+                        </MenuItem>
+
                         <MenuItem onClick={props.openCopilotWindow} sx={{ padding: '0.2rem 0.1rem', margin: '0.1rem' }}>
                             <ListItemIcon>
                                 <IconButton>
@@ -101,6 +127,7 @@ export default function Sidebar(props: Props) {
                                 <Typography>{t('My Copilots')}</Typography>
                             </ListItemText>
                         </MenuItem>
+
 
                         <MenuItem
                             onClick={() => {
@@ -139,6 +166,8 @@ export default function Sidebar(props: Props) {
                                 </Badge>
                             </ListItemText>
                         </MenuItem>
+
+
                     </MenuList>
                 </Stack>
             </div>
