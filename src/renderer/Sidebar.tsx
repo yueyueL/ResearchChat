@@ -21,10 +21,6 @@ import AddIcon from '@mui/icons-material/AddCircleOutline'
 import useVersion from './hooks/useVersion'
 import SessionList from './components/SessionList'
 import * as sessionActions from './stores/sessionActions'
-import MenuOpenIcon from '@mui/icons-material/MenuOpen'
-import { useSetAtom } from 'jotai'
-import * as atoms from './stores/atoms'
-import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate'
 import { trackingEvent } from './packages/event'
 
 export const drawerWidth = 240
@@ -72,7 +68,7 @@ export default function Sidebar(props: Props) {
                         <Box>
                             <a href="https://chatboxai.app" target="_blank">
                                 <img src={icon} className="w-8 h-8 mr-2 align-middle inline-block" />
-                                <span className="text-2xl align-middle inline-block">Chatbox</span>
+                                <span className="text-2xl align-middle inline-block">ChatResearch</span>
                             </a>
                         </Box>
                         <Box></Box>

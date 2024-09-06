@@ -21,9 +21,6 @@ export function settings(): Settings {
         // maxContextSize: "4000",
         // maxTokens: "2048",
 
-        ollamaHost: 'http://127.0.0.1:11434',
-        ollamaModel: '',
-
         showWordCount: true,
         showTokenCount: false,
         showTokenUsed: true,

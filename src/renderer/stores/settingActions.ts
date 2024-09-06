@@ -24,9 +24,6 @@ export function needEditSetting() {
     ) {
         return true
     }
-    if (settings.aiProvider === 'ollama' && !settings.ollamaModel) {
-        return true
-    }
     return false
 }
 

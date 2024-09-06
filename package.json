@@ -1,6 +1,6 @@
 {
-    "name": "xyz.chatboxapp.app",
-    "productName": "xyz.chatboxapp.app",
+    "name": "kknox.chatresearch.app",
+    "productName": "kknox.chatresearch.app",
     "version": "0.0.1",
     "license": "GPL-3.0 license",
     "description": "A desktop client for multiple cutting-edge AI models",
@@ -188,8 +188,8 @@
         ]
     },
     "build": {
-        "productName": "Chatbox",
-        "appId": "xyz.chatboxapp.app",
+        "productName": "ChatResearch",
+        "appId": "kknox.chatresearch.app",
         "asar": true,
         "asarUnpack": "**\\*.{node,dll}",
         "files": [

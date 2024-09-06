@@ -1,19 +1,16 @@
 import OpenAI from './openai'
 import { Settings, Config, ModelProvider, SessionType, ModelSettings, Session } from '../../../shared/types'
 import ChatboxAI from './chatboxai'
-import Ollama from './ollama'
 import SiliconFlow from './siliconflow'
 
 export function getModel(setting: Settings, config: Config) {
     switch (setting.aiProvider) {
-        case ModelProvider.ChatboxAI:
-            return new ChatboxAI(setting, config)
         case ModelProvider.OpenAI:
             return new OpenAI(setting)
-        case ModelProvider.Ollama:
-            return new Ollama(setting)
         case ModelProvider.SiliconFlow:
             return new SiliconFlow(setting)
+        case ModelProvider.ChatboxAI:
+            return new ChatboxAI(setting, config)
         default:
             throw new Error('Cannot find model with provider: ' + setting.aiProvider)
     }
@@ -22,30 +19,24 @@ export function getModel(setting: Settings, config: Config) {
 export const aiProviderNameHash = {
     [ModelProvider.OpenAI]: 'OpenAI API',
     [ModelProvider.ChatboxAI]: 'Chatbox AI',
-    [ModelProvider.Ollama]: 'Ollama',
     [ModelProvider.SiliconFlow]: 'SiliconCloud API',
 }
 
 export const AIModelProviderMenuOptionList = [
     {
-        value: ModelProvider.ChatboxAI,
-        label: aiProviderNameHash[ModelProvider.ChatboxAI],
-        featured: true,
-        disabled: false,
-    },
-    {
         value: ModelProvider.OpenAI,
         label: aiProviderNameHash[ModelProvider.OpenAI],
-        disabled: false,
-    },
-    {
-        value: ModelProvider.Ollama,
-        label: aiProviderNameHash[ModelProvider.Ollama],
+        featured: true,
         disabled: false,
     },
     {
         value: ModelProvider.SiliconFlow,
         label: aiProviderNameHash[ModelProvider.SiliconFlow],
+        disabled: false,
+    },
+    {
+        value: ModelProvider.ChatboxAI,
+        label: aiProviderNameHash[ModelProvider.ChatboxAI],
         disabled: false,
     },
 ]
@@ -67,8 +58,6 @@ export function getModelDisplayName(settings: Settings, sessionType: SessionType
         case ModelProvider.ChatboxAI:
             const model = settings.chatboxAIModel || 'chatboxai-3.5'
             return model.replace('chatboxai-', 'Chatbox AI ')
-        case ModelProvider.Ollama:
-            return `Ollama (${settings.ollamaModel})`
         case ModelProvider.SiliconFlow:
             return `SiliconCloud (${settings.siliconCloudModel})`
         default:
