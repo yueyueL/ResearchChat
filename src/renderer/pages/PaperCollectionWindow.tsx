@@ -23,6 +23,8 @@ import {
     InputLabel,
     Alert,
     Snackbar,
+    LinearProgress,
+    CircularProgress,
 } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import SearchIcon from '@mui/icons-material/Search'
@@ -55,6 +57,7 @@ export default function PaperCollectionWindow(props: Props) {
     const [selectedYear, setSelectedYear] = useState<string>(new Date().getFullYear().toString())
     const [volumeNumber, setVolumeNumber] = useState<string>('')
     const [dblpLinkError, setDblpLinkError] = useState<string | null>(null)
+    const [crawlProgress, setCrawlProgress] = useState<number | null>(null)
 
     const filteredVenues = useMemo(() => {
         return paperConstants.venues.filter(venue => 
@@ -85,23 +88,65 @@ export default function PaperCollectionWindow(props: Props) {
 
     const handleAddByDblp = async () => {
         setDblpLinkError(null);
+        setCrawlProgress(0);
         const { isValid, error } = await validateDblpLink(dblpLink);
         if (isValid) {
             try {
-                const { papers, error: extractionError } = await extractPapersFromDblpPage(dblpLink);
-                if (extractionError) {
-                    setDblpLinkError(t('Error extracting papers: {{error}}', { error: extractionError }));
+                const venue = paperConstants.venues.find(v => v.abbreviation === selectedVenue);
+                if (!venue) {
+                    setDblpLinkError(t('Please select a valid venue'));
+                    setCrawlProgress(null);
                     return;
                 }
-                console.log('Extracted papers:', papers);
-                // TODO: Process and add extracted papers to the library
-                // You might want to use the existing importPapers function or create a new one
+
+                const year = parseInt(selectedYear, 10);
+                if (isNaN(year)) {
+                    setDblpLinkError(t('Please enter a valid year'));
+                    setCrawlProgress(null);
+                    return;
+                }
+
+                setCrawlProgress(25);
+                const { papers, error: extractionError } = await extractPapersFromDblpPage(dblpLink, venue.fullName, year);
+                if (extractionError) {
+                    setDblpLinkError(t('Error extracting papers: {{error}}', { error: extractionError }));
+                    setCrawlProgress(null);
+                    return;
+                }
+                
+                if (papers.length === 0) {
+                    setDblpLinkError(t('No papers found on the given DBLP page'));
+                    setCrawlProgress(null);
+                    return;
+                }
+
+                setCrawlProgress(50);
+                const { importedPapers, newPapers } = await paperActions.importPapers(papers);
+                console.log('Imported papers:', importedPapers);
+                console.log('New papers:', newPapers);
+
+                setCrawlProgress(100);
+                setDblpLinkError(t('Successfully imported {{count}} papers. {{newCount}} new papers added.', { 
+                    count: importedPapers.length, 
+                    newCount: newPapers.length 
+                }));
+
+                // Clear the DBLP link input
+                setDblpLink('');
+
+                // Optionally, update the paper list in the UI here
+                setPapers(prevPapers => [...prevPapers, ...newPapers]);
+
+                setTimeout(() => setCrawlProgress(null), 2000); // Hide progress bar after 2 seconds
+
             } catch (error) {
                 console.error('Error processing DBLP page:', error);
                 setDblpLinkError(t('Error processing DBLP page. Please try again.'));
+                setCrawlProgress(null);
             }
         } else {
             setDblpLinkError(t('Invalid DBLP link: {{error}}', { error: error || 'Unknown error' }));
+            setCrawlProgress(null);
         }
     }
 
@@ -217,6 +262,9 @@ export default function PaperCollectionWindow(props: Props) {
                                 <Typography variant="body2" sx={{ mb: 2 }}>
                                     {t('You can filter venues using the options above or directly paste a DBLP link from the DBLP website.')}
                                 </Typography>
+                                <Typography variant="body2" sx={{ mb: 2, color: 'error.main', fontWeight: 'bold' }}>
+                                    {t('Please verify the correctness of the generated URL before crawling, as it may not always be accurate due to varying DBLP rules.')}
+                                </Typography>
                                 <Grid container spacing={2} sx={{ mb: 2 }}>
                                     <Grid item xs={3}>
                                         <FormControl fullWidth>
@@ -309,11 +357,23 @@ export default function PaperCollectionWindow(props: Props) {
                                             color="primary"
                                             onClick={handleAddByDblp}
                                             fullWidth
+                                            disabled={crawlProgress !== null}
                                         >
-                                            {t('Crawl & Add')}
+                                            {crawlProgress !== null ? (
+                                                <CircularProgress size={24} color="inherit" />
+                                            ) : (
+                                                t('Crawl & Add')
+                                            )}
                                         </Button>
                                     </Grid>
                                 </Grid>
+                                {crawlProgress !== null && (
+                                    <Grid item xs={12}>
+                                        <Box sx={{ width: '100%', mt: 2 }}>
+                                            <LinearProgress variant="determinate" value={crawlProgress} />
+                                        </Box>
+                                    </Grid>
+                                )}
                             </Box>
                         )}
                         {activeTab === 2 && (

@@ -17,7 +17,11 @@ class PaperDatabase extends Dexie {
 const db = new PaperDatabase()
 
 function generateUniqueId(paper: Paper): string {
-    return `${paper.title.charAt(0).toLowerCase()}${paper.year}`
+    const titleInitials = paper.title
+        .split(/\s+/)  // Split the title into words
+        .map(word => word.charAt(0).toLowerCase())  // Get the first character of each word
+        .join('');  // Join the characters
+    return `${titleInitials}${paper.year}`;
 }
 
 export const paperStorage = {
