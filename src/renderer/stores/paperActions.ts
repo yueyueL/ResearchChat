@@ -37,8 +37,9 @@ export async function filterPapers(filters: { year?: number, venue?: string }) {
   return await paperStorage.filterPapers(filters)
 }
 
-export async function importPapers(rawPapers: any[]): Promise<Paper[]> {
+export async function importPapers(rawPapers: any[]): Promise<{ importedPapers: Paper[], newPapers: Paper[] }> {
   const importedPapers: Paper[] = []
+  const newPapers: Paper[] = []
   for (const rawPaper of rawPapers) {
     try {
       const paper: Paper = {
@@ -54,16 +55,27 @@ export async function importPapers(rawPapers: any[]): Promise<Paper[]> {
         url: rawPaper.URL || rawPaper.url || '',
         abstract: rawPaper.abstract || '',
         doi: rawPaper.DOI || rawPaper.doi || '',
+        tags: Array.isArray(rawPaper.tags) ? rawPaper.tags : []
       }
-      const addedPaperId = await paperStorage.addPaper(paper)
-      if (addedPaperId) {
-        importedPapers.push({ ...paper, id: addedPaperId })
+      const { isDuplicate, existingPaper } = await paperStorage.checkDuplication(paper)
+      if (isDuplicate && existingPaper) {
+        // Merge the new paper info with the existing paper
+        const updatedPaper = { ...existingPaper, ...paper }
+        await paperStorage.updatePaper(existingPaper.id!, updatedPaper)
+        importedPapers.push(updatedPaper)
+      } else {
+        const addedPaperId = await paperStorage.addPaper(paper)
+        if (addedPaperId) {
+          const newPaper = { ...paper, id: addedPaperId }
+          importedPapers.push(newPaper)
+          newPapers.push(newPaper)
+        }
       }
     } catch (error) {
       console.error('Error importing paper:', error)
     }
   }
-  return importedPapers
+  return { importedPapers, newPapers }
 }
 
 export async function exportPapers() {
@@ -90,7 +102,41 @@ export async function fetchPapersPaginated(
     limit: number,
     searchQuery: string,
     yearFilter: { start: string, end: string },
-    venueFilter: string
+    venueFilter: string,
+    tagFilter: string[]
 ): Promise<{ papers: Paper[], total: number }> {
-    return await paperStorage.getPapersPaginated(page, limit, searchQuery, yearFilter, venueFilter)
+    return await paperStorage.getPapersPaginated(page, limit, searchQuery, yearFilter, venueFilter, tagFilter)
+}
+
+export async function getAllTags() {
+    return await paperStorage.getAllTags()
+}
+
+export async function createTag(tagName: string) {
+    return await paperStorage.createTag(tagName)
+}
+
+export async function addTagsToPapers(paperIds: number[], tags: string[]) {
+    return await paperStorage.addTagsToPapers(paperIds, tags)
+}
+
+export async function removeTagsFromPapers(paperIds: number[], tags: string[]) {
+    return await paperStorage.removeTagsFromPapers(paperIds, tags)
+}
+
+export async function deleteTag(tagId: number) {
+    return await paperStorage.deleteTag(tagId)
+}
+
+export async function removeTagFromPapers(tagId: number) {
+    return await paperStorage.removeTagFromPapers(tagId)
+}
+
+export async function getLibrarySize(): Promise<number> {
+    const papers = await paperStorage.getAllPapers()
+    // This is a rough estimation. Adjust the calculation based on your actual data structure
+    const sizeInBytes = papers.reduce((total, paper) => {
+        return total + JSON.stringify(paper).length
+    }, 0)
+    return sizeInBytes
 }

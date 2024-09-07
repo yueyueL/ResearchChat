@@ -22,6 +22,7 @@ import SearchIcon from '@mui/icons-material/Search'
 import LinkIcon from '@mui/icons-material/Link'
 import FileUploadIcon from '@mui/icons-material/FileUpload'
 import { Paper as PaperType } from '../../shared/types'
+import LibraryStats from '../components/LibraryStats'
 
 interface Props {
     open: boolean
@@ -72,9 +73,9 @@ export default function PaperCollectionWindow(props: Props) {
                 return
             }
 
-            const importedPapers = await paperActions.importPapers(parsedData)
+            const { importedPapers, newPapers } = await paperActions.importPapers(parsedData)
             setPapers(await paperActions.fetchAllPapers())
-            setUploadStatus(t('Successfully imported {{count}} papers', { count: importedPapers.length }) || `Successfully imported ${importedPapers.length} papers`)
+            setUploadStatus(t('Imported {{total}} papers ({{new}} new)', { total: importedPapers.length, new: newPapers.length }) || `Imported ${importedPapers.length} papers (${newPapers.length} new)`)
             setSelectedFile(null)
         } catch (error) {
             console.error('Error processing file:', error)
@@ -86,25 +87,9 @@ export default function PaperCollectionWindow(props: Props) {
         <Dialog open={props.open} onClose={props.close} fullWidth maxWidth="md">
             <DialogTitle>{t('Paper Collection')}</DialogTitle>
             <DialogContent>
-                <Box sx={{ mb: 3 }}>
-                    <Grid container spacing={2}>
-                        <Grid item xs={4}>
-                            <Typography variant="body1">
-                                <strong>{t('Paper count')}:</strong> 0
-                            </Typography>
-                        </Grid>
-                        <Grid item xs={4}>
-                            <Typography variant="body1">
-                                <strong>{t('SubCollections count')}:</strong> 0
-                            </Typography>
-                        </Grid>
-                        <Grid item xs={4}>
-                            <Typography variant="body1">
-                                <strong>{t('Library size')}:</strong> 0 MB
-                            </Typography>
-                        </Grid>
-                    </Grid>
-                </Box>
+                <LibraryStats />
+
+
 
                 <Paper elevation={3} sx={{ mb: 3 }}>
                     <Tabs value={activeTab} onChange={handleTabChange} variant="fullWidth">
@@ -152,6 +137,9 @@ export default function PaperCollectionWindow(props: Props) {
                         )}
                         {activeTab === 2 && (
                             <Box sx={{ textAlign: 'center' }}>
+                                <Typography variant="body2" sx={{ mb: 2 }}>
+                                    {t('Export paper from Zotero: Open Zotero -> Select paper -> Right-click -> Choose \'Export Items\' -> Select \'CSL JSON\' format')}
+                                </Typography>
                                 <input
                                     accept="application/json"
                                     style={{ display: 'none' }}

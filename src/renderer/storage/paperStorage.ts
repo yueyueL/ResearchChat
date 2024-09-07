@@ -1,13 +1,15 @@
 import Dexie from 'dexie'
-import { Paper } from '../../shared/types'
+import { Paper, Tag } from '../../shared/types'
 
 class PaperDatabase extends Dexie {
     papers!: Dexie.Table<Paper, number>
+    tags!: Dexie.Table<Tag, number>
 
     constructor() {
         super('PaperDatabase')
-        this.version(1).stores({
-            papers: '++id, title, year, venue, uniqueId'
+        this.version(2).stores({
+            papers: '++id, title, year, venue, uniqueId, *tags',
+            tags: '++id, name'
         })
     }
 }
@@ -26,12 +28,12 @@ export const paperStorage = {
 
         if (existingPaper) {
             console.log(`Paper with uniqueId ${uniqueId} already exists, updating...`)
-            const updatedPaper = { ...existingPaper, ...paper, uniqueId }
+            const updatedPaper = { ...existingPaper, ...paper, uniqueId, tags: paper.tags || [] }
             await db.papers.update(existingPaper.id!, updatedPaper)
             return existingPaper.id
         } else {
             console.log(`Adding new paper with uniqueId ${uniqueId}`)
-            return db.papers.add({ ...paper, uniqueId })
+            return db.papers.add({ ...paper, uniqueId, tags: paper.tags || [] })
         }
     },
 
@@ -117,12 +119,55 @@ export const paperStorage = {
         return db.papers.clear()
     },
 
+    async getAllTags() {
+        return db.tags.toArray()
+    },
+
+    async createTag(tagName: string) {
+        return db.tags.add({ name: tagName })
+    },
+
+    async addTagsToPapers(paperIds: number[], tags: string[]) {
+        await db.transaction('rw', db.papers, db.tags, async () => {
+            for (const tagName of tags) {
+                let tag = await db.tags.where('name').equals(tagName).first()
+                if (!tag) {
+                    const tagId = await db.tags.add({ name: tagName })
+                    tag = { id: tagId, name: tagName }
+                }
+            }
+
+            for (const paperId of paperIds) {
+                const paper = await db.papers.get(paperId)
+                if (paper) {
+                    const currentTags = Array.isArray(paper.tags) ? paper.tags : [];
+                    const updatedTags = [...new Set([...currentTags, ...tags])]
+                    await db.papers.update(paperId, { tags: updatedTags })
+                }
+            }
+        })
+    },
+
+    async removeTagsFromPapers(paperIds: number[], tags: string[]) {
+        await db.transaction('rw', db.papers, async () => {
+            for (const paperId of paperIds) {
+                const paper = await db.papers.get(paperId)
+                if (paper) {
+                    const currentTags = Array.isArray(paper.tags) ? paper.tags : [];
+                    const updatedTags = currentTags.filter(tag => !tags.includes(tag))
+                    await db.papers.update(paperId, { tags: updatedTags })
+                }
+            }
+        })
+    },
+
     async getPapersPaginated(
         page: number,
         limit: number,
         searchQuery: string,
         yearFilter: { start: string, end: string },
-        venueFilter: string
+        venueFilter: string,
+        tagFilter: string[]
     ): Promise<{ papers: Paper[], total: number }> {
         let collection = db.papers.toCollection()
 
@@ -146,12 +191,52 @@ export const paperStorage = {
             collection = collection.filter(paper => paper.venue.toLowerCase().includes(venueFilter.toLowerCase()))
         }
 
+        if (tagFilter && tagFilter.length > 0) {
+            collection = collection.filter(paper => 
+                paper.tags && tagFilter.every(tag => paper.tags.includes(tag))
+            )
+        }
+
         const total = await collection.count()
         const papers = await collection
             .offset((page - 1) * limit)
             .limit(limit)
             .toArray()
 
-        return { papers, total }
+        // Ensure tags are initialized for all papers
+        const papersWithTags = papers.map(paper => ({
+            ...paper,
+            tags: paper.tags || []
+        }))
+
+        return { papers: papersWithTags, total }
+    },
+
+    async deleteTag(tagId: number) {
+        await db.transaction('rw', db.tags, db.papers, async () => {
+            const tag = await db.tags.get(tagId)
+            if (!tag) return
+
+            // Delete the tag
+            await db.tags.delete(tagId)
+
+            // Remove the tag from all papers
+            const papers = await db.papers.where('tags').anyOf(tag.name).toArray()
+            for (const paper of papers) {
+                const updatedTags = paper.tags.filter(t => t !== tag.name)
+                await db.papers.update(paper.id!, { tags: updatedTags })
+            }
+        })
+    },
+
+    async removeTagFromPapers(tagId: number) {
+        const tag = await db.tags.get(tagId)
+        if (!tag) return
+
+        const papers = await db.papers.where('tags').anyOf(tag.name).toArray()
+        for (const paper of papers) {
+            const updatedTags = paper.tags.filter(t => t !== tag.name)
+            await db.papers.update(paper.id!, { tags: updatedTags })
+        }
     }
 }

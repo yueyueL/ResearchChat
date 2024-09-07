@@ -201,5 +201,12 @@ export interface Paper {
     url: string
     abstract: string
     doi: string
-    uniqueId?: string // Add this line
+    uniqueId?: string
+    tags: string[] // Add this line
+}
+
+// Add this new interface
+export interface Tag {
+    id?: number
+    name: string
 }
