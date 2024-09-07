@@ -10,6 +10,5534 @@
         "abstract": ["abstract", "summary", "paper_abstract"],
         "doi": ["doi", "digital_object_identifier"]
     },
+    "venues": [
+        {
+            "domain": "Security",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "CCS",
+            "fullName": "ACM Conference on Computer and Communications Security",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/ccs/"
+        },
+        {
+            "domain": "Security",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "CRYPTO",
+            "fullName": "International Cryptology Conference",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/crypto/"
+        },
+        {
+            "domain": "Security",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "EUROCRYPT",
+            "fullName": "European Cryptology Conference",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/eurocrypt/"
+        },
+        {
+            "domain": "Security",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "S&P",
+            "fullName": "IEEE Symposium on Security and Privacy",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/sp/"
+        },
+        {
+            "domain": "Security",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "USENIX Security",
+            "fullName": "Usenix Security Symposium",
+            "publisher": "USENIX Association",
+            "url": "dblp.org/db/conf/uss/"
+        },
+        {
+            "domain": "Security",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "ACSAC",
+            "fullName": "Annual Computer Security Applications Conference",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/acsac/"
+        },
+        {
+            "domain": "Security",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "ASIACRYPT",
+            "fullName": "Annual International Conference on the Theory and Application of Cryptology and Information Security",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/asiacrypt/"
+        },
+        {
+            "domain": "Security",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "ESORICS",
+            "fullName": "European Symposium on Research in Computer Security",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/esorics/"
+        },
+        {
+            "domain": "Security",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "FSE",
+            "fullName": "Fast Software Encryption",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/fse/"
+        },
+        {
+            "domain": "Security",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "NDSS",
+            "fullName": "ISOC Network and Distributed System Security Symposium",
+            "publisher": "ISOC",
+            "url": "dblp.org/db/conf/ndss/"
+        },
+        {
+            "domain": "Security",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "CSFW",
+            "fullName": "IEEE Computer Security Foundations Workshop",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/csfw/"
+        },
+        {
+            "domain": "Security",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "RAID",
+            "fullName": "International Symposium on Recent Advances in Intrusion Detection",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/raid/"
+        },
+        {
+            "domain": "Security",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "PKC",
+            "fullName": "International Workshop on Practice and Theory in Public Key Cryptography",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/pkc/"
+        },
+        {
+            "domain": "Security",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "DSN",
+            "fullName": "The International Conference on Dependable Systems and Networks",
+            "publisher": "IEEE/IFIP",
+            "url": "dblp.org/db/conf/dsn/"
+        },
+        {
+            "domain": "Security",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "TCC",
+            "fullName": "Theory of Cryptography Conference",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/tcc/"
+        },
+        {
+            "domain": "Security",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "SRDS",
+            "fullName": "IEEE International Symposium on Reliable",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/srds/"
+        },
+        {
+            "domain": "Security",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "CHES",
+            "fullName": "Workshop on Cryptographic Hardware and Embedded Systems",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/ches/"
+        },
+        {
+            "domain": "Security",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "WiSec",
+            "fullName": "ACM Conference on Security and Privacy in Wireless and Mobile Networks",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/wisec/"
+        },
+        {
+            "domain": "Security",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ACM MM&SEC",
+            "fullName": "ACM Multimedia and Security Workshop",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/ih/"
+        },
+        {
+            "domain": "Security",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "SACMAT",
+            "fullName": "ACM Symposium on Access Control Models and Technologies",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/sacmat/"
+        },
+        {
+            "domain": "Security",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ASIACCS",
+            "fullName": "ACM Symposium on Information, Computer and Communications Security",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/ccs/"
+        },
+        {
+            "domain": "Security",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "DRM",
+            "fullName": "ACM Workshop on Digital Rights Management",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/drm/"
+        },
+        {
+            "domain": "Security",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ACNS",
+            "fullName": "Applied Cryptography and Network Security",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/acns/"
+        },
+        {
+            "domain": "Security",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ACISP",
+            "fullName": "Australasia Conference on Information Security and Privacy",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/acisp/"
+        },
+        {
+            "domain": "Security",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "DFRWS",
+            "fullName": "Digital Forensic Research Workshop",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/conf/dfrws/"
+        },
+        {
+            "domain": "Security",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "FC",
+            "fullName": "Financial Cryptography and Data Security",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/fc/"
+        },
+        {
+            "domain": "Security",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "DIMVA",
+            "fullName": "Detection of Intrusions and Malware & Vulnerability Assessment",
+            "publisher": "SIDAR〝GI〝Springer",
+            "url": "dblp.org/db/conf/dimva/"
+        },
+        {
+            "domain": "Security",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "SEC",
+            "fullName": "IFIP International Information Security Conference",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/sec/"
+        },
+        {
+            "domain": "Security",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "IFIP WG 11.9",
+            "fullName": "IFIP WG 11.9 International Conference on Digital Forensics",
+            "publisher": "Springer",
+            "url": "www.ifip119.org/Conferences/"
+        },
+        {
+            "domain": "Security",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ISC",
+            "fullName": "Information Security Conference",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/isw/"
+        },
+        {
+            "domain": "Security",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ICICS",
+            "fullName": "International Conference on Information and Communications Security",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/icics/"
+        },
+        {
+            "domain": "Security",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "SecureComm",
+            "fullName": "International Conference on Security and Privacy in Communication Networks",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/securecomm/"
+        },
+        {
+            "domain": "Security",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "NSPW",
+            "fullName": "New Security Paradigms Workshop",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/nspw/"
+        },
+        {
+            "domain": "Security",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "CT-RSA",
+            "fullName": "RSA Conference, Cryptographers’ Track",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/ctrsa/"
+        },
+        {
+            "domain": "Security",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "SOUPS",
+            "fullName": "Symposium On Usable Privacy and Security",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/soups/"
+        },
+        {
+            "domain": "Security",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "HotSec",
+            "fullName": "USENIX Workshop on Hot Topics in Security",
+            "publisher": "USENIX",
+            "url": "www.usenix.org/events/"
+        },
+        {
+            "domain": "Security",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "SAC",
+            "fullName": "Selected Areas in Cryptography",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/sacrypt/"
+        },
+        {
+            "domain": "Security",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "TrustCom",
+            "fullName": "IEEE International Conference on Trust, Security and Privacy in Computing and Communications",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/trustcom/"
+        },
+        {
+            "domain": "Security",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "PAM",
+            "fullName": "Passive and Active Measurement Conference",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/pam/"
+        },
+        {
+            "domain": "Security",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "PETS",
+            "fullName": "Privacy Enhancing Technologies Symposium",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/pet/"
+        },
+        {
+            "domain": "Security",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ICDF2C",
+            "fullName": "International Conference on Digital Forensics & Cyber Crime",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/icdf2c/"
+        },
+        {
+            "domain": "Security",
+            "rank": "A",
+            "type": "Journal",
+            "abbreviation": "TDSC",
+            "fullName": "IEEE Transactions on Dependable and Secure Computing",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/journals/tdsc/"
+        },
+        {
+            "domain": "Security",
+            "rank": "A",
+            "type": "Journal",
+            "abbreviation": "TIFS",
+            "fullName": "IEEE Transactions on Information Forensics and Security",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/journals/tifs/"
+        },
+        {
+            "domain": "Security",
+            "rank": "A",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "Journal of Cryptology",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/joc/"
+        },
+        {
+            "domain": "Security",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "TOPS",
+            "fullName": "ACM Transactions on Privacy and Security",
+            "publisher": "ACM",
+            "url": "tops.acm.org/"
+        },
+        {
+            "domain": "Security",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "Computers & Security",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/compsec/"
+        },
+        {
+            "domain": "Security",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "Designs, Codes and Cryptography",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/dcc/"
+        },
+        {
+            "domain": "Security",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "JCS",
+            "fullName": "Journal of Computer Security",
+            "publisher": "IOS Press",
+            "url": "dblp.org/db/journals/jcs/"
+        },
+        {
+            "domain": "Security",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "CLSR",
+            "fullName": "Computer Law and Security Reports",
+            "publisher": "Elsevier",
+            "url": "www.journals.elsevier.com/computer-law-and-security-review/"
+        },
+        {
+            "domain": "Security",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "EURASIP Journal on Information Security",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/ejisec/"
+        },
+        {
+            "domain": "Security",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "IET Information Security",
+            "publisher": "IET",
+            "url": "dblp.org/db/journals/iet-ifs/"
+        },
+        {
+            "domain": "Security",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "IMCS",
+            "fullName": "Information Management & Computer Security",
+            "publisher": "Emerald",
+            "url": "dblp.org/db/journals/imcs/"
+        },
+        {
+            "domain": "Security",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "JISA",
+            "fullName": "Journal of Information Security and Application",
+            "publisher": "Elsevier",
+            "url": "dblp.uni-trier.de/db/journals/istr/"
+        },
+        {
+            "domain": "Security",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "IJISP",
+            "fullName": "International Journal of Information Security and Privacy",
+            "publisher": "Idea Group Inc",
+            "url": "dblp.org/db/journals/ijisp/"
+        },
+        {
+            "domain": "Security",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "IJICS",
+            "fullName": "International Journal of Information and Computer Security",
+            "publisher": "Inderscience",
+            "url": "dblp.org/db/journals/ijics/"
+        },
+        {
+            "domain": "Security",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "SCN",
+            "fullName": "Security and Communication Networks",
+            "publisher": "Wiley",
+            "url": "dblp.org/db/journals/scn/"
+        },
+        {
+            "domain": "System",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "ASPLOS",
+            "fullName": "Architectural Support for Programming Languages and Operating Systems",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/asplos/"
+        },
+        {
+            "domain": "System",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "FAST",
+            "fullName": "Conference on File and Storage Technologies",
+            "publisher": "USENIX",
+            "url": "dblp.org/db/conf/fast/"
+        },
+        {
+            "domain": "System",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "HPCA",
+            "fullName": "High-Performance Computer Architecture",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/cnhpca/"
+        },
+        {
+            "domain": "System",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "ISCA",
+            "fullName": "International Symposium on Computer Architecture",
+            "publisher": "ACM /IEEE",
+            "url": "dblp.org/db/conf/isca/"
+        },
+        {
+            "domain": "System",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "MICRO",
+            "fullName": "MICRO",
+            "publisher": "IEEE/ACM",
+            "url": "dblp.org/db/journals/micro/"
+        },
+        {
+            "domain": "System",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "SC",
+            "fullName": "International Conference for High Performance Computing, Networking, Storage, and Analysis",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/sc/"
+        },
+        {
+            "domain": "System",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "USENIX ATC",
+            "fullName": "USENIX Annul Technical Conference",
+            "publisher": "USENIX",
+            "url": "dblp.org/db/conf/usenix/"
+        },
+        {
+            "domain": "System",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "PPoPP",
+            "fullName": "Principles and Practice of Parallel Programming",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/ppopp/"
+        },
+        {
+            "domain": "System",
+            "rank": "",
+            "type": "Conference",
+            "abbreviation": "DAC",
+            "fullName": "Design Automation Conference",
+            "publisher": "ACM",
+            "url": "dblp.uni-trier.de/db/conf/dac/"
+        },
+        {
+            "domain": "System",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "HOT CHIPS",
+            "fullName": "ACM Symposium on High Performance Chips",
+            "publisher": "IEEE",
+            "url": "www.hotchips.org/"
+        },
+        {
+            "domain": "System",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "SPAA",
+            "fullName": "ACM Symposium on Parallelism in Algorithms and Architectures",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/spaa/"
+        },
+        {
+            "domain": "System",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "PODC",
+            "fullName": "ACM Symposium on Principles of Distributed Computing",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/podc/"
+        },
+        {
+            "domain": "System",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "CGO",
+            "fullName": "Code Generation and Optimization",
+            "publisher": "IEEE/ACM",
+            "url": "dblp.org/db/conf/cgo/"
+        },
+        {
+            "domain": "System",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "DATE",
+            "fullName": "Design, Automation & Test in Europe Conference",
+            "publisher": "IEEE/ACM",
+            "url": "dblp.org/db/conf/date/"
+        },
+        {
+            "domain": "System",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "EuroSys",
+            "fullName": "EuroSys",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/eurosys/"
+        },
+        {
+            "domain": "System",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "HPDC",
+            "fullName": "High-Performance Distributed Computing",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/hpdc/"
+        },
+        {
+            "domain": "System",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "ICCD",
+            "fullName": "International Conference on Computer Design",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/iccd/"
+        },
+        {
+            "domain": "System",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "ICCAD",
+            "fullName": "International Conference on Computer-Aided Design",
+            "publisher": "IEEE/ACM",
+            "url": "dblp.org/db/conf/iccad/"
+        },
+        {
+            "domain": "System",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "ICDCS",
+            "fullName": "International Conference on Distributed Computing Systems",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/icdcs/"
+        },
+        {
+            "domain": "System",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "HiPEAC",
+            "fullName": "International Conference on High Performance and Embedded Architectures and Compilers",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/hipeac/"
+        },
+        {
+            "domain": "System",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "SIGMETRICS",
+            "fullName": "International Conference on Measurement and Modeling of Computer Systems",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/sigmetrics/"
+        },
+        {
+            "domain": "System",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "ICPP",
+            "fullName": "International Conference on Parallel Processing",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/icpp/"
+        },
+        {
+            "domain": "System",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "ICS",
+            "fullName": "International Conference on Supercomputing",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/ics/"
+        },
+        {
+            "domain": "System",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "IPDPS",
+            "fullName": "International Parallel & Distributed Processing Symposium",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/ipps/"
+        },
+        {
+            "domain": "System",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "FPGA",
+            "fullName": "ACM/SIGDA International Symposium on Field-Programmable Gate Arrays",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/fpga/"
+        },
+        {
+            "domain": "System",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "Performance",
+            "fullName": "International Symposium on Computer Performance, Modeling, Measurements and Evaluation",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/performance/"
+        },
+        {
+            "domain": "System",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "LISA",
+            "fullName": "Large Installation system Administration Conference",
+            "publisher": "USENIX",
+            "url": "dblp.org/db/conf/lisa/"
+        },
+        {
+            "domain": "System",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "MSST",
+            "fullName": "Mass Storage Systems and Technologies",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/mss/"
+        },
+        {
+            "domain": "System",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "PACT",
+            "fullName": "Parallel Architectures and Compilation Techniques",
+            "publisher": "IEEE/ACM",
+            "url": "dblp.org/db/conf/IEEEpact/"
+        },
+        {
+            "domain": "System",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "RTAS",
+            "fullName": "Real-Time and Embedded Technology and Applications Symposium",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/rtas/"
+        },
+        {
+            "domain": "System",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "VEE",
+            "fullName": "Virtual Execution Environments",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/vee/"
+        },
+        {
+            "domain": "System",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "CODES+ISSS",
+            "fullName": "ACM/IEEE Conf. Hardware/Software Co-design and System Synthesis",
+            "publisher": "ACM/ IEEE",
+            "url": "dblp.org/db/conf/codes/"
+        },
+        {
+            "domain": "System",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "ITC",
+            "fullName": "International Test Conference",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/itc/"
+        },
+        {
+            "domain": "System",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "SOCC",
+            "fullName": "ACM Symposium on Cloud Computing",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/cloud/"
+        },
+        {
+            "domain": "System",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "CF",
+            "fullName": "ACM International Conference on Computing Frontiers",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/cf/"
+        },
+        {
+            "domain": "System",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "NOCS",
+            "fullName": "ACM/IEEE International Symposium on Networks-on-Chip",
+            "publisher": "ACM/IEEE",
+            "url": "dblp.org/db/conf/nocs/"
+        },
+        {
+            "domain": "System",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ASP-DAC",
+            "fullName": "Asia and South Pacific Design Automation Conference",
+            "publisher": "ACM/IEEE",
+            "url": "dblp.org/db/conf/aspdac/"
+        },
+        {
+            "domain": "System",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ASAP",
+            "fullName": "Application-Specific Systems, Architectures, and Processors",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/asap/"
+        },
+        {
+            "domain": "System",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ATS",
+            "fullName": "IEEE Asian Test Symposium",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/ats/"
+        },
+        {
+            "domain": "System",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "CCGRID",
+            "fullName": "Cluster Computing and the Grid",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/ccgrid/"
+        },
+        {
+            "domain": "System",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "Euro-Par",
+            "fullName": "European Conference on Parallel and Distributed Computing",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/europar/"
+        },
+        {
+            "domain": "System",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ETS",
+            "fullName": "European Test Symposium",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/ets/"
+        },
+        {
+            "domain": "System",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "FPL",
+            "fullName": "Field Programmable Logic and Applications",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/fpl/"
+        },
+        {
+            "domain": "System",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "FCCM",
+            "fullName": "Field-Programmable Custom Computing Machines",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/fccm/"
+        },
+        {
+            "domain": "System",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "GLSVLSI",
+            "fullName": "Great Lakes Symposium on VLSI Systems",
+            "publisher": "ACM/IEEE",
+            "url": "dblp.org/db/conf/glvlsi/"
+        },
+        {
+            "domain": "System",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "HPCC",
+            "fullName": "IEEE International Conference on High Performance Computing and Communications",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/hpcc/"
+        },
+        {
+            "domain": "System",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "MASCOTS",
+            "fullName": "IEEE International Symposium on Modeling, Analysis, and Simulation of Computer and Telecomm unication Systems",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/mascots/"
+        },
+        {
+            "domain": "System",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "NPC",
+            "fullName": "IFIP International Conference on Network and Parallel Computing",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/npc/"
+        },
+        {
+            "domain": "System",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ICA3PP",
+            "fullName": "International Conference on Algorithms and Architectures for Parallel Processing",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/ica3pp/"
+        },
+        {
+            "domain": "System",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "CASES",
+            "fullName": "International Conference on Compilers, Architectures, and Synthesis for Embedded Systems",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/cases/"
+        },
+        {
+            "domain": "System",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "FPT",
+            "fullName": "International Conference on Field-Programmable Technology",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/fpt/"
+        },
+        {
+            "domain": "System",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "HPC",
+            "fullName": "International Conference on High Performance Computing",
+            "publisher": "IEEE/ ACM",
+            "url": "dblp.org/db/conf/hipc/"
+        },
+        {
+            "domain": "System",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ICPADS",
+            "fullName": "International Conference on Parallel and Distributed Systems",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/icpads/"
+        },
+        {
+            "domain": "System",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ISCAS",
+            "fullName": "International Symposium on Circuits and Systems",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/iscas/"
+        },
+        {
+            "domain": "System",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ISLPED",
+            "fullName": "International Symposium on Low Power Electronics and Design",
+            "publisher": "ACM/IEEE",
+            "url": "dblp.org/db/conf/islped/"
+        },
+        {
+            "domain": "System",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ISPD",
+            "fullName": "International Symposium on Physical Design",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/ispd/"
+        },
+        {
+            "domain": "System",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "Hot Interconnects",
+            "fullName": "Symposium on High-Performance Interconnects",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/hoti/"
+        },
+        {
+            "domain": "System",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "VTS",
+            "fullName": "VLSI Test Symposium",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/vts/"
+        },
+        {
+            "domain": "System",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ISPA",
+            "fullName": "Symposium on Parallel and Distributed Processing with Applications",
+            "publisher": "",
+            "url": "dblp.org/db/conf/ispa/"
+        },
+        {
+            "domain": "System",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "SYSTOR",
+            "fullName": "ACM SIGOPS International Systems and Storage Conference",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/systor/"
+        },
+        {
+            "domain": "System",
+            "rank": "A",
+            "type": "Journal",
+            "abbreviation": "TOCS",
+            "fullName": "ACM Transactions on Computer Systems",
+            "publisher": "ACM",
+            "url": "dblp.org/db/journals/tocs/"
+        },
+        {
+            "domain": "System",
+            "rank": "A",
+            "type": "Journal",
+            "abbreviation": "TOC",
+            "fullName": "IEEE Transactions on Computers",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/journals/tc/"
+        },
+        {
+            "domain": "System",
+            "rank": "A",
+            "type": "Journal",
+            "abbreviation": "TPDS",
+            "fullName": "IEEE Transactions on Parallel and Distributed Systems",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/journals/tpds/"
+        },
+        {
+            "domain": "System",
+            "rank": "A",
+            "type": "Journal",
+            "abbreviation": "TCAD",
+            "fullName": "IEEE Transactions On Computer-Aided Design Of Integrated Circuits And System",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/journals/tcad/"
+        },
+        {
+            "domain": "System",
+            "rank": "A",
+            "type": "Journal",
+            "abbreviation": "TOS",
+            "fullName": "ACM Transactions on Storage",
+            "publisher": "ACM",
+            "url": "dblp.org/db/journals/tos/"
+        },
+        {
+            "domain": "System",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "TACO",
+            "fullName": "ACM Transactions on Architecture and Code Optimization",
+            "publisher": "ACM",
+            "url": "dblp.org/db/journals/taco/"
+        },
+        {
+            "domain": "System",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "TAAS",
+            "fullName": "ACM Transactions on Autonomous and Adaptive Systems",
+            "publisher": "ACM",
+            "url": "dblp.org/db/journals/taas/"
+        },
+        {
+            "domain": "System",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "TODAES",
+            "fullName": "ACM Transactions on Design Automation of Electronic Systems",
+            "publisher": "ACM",
+            "url": "dblp.org/db/journals/todaes/"
+        },
+        {
+            "domain": "System",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "TECS",
+            "fullName": "ACM Transactions on Embedded Computing Systems",
+            "publisher": "ACM",
+            "url": "dblp.org/db/journals/tecs/"
+        },
+        {
+            "domain": "System",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "TRETS",
+            "fullName": "ACM Transactions on Reconfigurable Technology and Systems",
+            "publisher": "ACM",
+            "url": "dblp.org/db/journals/trets/"
+        },
+        {
+            "domain": "System",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "TVLSI",
+            "fullName": "IEEE Transactions on VLSI Systems",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/journals/tvlsi/"
+        },
+        {
+            "domain": "System",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "JPDC",
+            "fullName": "Journal of Parallel and Distributed Computing",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/jpdc/"
+        },
+        {
+            "domain": "System",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "PARCO",
+            "fullName": "Parallel Computing",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/conf/parco/"
+        },
+        {
+            "domain": "System",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "Performance Evaluation: An International Journal",
+            "publisher": "Elsevier",
+            "url": "www.journals.elsevier.com/performance-evaluation/"
+        },
+        {
+            "domain": "System",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "JSA",
+            "fullName": "Journal of Systems Architecture",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/jsa/"
+        },
+        {
+            "domain": "System",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "Concurrency and Computation: Practice and Experience",
+            "publisher": "Wiley",
+            "url": "dblp.org/db/journals/concurrency/"
+        },
+        {
+            "domain": "System",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "DC",
+            "fullName": "Distributed Computing",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/dc/"
+        },
+        {
+            "domain": "System",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "FGCS",
+            "fullName": "Future Generation Computer Systems",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/fgcs/"
+        },
+        {
+            "domain": "System",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "Integration",
+            "fullName": "Integration, the VLSI Journal",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/integration/"
+        },
+        {
+            "domain": "System",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "Microprocessors and Microsystems: Embedded Hardware Design",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/mam/"
+        },
+        {
+            "domain": "System",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "JGC",
+            "fullName": "The Journal of Grid computing",
+            "publisher": "Springer",
+            "url": "link.springer.com/journal/10723"
+        },
+        {
+            "domain": "System",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "TJSC",
+            "fullName": "The Journal of Supercomputing",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/tjs/"
+        },
+        {
+            "domain": "System",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "JETC",
+            "fullName": "The ACM Journal on Emerging Technologies in Computing Systems",
+            "publisher": "ACM",
+            "url": "dblp.org/db/journals/jetc/"
+        },
+        {
+            "domain": "System",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "JET",
+            "fullName": "Journal of Electronic Testing-Theory and Applications",
+            "publisher": "Springer",
+            "url": "link.springer.com/journal/10836"
+        },
+        {
+            "domain": "System",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "RTS",
+            "fullName": "Real-Time Systems",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/rts/"
+        },
+        {
+            "domain": "System",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "TCC",
+            "fullName": "IEEE Transactions on Cloud Computing",
+            "publisher": "IEEE",
+            "url": "dblp.uni-trier.de/db/journals/tcc/"
+        },
+        {
+            "domain": "Software",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "FSE/ESEC",
+            "fullName": "ACM SIGSOFT Symposium on the Foundation of Software Engineering/ European Software Engin eering Conference",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/sigsoft/"
+        },
+        {
+            "domain": "Software",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "OOPSLA",
+            "fullName": "Conference on Object-Oriented Programming Systems, Languages, and Applications",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/oopsla/"
+        },
+        {
+            "domain": "Software",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "ICSE",
+            "fullName": "International Conference on Software Engineering",
+            "publisher": "ACM/IEEE",
+            "url": "dblp.org/db/conf/icse/"
+        },
+        {
+            "domain": "Software",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "OSDI",
+            "fullName": "USENIX Symposium on Operating Systems Design and Implementations",
+            "publisher": "USENIX",
+            "url": "dblp.org/db/conf/osdi/"
+        },
+        {
+            "domain": "Software",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "PLDI",
+            "fullName": "ACM SIGPLAN Symposium on Programming Language Design & Implementation",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/pldi/"
+        },
+        {
+            "domain": "Software",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "POPL",
+            "fullName": "ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/popl/"
+        },
+        {
+            "domain": "Software",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "SOSP",
+            "fullName": "ACM Symposium on Operating Systems Principles",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/sosp/"
+        },
+        {
+            "domain": "Software",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "ASE",
+            "fullName": "International Conference on Automated Software Engineering",
+            "publisher": "IEEE/ACM",
+            "url": "dblp.org/db/conf/kbse/"
+        },
+        {
+            "domain": "Software",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "ISSTA",
+            "fullName": "International Symposium on Software Testing and Analysis",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/issta/"
+        },
+        {
+            "domain": "Software",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "ECOOP",
+            "fullName": "European Conference on Object-Oriented Programming",
+            "publisher": "AITO",
+            "url": "dblp.org/db/conf/ecoop/"
+        },
+        {
+            "domain": "Software",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "ETAPS",
+            "fullName": "European Joint Conferences on Theory and Practice of Software",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/etaps/"
+        },
+        {
+            "domain": "Software",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "FM",
+            "fullName": "World Congress on Formal Methods",
+            "publisher": "FME",
+            "url": "dblp.org/db/conf/fm/"
+        },
+        {
+            "domain": "Software",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "ICPC",
+            "fullName": "IEEE International Conference on Program Comprehension",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/iwpc/"
+        },
+        {
+            "domain": "Software",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "RE",
+            "fullName": "IEEE International Requirement Engineering Conference",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/re/"
+        },
+        {
+            "domain": "Software",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "CAiSE",
+            "fullName": "International Conference on Advanced Information Systems Engineering",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/caise/"
+        },
+        {
+            "domain": "Software",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "ICFP",
+            "fullName": "International Conference on Function Programming",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/icfp/"
+        },
+        {
+            "domain": "Software",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "LCTES",
+            "fullName": "International Conference on Languages, Compilers, Tools and Theory for Embedded Systems",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/lctrts/"
+        },
+        {
+            "domain": "Software",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "MoDELS",
+            "fullName": "International Conference on Model Driven Engineering Languages and Systems",
+            "publisher": "ACM, IEEE",
+            "url": "dblp.org/db/conf/models/"
+        },
+        {
+            "domain": "Software",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "CP",
+            "fullName": "International Conference on Principles and Practice of Constraint Programming",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/cp/"
+        },
+        {
+            "domain": "Software",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "ICSOC",
+            "fullName": "International Conference on Service Oriented Computing",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/icsoc/"
+        },
+        {
+            "domain": "Software",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "ICSME",
+            "fullName": "International Conference on Software Maintenance and Evolution",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/icsm/"
+        },
+        {
+            "domain": "Software",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "VMCAI",
+            "fullName": "International Conference on Verification, Model Checking, and Abstract Interpretation",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/vmcai/"
+        },
+        {
+            "domain": "Software",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "ICWS",
+            "fullName": "International Conference on Web Services （Research Track）",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/icws/"
+        },
+        {
+            "domain": "Software",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "SAS",
+            "fullName": "International Static Analysis Symposium",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/sas/"
+        },
+        {
+            "domain": "Software",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "ISSRE",
+            "fullName": "International Symposium on Software Reliability Engineering",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/issre/"
+        },
+        {
+            "domain": "Software",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "ESEM",
+            "fullName": "International Symposium on Empirical Software Engineering and Measurement",
+            "publisher": "ACM/IEEE",
+            "url": "dblp.org/db/conf/esem/"
+        },
+        {
+            "domain": "Software",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "Middleware",
+            "fullName": "Conference on middleware",
+            "publisher": "ACM/IFIP/ USENIX",
+            "url": "dblp.org/db/conf/middleware/"
+        },
+        {
+            "domain": "Software",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "SANER",
+            "fullName": "International Conference on Software Analysis, Evolution, and Reengineering",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/wcre/"
+        },
+        {
+            "domain": "Software",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "HotOS",
+            "fullName": "USENIX Workshop on Hot Topics in Operating Systems",
+            "publisher": "USENIX",
+            "url": "dblp.org/db/conf/hotos/"
+        },
+        {
+            "domain": "Software",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "PASTE",
+            "fullName": "ACMSIGPLAN-SIGSOFT Workshop on Program Analysis for Software Tools and Engineering",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/paste/"
+        },
+        {
+            "domain": "Software",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "APLAS",
+            "fullName": "Asian Symposium on Programming Languages and Systems",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/aplas/"
+        },
+        {
+            "domain": "Software",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "APSEC",
+            "fullName": "Asia-Pacific Software Engineerin g Conference",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/apsec/"
+        },
+        {
+            "domain": "Software",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "COMPSAC",
+            "fullName": "International Computer Software and Applications Conference",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/compsac/"
+        },
+        {
+            "domain": "Software",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ICECCS",
+            "fullName": "IEEE International Conference on Engineering of Complex Computer Systems",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/iceccs/"
+        },
+        {
+            "domain": "Software",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "SCAM",
+            "fullName": "IEEE International Working Conference on Source Code Analysis and Manipulation",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/scam/"
+        },
+        {
+            "domain": "Software",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ICFEM",
+            "fullName": "International Conference on Formal Engineering Methods",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/icfem/"
+        },
+        {
+            "domain": "Software",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "TOOLS",
+            "fullName": "International Conference on Objects, Models, Components, Patterns",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/tools/"
+        },
+        {
+            "domain": "Software",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "PEPM",
+            "fullName": "ACM SIGPLAN Symposium on Partial Evaluation and Semantics Based Programming Manipulation",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/pepm/"
+        },
+        {
+            "domain": "Software",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "QRS",
+            "fullName": "The IEEE International Conference on Software Quality, Reliability and Security",
+            "publisher": "IEEE",
+            "url": "paris.utdallas.edu/qrs/"
+        },
+        {
+            "domain": "Software",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "SEKE",
+            "fullName": "International Conference on Software Engineering and Knowledge Engineering",
+            "publisher": "KSI",
+            "url": "dblp.org/db/conf/seke/"
+        },
+        {
+            "domain": "Software",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ICSR",
+            "fullName": "International Conference on Software Reuse",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/icsr/"
+        },
+        {
+            "domain": "Software",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ICWE",
+            "fullName": "International Conference on Web Engineering",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/icwe/"
+        },
+        {
+            "domain": "Software",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "SPIN",
+            "fullName": "International SPIN Workshop on Model Checking of Software",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/spin/"
+        },
+        {
+            "domain": "Software",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "LOPSTR",
+            "fullName": "International Symposium on Logic-based Program Synthesis and Transformation",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/lopstr/"
+        },
+        {
+            "domain": "Software",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "TASE",
+            "fullName": "International Symposium on Theoretical Aspects of Software Engineering",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/tase/"
+        },
+        {
+            "domain": "Software",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ICST",
+            "fullName": "The IEEE International Conference on Software Testing, Verification and Validation",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/icst/"
+        },
+        {
+            "domain": "Software",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ATVA",
+            "fullName": "International Symposium on Automated Technology for Verification and Analysis",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/atva/"
+        },
+        {
+            "domain": "Software",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ISPASS",
+            "fullName": "IEEE International Symposium on Performance Analysis of Systems and Software",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/ispass/"
+        },
+        {
+            "domain": "Software",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "SCC",
+            "fullName": "International Conference on Service Computing",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/IEEEscc/"
+        },
+        {
+            "domain": "Software",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ICSSP",
+            "fullName": "International Conference on Software and System Process",
+            "publisher": "ISPA",
+            "url": "dblp.org/db/conf/ispw/"
+        },
+        {
+            "domain": "Software",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "MSR",
+            "fullName": "Working Conference on Mining Software Repositories",
+            "publisher": "IEEE/ACM",
+            "url": "dblp.org/db/conf/msr/"
+        },
+        {
+            "domain": "Software",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "REFSQ",
+            "fullName": "Requirements Engineering: Foundation for Software Quality",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/refsq/"
+        },
+        {
+            "domain": "Software",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "WICSA",
+            "fullName": "Working IEEE/IFIP Conference on Software Architecture",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/wicsa/"
+        },
+        {
+            "domain": "Software",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "EASE",
+            "fullName": "Evaluation and Assessment in Software Engineering",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/ease/"
+        },
+        {
+            "domain": "Software",
+            "rank": "A",
+            "type": "Journal",
+            "abbreviation": "TOPLAS",
+            "fullName": "ACM Transactions on Programming Languages & Systems",
+            "publisher": "ACM",
+            "url": "dblp.org/db/journals/toplas/"
+        },
+        {
+            "domain": "Software",
+            "rank": "A",
+            "type": "Journal",
+            "abbreviation": "TOSEM",
+            "fullName": "ACM Transactions on Software Engineering Methodology",
+            "publisher": "ACM",
+            "url": "dblp.org/db/journals/tosem/"
+        },
+        {
+            "domain": "Software",
+            "rank": "A",
+            "type": "Journal",
+            "abbreviation": "TSE",
+            "fullName": "IEEE Transactions on Software Engineering",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/journals/tse/"
+        },
+        {
+            "domain": "Software",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "ASE",
+            "fullName": "Automated Software Engineering",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/ase/"
+        },
+        {
+            "domain": "Software",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "ESE",
+            "fullName": "Empirical Software Engineering",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/ese/"
+        },
+        {
+            "domain": "Software",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "TSC",
+            "fullName": "IEEE Transactions on Service Computing",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/journals/tsc/"
+        },
+        {
+            "domain": "Software",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "IETS",
+            "fullName": "IET Software",
+            "publisher": "IET",
+            "url": "dblp.org/db/journals/iee/"
+        },
+        {
+            "domain": "Software",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "IST",
+            "fullName": "Information and Software Technology",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/infsof/"
+        },
+        {
+            "domain": "Software",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "JFP",
+            "fullName": "Journal of Functional Programming",
+            "publisher": "Cambridge University Press",
+            "url": "dblp.org/db/journals/jfp/"
+        },
+        {
+            "domain": "Software",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "Journal of Software: Evolution and Process",
+            "publisher": "Wiley",
+            "url": "dblp.org/db/journals/smr/"
+        },
+        {
+            "domain": "Software",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "JSS",
+            "fullName": "Journal of Systems and Software",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/jss/"
+        },
+        {
+            "domain": "Software",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "RE",
+            "fullName": "Requirements Engineering",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/re/"
+        },
+        {
+            "domain": "Software",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "SCP",
+            "fullName": "Science of Computer Programming",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/scp/"
+        },
+        {
+            "domain": "Software",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "SoSyM",
+            "fullName": "Software and System Modeling",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/sosym/"
+        },
+        {
+            "domain": "Software",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "SPE",
+            "fullName": "Software: Practice and Experience",
+            "publisher": "Wiley",
+            "url": "dblp.org/db/journals/spe/"
+        },
+        {
+            "domain": "Software",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "STVR",
+            "fullName": "Software Testing, Verification and Reliability",
+            "publisher": "Wiley",
+            "url": "dblp.org/db/journals/stvr/"
+        },
+        {
+            "domain": "Software",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "CL",
+            "fullName": "Computer Languages, Systems and Structures",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/cl/"
+        },
+        {
+            "domain": "Software",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "IJSEKE",
+            "fullName": "International Journal on Software Engineering and Knowledge Engineering",
+            "publisher": "World Scientific",
+            "url": "dblp.org/db/journals/ijseke/"
+        },
+        {
+            "domain": "Software",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "STTT",
+            "fullName": "International Journal on Software Tools for Technology Transfer",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/sttt/"
+        },
+        {
+            "domain": "Software",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "JLAP",
+            "fullName": "Journal of Logic and Algebraic Programming",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/jlp/jlap.html/"
+        },
+        {
+            "domain": "Software",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "JWE",
+            "fullName": "Journal of Web Engineering",
+            "publisher": "Rinton Press",
+            "url": "dblp.org/db/journals/jwe/"
+        },
+        {
+            "domain": "Software",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "SOCA",
+            "fullName": "Service Oriented Computing and Applications",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/soca/"
+        },
+        {
+            "domain": "Software",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "SQJ",
+            "fullName": "Software Quality Journal",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/sqj/"
+        },
+        {
+            "domain": "Software",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "TPLP",
+            "fullName": "Theory and Practice of Logic Programming",
+            "publisher": "Cambridge University Press",
+            "url": "dblp.org/db/journals/tplp/"
+        },
+        {
+            "domain": "Network",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "MOBICOM",
+            "fullName": "ACM International Conference on Mobile Computing and Networking",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/mobicom/"
+        },
+        {
+            "domain": "Network",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "SIGCOMM",
+            "fullName": "ACM International Conference on the applications, technologies, architectures, and protocols for computer\n                communication",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/sigcomm/"
+        },
+        {
+            "domain": "Network",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "INFOCOM",
+            "fullName": "IEEE International Conference on Computer Communications",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/infocom/"
+        },
+        {
+            "domain": "Network",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "NSDI",
+            "fullName": "Symposium on Network System Design and Implementation",
+            "publisher": "USENIX",
+            "url": "dblp.org/db/conf/nsdi/"
+        },
+        {
+            "domain": "Network",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "SenSys",
+            "fullName": "ACM Conference on Embedded Networked Sensor Systems",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/sensys/"
+        },
+        {
+            "domain": "Network",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "CoNEXT",
+            "fullName": "ACM International Conference on emerging Networking EXperiments and Technologies",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/conext/"
+        },
+        {
+            "domain": "Network",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "SECON",
+            "fullName": "IEEE Communications Society Conference on Sensor and Ad Hoc Communications and Networks",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/secon/"
+        },
+        {
+            "domain": "Network",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "IPSN",
+            "fullName": "International Conference on Information Processing in Sensor Networks",
+            "publisher": "IEEE/ACM",
+            "url": "dblp.org/db/conf/ipsn/"
+        },
+        {
+            "domain": "Network",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "ICNP",
+            "fullName": "International Conference on Network Protocols",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/icnp/"
+        },
+        {
+            "domain": "Network",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "MobiHoc",
+            "fullName": "International Symposium on Mobile Ad Hoc Networking and Computing",
+            "publisher": "ACM/IEEE",
+            "url": "dblp.org/db/conf/mobihoc/"
+        },
+        {
+            "domain": "Network",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "MobiSys",
+            "fullName": "International Conference on Mobile Systems, Applications, and Services",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/mobisys/"
+        },
+        {
+            "domain": "Network",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "IWQoS",
+            "fullName": "International Workshop on Quality of Service",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/iwqos/"
+        },
+        {
+            "domain": "Network",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "IMC",
+            "fullName": "Internet Measurement Conference",
+            "publisher": "ACM/USENIX",
+            "url": "dblp.org/db/conf/imc/"
+        },
+        {
+            "domain": "Network",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "NOSSDAV",
+            "fullName": "Network and Operating System Support for Digital Audio and Video",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/nossdav/"
+        },
+        {
+            "domain": "Network",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ANCS",
+            "fullName": "Architectures for Networking and Communications Systems",
+            "publisher": "ACM/IEEE",
+            "url": "dblp.org/db/conf/ancs/"
+        },
+        {
+            "domain": "Network",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "FORTE",
+            "fullName": "Formal Techniques for Networked and Distributed Systems",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/forte/"
+        },
+        {
+            "domain": "Network",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "LCN",
+            "fullName": "IEEE Conference on Local Computer Networks",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/lcn/"
+        },
+        {
+            "domain": "Network",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "Globecom",
+            "fullName": "IEEE Global Communications Conference, incorporating the Global Internet Symposium",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/globecom/"
+        },
+        {
+            "domain": "Network",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ICC",
+            "fullName": "IEEE International Conference on Communications",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/icc/"
+        },
+        {
+            "domain": "Network",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ICCCN",
+            "fullName": "IEEE International Conference on Computer Communications and Networks",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/icccn/"
+        },
+        {
+            "domain": "Network",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "MASS",
+            "fullName": "IEEE International Conference on Mobile Ad hoc and Sensor Systems",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/mass/"
+        },
+        {
+            "domain": "Network",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "P2P",
+            "fullName": "IEEE International Conference on P2P Computing",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/p2p/"
+        },
+        {
+            "domain": "Network",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "IPCCC",
+            "fullName": "IEEE International Performance Computing and Communications Conference",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/ipccc/"
+        },
+        {
+            "domain": "Network",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "WoWMoM",
+            "fullName": "IEEE International Symposium on a World of Wireless Mobile and Multimedia Networks",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/wowmom/"
+        },
+        {
+            "domain": "Network",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ISCC",
+            "fullName": "IEEE Symposium on Computers and Communications",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/iscc/"
+        },
+        {
+            "domain": "Network",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "WCNC",
+            "fullName": "IEEE Wireless Communications & Networking Conference",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/wcnc/"
+        },
+        {
+            "domain": "Network",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "Networking",
+            "fullName": "IFIP International Conferences on Networking",
+            "publisher": "IFIP",
+            "url": "dblp.org/db/conf/networking/"
+        },
+        {
+            "domain": "Network",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "IM",
+            "fullName": "IFIP/IEEE International Symposium on Integrated Network Management",
+            "publisher": "IFIP/IEEE",
+            "url": "dblp.org/db/conf/im/"
+        },
+        {
+            "domain": "Network",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "MSWiM",
+            "fullName": "International Conference on Modeling, Analysis and Simulation of Wireless and Mobile Systems",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/mswim/"
+        },
+        {
+            "domain": "Network",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "NOMS",
+            "fullName": "Asia-Pacific Network Operations and Management Symposium",
+            "publisher": "IFIP/IEEE",
+            "url": "dblp.org/db/conf/apnoms/"
+        },
+        {
+            "domain": "Network",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "HotNets",
+            "fullName": "The Workshop on Hot Topics in Networks",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/hotnets/"
+        },
+        {
+            "domain": "Network",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "WASA",
+            "fullName": "International Conference on Wireless Algorithms, Systems, and Applications",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/wasa/"
+        },
+        {
+            "domain": "Network",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "MSN",
+            "fullName": "International Conference on Modeling, Analysis and Simulation of Wireless and Mobile Systems",
+            "publisher": "IEEE",
+            "url": "dblp.uni-trier.de/db/conf/msn/"
+        },
+        {
+            "domain": "Network",
+            "rank": "A",
+            "type": "Journal",
+            "abbreviation": "TON",
+            "fullName": "IEEE/ACM Transactions on Networking",
+            "publisher": "IEEE, ACM",
+            "url": "dblp.org/db/journals/ton/"
+        },
+        {
+            "domain": "Network",
+            "rank": "A",
+            "type": "Journal",
+            "abbreviation": "JSAC",
+            "fullName": "IEEE Journal of Selected Areas in Communications",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/journals/jsac/"
+        },
+        {
+            "domain": "Network",
+            "rank": "A",
+            "type": "Journal",
+            "abbreviation": "TMC",
+            "fullName": "IEEE Transactions on Mobile Computing",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/journals/tmc/"
+        },
+        {
+            "domain": "Network",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "TOIT",
+            "fullName": "ACM Transactions on Internet Technology",
+            "publisher": "ACM",
+            "url": "dblp.org/db/journals/toit/"
+        },
+        {
+            "domain": "Network",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "TOMCCAP",
+            "fullName": "ACM Transactions on Multimedia Computing, Communications and Applications",
+            "publisher": "ACM",
+            "url": "dblp.org/db/journals/tomccap/"
+        },
+        {
+            "domain": "Network",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "TOSN",
+            "fullName": "ACM Transactions on Sensor Networks",
+            "publisher": "ACM",
+            "url": "dblp.org/db/journals/tosn/"
+        },
+        {
+            "domain": "Network",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "CN",
+            "fullName": "Computer Networks",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/cn/"
+        },
+        {
+            "domain": "Network",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "TOC",
+            "fullName": "IEEE Transactions on Communications",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/journals/tcom/"
+        },
+        {
+            "domain": "Network",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "TWC",
+            "fullName": "IEEE Transactions on Wireless Communications",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/journals/twc/"
+        },
+        {
+            "domain": "Network",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "Ad hoc Networks",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/adhoc/"
+        },
+        {
+            "domain": "Network",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "CC",
+            "fullName": "Computer Communications",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/comcom/"
+        },
+        {
+            "domain": "Network",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "TNSM",
+            "fullName": "IEEE Transactions on Network and Service Management",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/journals/tnsm/"
+        },
+        {
+            "domain": "Network",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "IET Communications",
+            "publisher": "IET",
+            "url": "dblp.org/db/journals/iet-com/"
+        },
+        {
+            "domain": "Network",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "JNCA",
+            "fullName": "Journal of Network and Computer Applications",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/jnca/"
+        },
+        {
+            "domain": "Network",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "MONET",
+            "fullName": "Mobile Networks & Applications",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/monet/"
+        },
+        {
+            "domain": "Network",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "Networks",
+            "publisher": "Wiley",
+            "url": "dblp.org/db/journals/networks/"
+        },
+        {
+            "domain": "Network",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "PPNA",
+            "fullName": "Peer-to-Peer Networking and Applications",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/ppna/"
+        },
+        {
+            "domain": "Network",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "WCMC",
+            "fullName": "Wireless Communications & Mobile Computing",
+            "publisher": "Wiley.",
+            "url": "dblp.org/db/journals/wicomm/"
+        },
+        {
+            "domain": "Network",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "Wireless Networks",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/winet/"
+        },
+        {
+            "domain": "Interaction",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "CHI",
+            "fullName": "ACM Conference on Human Factors in Computing Systems",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/chi/"
+        },
+        {
+            "domain": "Interaction",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "UbiComp",
+            "fullName": "ACM International Conference on Ubiquitous Computing",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/huc/"
+        },
+        {
+            "domain": "Interaction",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "CSCW",
+            "fullName": "ACM Conference on Computer Supported Cooperative Work and Social Computing",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/cscw/"
+        },
+        {
+            "domain": "Interaction",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "IUI",
+            "fullName": "ACM International Conference on Intelligent User Interfaces",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/iui/"
+        },
+        {
+            "domain": "Interaction",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "ITS",
+            "fullName": "ACM International Conference on Interactive Tabletops and Surfaces",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/tabletop/"
+        },
+        {
+            "domain": "Interaction",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "UIST",
+            "fullName": "ACM Symposium on User Interface Software and Technology",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/uist/"
+        },
+        {
+            "domain": "Interaction",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "ECSCW",
+            "fullName": "European Computer Supported Cooperative Work",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/ecscw/"
+        },
+        {
+            "domain": "Interaction",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "MobileHCI",
+            "fullName": "International Conference on Human Computer Interaction with Mobile Devices and Services",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/mhci/"
+        },
+        {
+            "domain": "Interaction",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "PERCOM",
+            "fullName": "IEEE International Conference on Pervasive Computing and Communications",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/percom/"
+        },
+        {
+            "domain": "Interaction",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "GROUP",
+            "fullName": "ACM Conference on Supporting Group Work",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/group/"
+        },
+        {
+            "domain": "Interaction",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ASSETS",
+            "fullName": "ACM SIGACCESS Conference on Computers and Accessibility",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/assets/"
+        },
+        {
+            "domain": "Interaction",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "DIS",
+            "fullName": "ACM Conference on Designing Interactive Systems",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/ACMdis/"
+        },
+        {
+            "domain": "Interaction",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "GI",
+            "fullName": "Graphics Interface conference",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/graphicsinterface/"
+        },
+        {
+            "domain": "Interaction",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "MobiQuitous",
+            "fullName": "International Conference on Mobile and Ubiquitous Systems: Computing, Networking and Services",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/mobiquitous/"
+        },
+        {
+            "domain": "Interaction",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "INTERACT",
+            "fullName": "IFIP TC13 Conference on Human-Computer Interaction",
+            "publisher": "IFIP",
+            "url": "dblp.org/db/conf/interact/"
+        },
+        {
+            "domain": "Interaction",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "CoopIS",
+            "fullName": "International Conference on Cooperative Information Systems",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/coopis/"
+        },
+        {
+            "domain": "Interaction",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ICMI",
+            "fullName": "ACM International Conference on Multimodal Interaction",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/icmi/"
+        },
+        {
+            "domain": "Interaction",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "IDC",
+            "fullName": "Interaction Design and Children",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/acmidc/"
+        },
+        {
+            "domain": "Interaction",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "AVI",
+            "fullName": "International Working Conference on Advanced Visual Interfaces",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/avi/"
+        },
+        {
+            "domain": "Interaction",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "UIC",
+            "fullName": "IEEE International Conference on Ubiquitous Intelligence and Computing",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/uic/"
+        },
+        {
+            "domain": "Interaction",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "Collaborate Com",
+            "fullName": "International Conference on Collaborative Computing",
+            "publisher": "Springer",
+            "url": "collaboratecom.org/"
+        },
+        {
+            "domain": "Interaction",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "",
+            "fullName": "IEEE World Haptics Conference",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/haptics/"
+        },
+        {
+            "domain": "Interaction",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "CSCWD",
+            "fullName": "International Conference on Computer Supported Cooperative Work in Design",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/cscwd/"
+        },
+        {
+            "domain": "Interaction",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "Collaborate Com",
+            "fullName": "International Conference on Collaborative Computing",
+            "publisher": "Springer",
+            "url": "collaboratecom.org/"
+        },
+        {
+            "domain": "Interaction",
+            "rank": "A",
+            "type": "Journal",
+            "abbreviation": "TOCHI",
+            "fullName": "ACM Transactions on Computer-Human Interaction",
+            "publisher": "ACM",
+            "url": "dblp.org/db/journals/tochi/"
+        },
+        {
+            "domain": "Interaction",
+            "rank": "A",
+            "type": "Journal",
+            "abbreviation": "IJHCS",
+            "fullName": "International Journal of Human Computer Studies",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/ijmms/"
+        },
+        {
+            "domain": "Interaction",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "CSCW",
+            "fullName": "Computer Supported Cooperative Work",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/cscw/"
+        },
+        {
+            "domain": "Interaction",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "HCI",
+            "fullName": "Human Computer Interaction",
+            "publisher": "Taylor & Francis",
+            "url": "dblp.org/db/journals/hhci/"
+        },
+        {
+            "domain": "Interaction",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "IWC",
+            "fullName": "Interacting with Computers",
+            "publisher": "Oxford University Press",
+            "url": "dblp.org/db/journals/iwc/"
+        },
+        {
+            "domain": "Interaction",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "UMUAI",
+            "fullName": "User Modeling and User-Adapted Interaction",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/umuai/"
+        },
+        {
+            "domain": "Interaction",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "IJHCI",
+            "fullName": "International Journal of Human-Computer Interaction",
+            "publisher": "Taylor & Francis",
+            "url": "dblp.org/db/journals/ijhci/"
+        },
+        {
+            "domain": "Interaction",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "IEEE Transactions on Human-Machine Systems",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/journals/thms/"
+        },
+        {
+            "domain": "Interaction",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "BIT",
+            "fullName": "Behaviour & Information Technology",
+            "publisher": "Taylor & Francis",
+            "url": "dblp.org/db/journals/behaviourIT/"
+        },
+        {
+            "domain": "Interaction",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "PMC",
+            "fullName": "Pervasive and Mobile Computing",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/percom/"
+        },
+        {
+            "domain": "Interaction",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "PUC",
+            "fullName": "Personal and Ubiquitous Computing",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/puc/"
+        },
+        {
+            "domain": "Others",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "RTSS",
+            "fullName": "Real-Time Systems Symposium",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/rtss/"
+        },
+        {
+            "domain": "Others",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "WWW",
+            "fullName": "International World Wide Web Conferences",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/www/"
+        },
+        {
+            "domain": "Others",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "EMSOFT",
+            "fullName": "International Conference on Embedded Software",
+            "publisher": "ACM/IEEE/IFIP",
+            "url": "dblp.org/db/conf/emsoft/"
+        },
+        {
+            "domain": "Others",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "ISMB",
+            "fullName": "International conference on Intelligent Systems for Molecular Biology",
+            "publisher": "Oxford Journals",
+            "url": "www.iscb.org/about-ismb"
+        },
+        {
+            "domain": "Others",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "CogSci",
+            "fullName": "Cognitive Science Society Annual Conference",
+            "publisher": "Psychology Press",
+            "url": "cognitivesciencesociety.org/"
+        },
+        {
+            "domain": "Others",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "RECOMB",
+            "fullName": "International Conference on Research in Computational Molecular Biology",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/recomb/"
+        },
+        {
+            "domain": "Others",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "BIBM",
+            "fullName": "IEEE International Conference on Bioinformatics and Biomedicine",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/bibm/"
+        },
+        {
+            "domain": "Others",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "AMIA",
+            "fullName": "American Medical Informatics Association Annual Symposium",
+            "publisher": "AMIA",
+            "url": "dblp.org/db/conf/amia/"
+        },
+        {
+            "domain": "Others",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "APBC",
+            "fullName": "Asia Pacific Bioinformatics Conference",
+            "publisher": "BioMed Central",
+            "url": "dblp.org/db/conf/apbc/"
+        },
+        {
+            "domain": "Others",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "COSIT",
+            "fullName": "International Conference on Spatial Information Theory",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/cosit/"
+        },
+        {
+            "domain": "Others",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "IEEECloud",
+            "fullName": "IEEE International Conference on Cloud Computing",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/IEEEcloud/"
+        },
+        {
+            "domain": "Others",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "",
+            "fullName": "IEEE International Conference on Big Data",
+            "publisher": "IEEE",
+            "url": "dblp.uni-trier.de/db/conf/bigdataconf/"
+        },
+        {
+            "domain": "Others",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "SMC",
+            "fullName": "IEEE International Conference on Systems, Man, and Cybernetics",
+            "publisher": "IEEE",
+            "url": "dblp.uni-trier.de/db/conf/smc/"
+        },
+        {
+            "domain": "Others",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ISBRA",
+            "fullName": "International Symposium on Bioinformatics Research and Applications",
+            "publisher": "Springer",
+            "url": "dblp.uni-trier.de/db/conf/isbra/"
+        },
+        {
+            "domain": "Others",
+            "rank": "A",
+            "type": "Journal",
+            "abbreviation": "Proc. IEEE",
+            "fullName": "Proceedings of the IEEE",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/journals/pieee/"
+        },
+        {
+            "domain": "Others",
+            "rank": "A",
+            "type": "Journal",
+            "abbreviation": "JACM",
+            "fullName": "Journal of the ACM",
+            "publisher": "ACM",
+            "url": "dblp.org/db/journals/jacm/"
+        },
+        {
+            "domain": "Others",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "Bioinformatics",
+            "publisher": "Oxford University Press",
+            "url": "dblp.org/db/journals/bioinformatics/"
+        },
+        {
+            "domain": "Others",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "Briefings in Bioinformatics",
+            "publisher": "Oxford University Press",
+            "url": "dblp.org/db/journals/bib/"
+        },
+        {
+            "domain": "Others",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "Cognition",
+            "fullName": "Cognition：International Journal of Cognitive Science",
+            "publisher": "Elsevier",
+            "url": "www.journals.elsevier.com/cognition/"
+        },
+        {
+            "domain": "Others",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "PLOS Computational Biology",
+            "publisher": "Public Library of Science",
+            "url": "dblp.org/db/journals/ploscb/"
+        },
+        {
+            "domain": "Others",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "TMI",
+            "fullName": "IEEE Transactions on Medical Imaging",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/journals/tmi/"
+        },
+        {
+            "domain": "Others",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "TGARS",
+            "fullName": "IEEE Transactions on Geoscience and Remote Sensing",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/journals/tgrs/"
+        },
+        {
+            "domain": "Others",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "TITS",
+            "fullName": "IEEE Transactions on Intelligent Transportation Systems",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/journals/tits/"
+        },
+        {
+            "domain": "Others",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "TR",
+            "fullName": "IEEE Transactions on Robotics",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/journals/trob/"
+        },
+        {
+            "domain": "Others",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "TASAE",
+            "fullName": "IEEE Transactions on Automation Science and Engineering",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/journals/tase/"
+        },
+        {
+            "domain": "Others",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "JCST",
+            "fullName": "Journal of Computer Science and Technology",
+            "publisher": "SCIENCE PRESS /Springer",
+            "url": "dblp.org/db/journals/jcst/"
+        },
+        {
+            "domain": "Others",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "JAMIA",
+            "fullName": "Journal of the American Medical Informatics Association",
+            "publisher": "BMJ Journals",
+            "url": "dblp.org/db/journals/jamia/"
+        },
+        {
+            "domain": "Others",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "Science China Information Sciences",
+            "publisher": "Science in China Press /Springer",
+            "url": "dblp.org/db/journals/chinaf/"
+        },
+        {
+            "domain": "Others",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "The Computer Journal",
+            "publisher": "Oxford University Press",
+            "url": "dblp.org/db/journals/cj/"
+        },
+        {
+            "domain": "Others",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "World Wide Web Journal",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/wwwj/"
+        },
+        {
+            "domain": "Others",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "TCBB",
+            "fullName": "IEEE-ACM Transactions on Computational Biology and Bioinformatics",
+            "publisher": "IEEE/ACM",
+            "url": "dblp.org/db/journals/tcbb/"
+        },
+        {
+            "domain": "Others",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "BMC Bioinformatics",
+            "publisher": "BioMed Central",
+            "url": "dblp.org/db/journals/bmcbi/"
+        },
+        {
+            "domain": "Others",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "Cybernetics and Systems",
+            "publisher": "Taylor & Francis",
+            "url": "dblp.org/db/journals/cas/"
+        },
+        {
+            "domain": "Others",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "IEEE Geoscience and Remote Sensing Letters",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/journals/lgrs/"
+        },
+        {
+            "domain": "Others",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "TITB",
+            "fullName": "IEEE Transactions on Information Technology in Biomedicine",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/journals/titb/"
+        },
+        {
+            "domain": "Others",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "TBD",
+            "fullName": "IEEE Transactions on Big Data",
+            "publisher": "IEEE",
+            "url": "dblp.uni-trier.de/db/journals/tbd/"
+        },
+        {
+            "domain": "Others",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "IET Intelligent Transport Systems",
+            "publisher": "IET",
+            "url": "digital-library.theiet.org/content/journals/iet-its"
+        },
+        {
+            "domain": "Others",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "Medical Image Analysis",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/mia/"
+        },
+        {
+            "domain": "Others",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "FCS",
+            "fullName": "Frontiers of Computer Science",
+            "publisher": "Higher Education Press",
+            "url": "dblp.org/db/journals/fcsc/"
+        },
+        {
+            "domain": "Others",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "JBI",
+            "fullName": "Journal of Biomedical Informatics",
+            "publisher": "Elsevier",
+            "url": "dblp.uni-trier.de/db/journals/jbi/"
+        },
+        {
+            "domain": "AI",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "AAAI",
+            "fullName": "AAAI Conference on Artificial Intelligence",
+            "publisher": "AAAI",
+            "url": "dblp.org/db/conf/aaai/"
+        },
+        {
+            "domain": "AI",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "CVPR",
+            "fullName": "IEEE Conference on Computer Vision and Pattern Recognition",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/cvpr/"
+        },
+        {
+            "domain": "AI",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "ICCV",
+            "fullName": "International Conference on Computer Vision",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/iccv/"
+        },
+        {
+            "domain": "AI",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "ICML",
+            "fullName": "International Conference on Machine Learning",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/icml/"
+        },
+        {
+            "domain": "AI",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "ICLR",
+            "fullName": "International Conference on Learning Representations",
+            "publisher": "OpenReview",
+            "url": "https://dblp.org/db/conf/iclr/"
+        },
+        {
+            "domain": "AI",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "IJCAI",
+            "fullName": "International Joint Conference on Artificial Intelligence",
+            "publisher": "Morgan Kaufmann",
+            "url": "dblp.org/db/conf/ijcai/"
+        },
+        {
+            "domain": "AI",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "NIPS",
+            "fullName": "Annual Conference on Neural Information Processing Systems",
+            "publisher": "MIT Press",
+            "url": "dblp.org/db/conf/nips/"
+        },
+        {
+            "domain": "AI",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "ACL",
+            "fullName": "Annual Meeting of the Association for Computational Linguistics",
+            "publisher": "ACL",
+            "url": "dblp.org/db/conf/acl/"
+        },
+        {
+            "domain": "AI",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "COLT",
+            "fullName": "Annual Conference on Computational Learning Theory",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/colt/"
+        },
+        {
+            "domain": "AI",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "EMNLP",
+            "fullName": "Conference on Empirical Methods in Natural Language Processing",
+            "publisher": "ACL",
+            "url": "dblp.org/db/conf/emnlp/"
+        },
+        {
+            "domain": "AI",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "ECAI",
+            "fullName": "European Conference on Artificial Intelligence",
+            "publisher": "IOS Press",
+            "url": "dblp.org/db/conf/ecai/"
+        },
+        {
+            "domain": "AI",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "ECCV",
+            "fullName": "European Conference on Computer Vision",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/eccv/"
+        },
+        {
+            "domain": "AI",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "ICRA",
+            "fullName": "IEEE International Conference on Robotics and Automation",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/icra/"
+        },
+        {
+            "domain": "AI",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "ICAPS",
+            "fullName": "International Conference on Automated Planning and Scheduling",
+            "publisher": "AAAI",
+            "url": "dblp.org/db/conf/aips/"
+        },
+        {
+            "domain": "AI",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "ICCBR",
+            "fullName": "International Conference on Case-Based Reasoning",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/iccbr/"
+        },
+        {
+            "domain": "AI",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "COLING",
+            "fullName": "International Conference on Computational Linguistics",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/coling/"
+        },
+        {
+            "domain": "AI",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "KR",
+            "fullName": "International Conference on Principles of Knowledge Representation and Reasoning",
+            "publisher": "Morgan Kaufmann",
+            "url": "dblp.org/db/conf/kr/"
+        },
+        {
+            "domain": "AI",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "UAI",
+            "fullName": "International Conference on Uncertaintyin Artificial Intelligence",
+            "publisher": "AUAI",
+            "url": "dblp.org/db/conf/uai/"
+        },
+        {
+            "domain": "AI",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "AAMAS",
+            "fullName": "International Joint Conference on Autonomous Agents and Multi-agent Systems",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/atal/"
+        },
+        {
+            "domain": "AI",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "PPSN",
+            "fullName": "Parallel Problem Solving from Nature",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/ppsn/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ACCV",
+            "fullName": "Asian Conference on Computer Vision",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/accv/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "CoNLL",
+            "fullName": "Conference on Natural Language Learning",
+            "publisher": "CoNLL",
+            "url": "dblp.org/db/conf/conll/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "GECCO",
+            "fullName": "Genetic and Evolutionary Computation Conference",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/gecco/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ICTAI",
+            "fullName": "IEEE International Conference on Tools with Artificial Intelligence",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/ictai/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ALT",
+            "fullName": "International Conference on Algorithmic Learning Theory",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/alt/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ICANN",
+            "fullName": "International Conference on Artificial Neural Networks",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/icann/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "FGR",
+            "fullName": "International Conference on Automatic Face and Gesture Recognition",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/fgr/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ICDAR",
+            "fullName": "International Conference on Document Analysis and Recognition",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/icdar/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ILP",
+            "fullName": "International Conference on Inductive Logic Programming",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/ilp/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "KSEM",
+            "fullName": "International conference on Knowledge Science, Engineering and Management",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/ksem/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ICONIP",
+            "fullName": "International Conference on Neural Information Processing",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/iconip/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ICPR",
+            "fullName": "International Conference on Pattern Recognition",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/icpr/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ICB",
+            "fullName": "International Joint Conference on Biometrics",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/icb/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "IJCNN",
+            "fullName": "International Joint Conference on Neural Networks",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/ijcnn/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "PRICAI",
+            "fullName": "Pacific Rim International Conference on Artificial Intelligence",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/pricai/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "NAACL",
+            "fullName": "The Annual Conference of the North American Chapter of the Association for Computational Linguistics",
+            "publisher": "NAACL",
+            "url": "dblp.org/db/conf/naacl/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "BMVC",
+            "fullName": "British Machine Vision Conference",
+            "publisher": "British Machine Vision Association",
+            "url": "dblp.org/db/conf/bmvc/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "IROS",
+            "fullName": "IEEE\\RSJ International Conference on Intelligent Robots and Systems",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/iros/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "AISTATS",
+            "fullName": "Artificial Intelligence and Statistics",
+            "publisher": "JMLR",
+            "url": "dblp.org/db/conf/aistats/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ACML",
+            "fullName": "Asian Conference on Machine Learning",
+            "publisher": "JMLR",
+            "url": "dblp.org/db/conf/acml/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "NLPCC",
+            "fullName": "CCF International Conference on Natural Language Processing and Chinese Computing",
+            "publisher": "Springer",
+            "url": "dblp.uni-trier.de/db/conf/nlpcc/"
+        },
+        {
+            "domain": "AI",
+            "rank": "A",
+            "type": "Journal",
+            "abbreviation": "AI",
+            "fullName": "Artificial Intelligence",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/ai/"
+        },
+        {
+            "domain": "AI",
+            "rank": "A",
+            "type": "Journal",
+            "abbreviation": "TPAMI",
+            "fullName": "IEEE Trans on Pattern Analysis and Machine Intelligence",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/journals/pami/"
+        },
+        {
+            "domain": "AI",
+            "rank": "A",
+            "type": "Journal",
+            "abbreviation": "IJCV",
+            "fullName": "International Journal of Computer Vision",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/ijcv/"
+        },
+        {
+            "domain": "AI",
+            "rank": "A",
+            "type": "Journal",
+            "abbreviation": "JMLR",
+            "fullName": "Journal of Machine Learning Research",
+            "publisher": "MIT Press",
+            "url": "dblp.org/db/journals/jmlr/"
+        },
+        {
+            "domain": "AI",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "TAP",
+            "fullName": "ACM Transactions on Applied Perception",
+            "publisher": "ACM",
+            "url": "dblp.org/db/journals/tap/"
+        },
+        {
+            "domain": "AI",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "TSLP",
+            "fullName": "ACM Transactions on Speech and Language Processing",
+            "publisher": "ACM",
+            "url": "dblp.org/db/journals/tslp/"
+        },
+        {
+            "domain": "AI",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "Computational Linguistics",
+            "publisher": "MIT Press",
+            "url": "dblp.org/db/journals/coling/"
+        },
+        {
+            "domain": "AI",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "CVIU",
+            "fullName": "Computer Vision and Image Understanding",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/cviu/"
+        },
+        {
+            "domain": "AI",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "DKE",
+            "fullName": "Data and Knowledge Engineering",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/dke/"
+        },
+        {
+            "domain": "AI",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "Evolutionary Computation",
+            "publisher": "MIT Press",
+            "url": "dblp.org/db/journals/ec/"
+        },
+        {
+            "domain": "AI",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "TAC",
+            "fullName": "IEEE Transactions on Affective Computing",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/journals/taffco/"
+        },
+        {
+            "domain": "AI",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "TASLP",
+            "fullName": "IEEE Transactions on Audio, Speech, and Language Processing",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/journals/taslp/"
+        },
+        {
+            "domain": "AI",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "IEEE Transactions on Cybernetics",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/journals/tcyb/"
+        },
+        {
+            "domain": "AI",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "TEC",
+            "fullName": "IEEE Transactions on Evolutionary Computation",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/journals/tec/"
+        },
+        {
+            "domain": "AI",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "TFS",
+            "fullName": "IEEE Transactions on Fuzzy Systems",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/journals/tfs/"
+        },
+        {
+            "domain": "AI",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "TNNLS",
+            "fullName": "IEEE Transactions on Neural Networks and learning systems",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/journals/tnn/"
+        },
+        {
+            "domain": "AI",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "IJAR",
+            "fullName": "International Journal of Approximate Reasoning",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/ijar/"
+        },
+        {
+            "domain": "AI",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "JAIR",
+            "fullName": "Journal of AI Research",
+            "publisher": "AAAI",
+            "url": "dblp.org/db/journals/jair/"
+        },
+        {
+            "domain": "AI",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "Journal of Automated Reasoning",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/jar/"
+        },
+        {
+            "domain": "AI",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "JSLHR",
+            "fullName": "Journal of Speech, Language, and Hearing Research",
+            "publisher": "American Speech-Language Hearing Association",
+            "url": "jslhr.pubs.asha.org/"
+        },
+        {
+            "domain": "AI",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "Machine Learning",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/ml/"
+        },
+        {
+            "domain": "AI",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "Neural Computation",
+            "publisher": "MIT Press",
+            "url": "dblp.org/db/journals/neco/"
+        },
+        {
+            "domain": "AI",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "Neural Networks",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/nn/"
+        },
+        {
+            "domain": "AI",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "Pattern Recognition",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/conf/par/"
+        },
+        {
+            "domain": "AI",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "AAMAS",
+            "fullName": "Autonomous Agents and Multi-Agent Systems",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/aamas/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "TALIP",
+            "fullName": "ACM Transactions on Asian Language Information Processing",
+            "publisher": "ACM",
+            "url": "dblp.org/db/journals/talip/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "Applied Intelligence",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/apin/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "AIM",
+            "fullName": "Artificial Intelligence in Medicine",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/artmed/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "Artificial Life",
+            "publisher": "MIT Press",
+            "url": "dblp.org/db/journals/alife/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "Computational Intelligence",
+            "publisher": "Wiley",
+            "url": "dblp.org/db/journals/ci/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "Computer Speech and Language",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/csl/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "Connection Science",
+            "publisher": "Taylor & Francis",
+            "url": "dblp.org/db/journals/connection/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "DSS",
+            "fullName": "Decision Support Systems",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/dss/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "EAAI",
+            "fullName": "Engineering Applications of Artificial Intelligence",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/eaai/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "Expert Systems",
+            "publisher": "Blackwell /Wiley",
+            "url": "dblp.org/db/journals/es/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "ESWA",
+            "fullName": "Expert Systems with Applications",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/eswa/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "Fuzzy Sets and Systems",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/fss/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "T-CIAIG",
+            "fullName": "IEEE Transactions on Computational Intelligence and AI in Games",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/journals/tciaig/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "IET-CVI",
+            "fullName": "IET Computer Vision",
+            "publisher": "IET",
+            "url": "digital-library.theiet.org/content/journals/iet-cvi"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "IET Signal Processing",
+            "publisher": "IET",
+            "url": "digital-library.theiet.org/content/journals/iet-spr"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "IVC",
+            "fullName": "Image and Vision Computing",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/ivc/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "IDA",
+            "fullName": "Intelligent Data Analysis",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/ida/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "IJCIA",
+            "fullName": "International Journal of Computational Intelligence and Applications",
+            "publisher": "World Scientific",
+            "url": "dblp.org/db/journals/ijcia/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "IJDAR",
+            "fullName": "International Journal on Document Analysis and Recognition",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/ijdar/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "IJIS",
+            "fullName": "International Journal of Intelligent Systems",
+            "publisher": "Wiley",
+            "url": "dblp.org/db/journals/ijis/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "IJNS",
+            "fullName": "International Journal of Neural Systems",
+            "publisher": "World Scientific",
+            "url": "dblp.org/db/journals/ijns/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "IJPRAI",
+            "fullName": "International Journal of Pattern Recognition and Artificial Intelligence",
+            "publisher": "World Scientific",
+            "url": "dblp.org/db/journals/ijprai/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "IJUFKS",
+            "fullName": "International Journal of Uncertainty, Fuzziness and Knowledge-Based Systems",
+            "publisher": "World Scientific",
+            "url": "dblp.dagstuhl.de/db/journals/ijufks/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "JETAI",
+            "fullName": "Journal of Experimental and Theoretical Artificial Intelligence",
+            "publisher": "Taylor & Francis",
+            "url": "dblp.org/db/journals/jetai/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "KBS",
+            "fullName": "Knowledge-Based Systems",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/kbs/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "Machine Translation",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/mt/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "Machine Vision and Applications",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/mva/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "Natural Computing",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/nc/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "NLE",
+            "fullName": "Natural Language Engineering",
+            "publisher": "Cambridge University",
+            "url": "dblp.org/db/journals/nle/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "NCA",
+            "fullName": "Neural Computing & Applications",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/nca/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "NPL",
+            "fullName": "Neural Processing Letters",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/npl/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "Neurocomputing",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/ijon/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "PAA",
+            "fullName": "Pattern Analysis and Applications",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/paa/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "PRL",
+            "fullName": "Pattern Recognition Letters",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/prl/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "Soft Computing",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/soco/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "IJUFKS",
+            "fullName": "WInternational Journal of Uncertainty, Fuzziness and Knowledge-Based System",
+            "publisher": "World Scientific",
+            "url": "dblp.uni-trier.de/db/journals/ijufks/"
+        },
+        {
+            "domain": "AI",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "WIAS",
+            "fullName": "Web Intelligence and Agent Systems",
+            "publisher": "IOS Press",
+            "url": "dblp.org/db/journals/wias/"
+        },
+        {
+            "domain": "Media",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "ACM MM",
+            "fullName": "ACM International Conference on Multimedia",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/mm/"
+        },
+        {
+            "domain": "Media",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "SIGGRAPH",
+            "fullName": "ACM SIGGRAPH Annual Conference",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/siggraph/"
+        },
+        {
+            "domain": "Media",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "IEEE VIS",
+            "fullName": "IEEE Visualization Conference",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/visualization/"
+        },
+        {
+            "domain": "Media",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "VR",
+            "fullName": "IEEE Virtual Reality",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/vr/"
+        },
+        {
+            "domain": "Media",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "ICMR",
+            "fullName": "ACM SIGMM International Conference on Multimedia Retrieval",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/mir/"
+        },
+        {
+            "domain": "Media",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "i3D",
+            "fullName": "ACM Symposium on Interactive 3D Graphics",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/si3d/"
+        },
+        {
+            "domain": "Media",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "SCA",
+            "fullName": "ACM/Eurographics Symposium on Computer Animation",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/sca/"
+        },
+        {
+            "domain": "Media",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "DCC",
+            "fullName": "Data Compression Conference",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/dcc/"
+        },
+        {
+            "domain": "Media",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "EG",
+            "fullName": "Eurographics",
+            "publisher": "Wiley/ Blackwell",
+            "url": "dblp.org/db/conf/eurographics/"
+        },
+        {
+            "domain": "Media",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "EuroVis",
+            "fullName": "Eurographics Conference on Visualization",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/vissym/"
+        },
+        {
+            "domain": "Media",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "SGP",
+            "fullName": "Eurographics Symposium on Geometry Processing",
+            "publisher": "Wiley/Blackwell",
+            "url": "dblp.org/db/conf/sgp/"
+        },
+        {
+            "domain": "Media",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "EGSR",
+            "fullName": "Eurographics Symposium on Rendering",
+            "publisher": "Wiley/Blackwell",
+            "url": "dblp.org/db/conf/rt/"
+        },
+        {
+            "domain": "Media",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "ICME",
+            "fullName": "IEEE International Conference on Multimedia & Expo",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/icmcs/"
+        },
+        {
+            "domain": "Media",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "PG",
+            "fullName": "Pacific Graphics: The Pacific Conference on Computer Graphics and Applications",
+            "publisher": "Wiley/Blackwell",
+            "url": "dblp.org/db/conf/pg/"
+        },
+        {
+            "domain": "Media",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "SPM",
+            "fullName": "Symposium on Solid and Physical Modeling",
+            "publisher": "SMA/Elsevier",
+            "url": "dblp.org/db/conf/sma/"
+        },
+        {
+            "domain": "Media",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "ICASSP",
+            "fullName": "IEEE International Conference on Acoustics, Speech and SP",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/icassp/"
+        },
+        {
+            "domain": "Media",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "ISMAR",
+            "fullName": "International Symposium on Mixed and Augmented Reality",
+            "publisher": "IEEE/ACM",
+            "url": "dblp.org/db/conf/ismar/"
+        },
+        {
+            "domain": "Media",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "CASA",
+            "fullName": "Computer Animation and Social Agents",
+            "publisher": "Wiley",
+            "url": "dblp.org/db/conf/ca/"
+        },
+        {
+            "domain": "Media",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "CGI",
+            "fullName": "Computer Graphics International",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/cgi/"
+        },
+        {
+            "domain": "Media",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "3DV",
+            "fullName": "International Conference on 3D Vision",
+            "publisher": "IEEE/ACM",
+            "url": "dblp.uni-trier.de/db/conf/3dim/"
+        },
+        {
+            "domain": "Media",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "PacificVis",
+            "fullName": "IEEE Pacific Visualization Symposium",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/apvis/"
+        },
+        {
+            "domain": "Media",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ICIP",
+            "fullName": "International Conference on Image Processing",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/icip/"
+        },
+        {
+            "domain": "Media",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "MMM",
+            "fullName": "International Conference on Multimedia Modeling",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/mmm/"
+        },
+        {
+            "domain": "Media",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "GMP",
+            "fullName": "Geometric Modeling and Processing",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/conf/gmp/"
+        },
+        {
+            "domain": "Media",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "PCM",
+            "fullName": "Pacific-Rim Conference on Multimedia",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/pcm/"
+        },
+        {
+            "domain": "Media",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "SMI",
+            "fullName": "Shape Modeling International",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/smi/"
+        },
+        {
+            "domain": "Media",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "INTER SPEECH",
+            "fullName": "Conference of the International Speech Communication Association",
+            "publisher": "",
+            "url": "dblp.org/db/conf/interspeech/"
+        },
+        {
+            "domain": "Media",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "",
+            "fullName": "ACM Symposium on Virtual Reality Software and Technology",
+            "publisher": "ACM",
+            "url": "dblp2.uni-trier.de/db/conf/vrst/"
+        },
+        {
+            "domain": "Media",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "CAD/Graphics",
+            "fullName": "International Conference on Computer-Aided Design and Computer Graphics",
+            "publisher": "ACM",
+            "url": "dblp.uni-trier.de/db/conf/cadgraphics/"
+        },
+        {
+            "domain": "Media",
+            "rank": "A",
+            "type": "Journal",
+            "abbreviation": "TOG",
+            "fullName": "ACM Transactions on Graphics",
+            "publisher": "ACM",
+            "url": "dblp.org/db/journals/tog/"
+        },
+        {
+            "domain": "Media",
+            "rank": "A",
+            "type": "Journal",
+            "abbreviation": "TIP",
+            "fullName": "IEEE Transactions on Image Processing",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/journals/tip/"
+        },
+        {
+            "domain": "Media",
+            "rank": "A",
+            "type": "Journal",
+            "abbreviation": "TVCG",
+            "fullName": "IEEE Transactions on Visualization and Computer Graphics",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/journals/tvcg/"
+        },
+        {
+            "domain": "Media",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "TOMCCAP",
+            "fullName": "ACM Transactions on Multimedia Computing, Communications and Applications",
+            "publisher": "ACM",
+            "url": "dblp.org/db/journals/tomccap/"
+        },
+        {
+            "domain": "Media",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "CAD",
+            "fullName": "Computer-Aided Design",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/cad/"
+        },
+        {
+            "domain": "Media",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "CAGD",
+            "fullName": "Computer Aided Geometric Design",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/cagd/"
+        },
+        {
+            "domain": "Media",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "CGF",
+            "fullName": "Computer Graphics Forum",
+            "publisher": "Wiley",
+            "url": "dblp.org/db/journals/cgf/"
+        },
+        {
+            "domain": "Media",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "GM",
+            "fullName": "Graphical Models",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/cvgip/"
+        },
+        {
+            "domain": "Media",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "TCSVT",
+            "fullName": "IEEE Transactions on Circuits and Systems for Video Technology",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/journals/tcsv/"
+        },
+        {
+            "domain": "Media",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "TMM",
+            "fullName": "IEEE Transactions on Multimedia",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/journals/tmm/"
+        },
+        {
+            "domain": "Media",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "JASA",
+            "fullName": "Journal of The Acoustical Society of America",
+            "publisher": "AIP",
+            "url": "scitation.aip.org/content/asa/journal/jasa"
+        },
+        {
+            "domain": "Media",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "SIIMS",
+            "fullName": "SIAM Journal on Imaging Sciences",
+            "publisher": "SIAM",
+            "url": "dblp.org/db/journals/siamis/"
+        },
+        {
+            "domain": "Media",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "Speech Com",
+            "fullName": "Speech Communication",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/speech/"
+        },
+        {
+            "domain": "Media",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "CAVW",
+            "fullName": "Computer Animation and Virtual Worlds",
+            "publisher": "Wiley",
+            "url": "onlinelibrary.wiley.com/journal/10.1002/(ISSN)1546-427X"
+        },
+        {
+            "domain": "Media",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "C&G",
+            "fullName": "Computers & Graphics-UK",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/cg/"
+        },
+        {
+            "domain": "Media",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "CGTA",
+            "fullName": "Computational Geometry: Theory and Applications",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/comgeo/"
+        },
+        {
+            "domain": "Media",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "DCG",
+            "fullName": "Discrete & Computational Geometry",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/dcg/"
+        },
+        {
+            "domain": "Media",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "IET-IPR",
+            "fullName": "IET Image Processing",
+            "publisher": "IET",
+            "url": "dblp.org/db/journals/iet-ipr/"
+        },
+        {
+            "domain": "Media",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "IEEE Signal Processing Letter",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/journals/spl/"
+        },
+        {
+            "domain": "Media",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "JVCIR",
+            "fullName": "Journal of Visual Communication and Image Representation",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/jvcir/"
+        },
+        {
+            "domain": "Media",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "MS",
+            "fullName": "Multimedia Systems",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/mms/"
+        },
+        {
+            "domain": "Media",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "MTA",
+            "fullName": "Multimedia Tools and Applications",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/mta/"
+        },
+        {
+            "domain": "Media",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "Signal Processing",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/sigpro/"
+        },
+        {
+            "domain": "Media",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "SPIC",
+            "fullName": "Signal processing : image communication",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/spic/"
+        },
+        {
+            "domain": "Media",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "TVC",
+            "fullName": "The Visual Computer",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/vc/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "STOC",
+            "fullName": "ACM Symposium on Theory of Computing",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/stoc/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "FOCS",
+            "fullName": "IEEE Symposium on Foundations of Computer Science",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/focs/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "LICS",
+            "fullName": "IEEE Symposium on Logic in Computer Science",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/lics/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "CAV",
+            "fullName": "Computer Aided Verification",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/cav/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "SODA",
+            "fullName": "ACM-SIAM Symposium on Discrete Algorithms",
+            "publisher": "SIAM",
+            "url": "dblp.org/db/conf/soda/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "SoCG",
+            "fullName": "ACM Symposium on Computational Geometry",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/compgeom/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "SAT",
+            "fullName": "Theory and Applications of Satisfiability Testing",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/sat/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "CADE/IJCAR",
+            "fullName": "Conference on Automated Deduction/The International Joint Conference on Automated Reasoning",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/cade/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "CCC",
+            "fullName": "IEEE Conference on Computational Complexity",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/coco/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "ICALP",
+            "fullName": "International Colloquium on Automata, Languages and Programming",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/icalp/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "CONCUR",
+            "fullName": "International Conference on Concurrency Theory",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/concur/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "HSCC",
+            "fullName": "International Conference on Hybrid Systems: Computation and Control",
+            "publisher": "Springer and ACM",
+            "url": "dblp.org/db/conf/hybrid/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "ESA",
+            "fullName": "European Symposium on Algorithms",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/esa/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "CSL",
+            "fullName": "Computer Science Logic",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/csl/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "FSTTCS",
+            "fullName": "Foundations of Software Technology and Theoretical Computer Science",
+            "publisher": "Indian Association for Research in Computing Science",
+            "url": "dblp.org/db/conf/fsttcs/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "IPCO",
+            "fullName": "International Conference on Integer Programming and Combinatorial Optimization",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/ipco/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "RTA",
+            "fullName": "International Conference on Rewriting Techniques and Applications",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/rta/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ISAAC",
+            "fullName": "International Symposium on Algorithms and Computation",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/isaac/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "MFCS",
+            "fullName": "Mathematical Foundations of Computer Science",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/mfcs/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "STACS",
+            "fullName": "Symposium on Theoretical Aspects of Computer Science",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/stacs/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "FMCAD",
+            "fullName": "Formal Method in Computer-Aided Design",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/fmcad/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "DSAA",
+            "fullName": "IEEE International Conference on Data Science and Advanced Analytics",
+            "publisher": "IEEE",
+            "url": "dblp.uni-trier.de/db/conf/dsaa/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ICTAC",
+            "fullName": "International Colloquium on Theoretical Aspects of Computing",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/ictac/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "A",
+            "type": "Journal",
+            "abbreviation": "IANDC",
+            "fullName": "Information and Computation",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/iandc/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "A",
+            "type": "Journal",
+            "abbreviation": "SICOMP",
+            "fullName": "SIAM Journal on Computing",
+            "publisher": "SIAM",
+            "url": "dblp.org/db/journals/siamcomp/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "A",
+            "type": "Journal",
+            "abbreviation": "TIT",
+            "fullName": "IEEE Transactions on Information Theory",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/journals/tit/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "TALG",
+            "fullName": "ACM Transactions on Algorithms",
+            "publisher": "ACM",
+            "url": "dblp.org/db/journals/talg/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "TOCL",
+            "fullName": "ACM Transactions on Computational Logic",
+            "publisher": "ACM",
+            "url": "dblp.org/db/journals/tocl/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "TOMS",
+            "fullName": "ACM Transactions on Mathematical Software",
+            "publisher": "ACM",
+            "url": "dblp.org/db/journals/toms/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "Algorithmica",
+            "fullName": "Algorithmica",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/algorithmica/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "CC",
+            "fullName": "Computational complexity",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/cc/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "FAC",
+            "fullName": "Formal Aspects of Computing",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/fac/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "FMSD",
+            "fullName": "Formal Methods in System Design",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/fmsd/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "INFORMS",
+            "fullName": "INFORMS Journal on Computing",
+            "publisher": "INFORMS",
+            "url": "dblp.org/db/journals/informs/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "JCSS",
+            "fullName": "Journal of Computer and System Sciences",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/jcss/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "JGO",
+            "fullName": "Journal of Global Optimization",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/jgo/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "JSC",
+            "fullName": "Journal of Symbolic Computation",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/jsc/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "MSCS",
+            "fullName": "Mathematical Structures in Computer Science",
+            "publisher": "Cambridge University Press",
+            "url": "dblp.org/db/journals/mscs/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "TCS",
+            "fullName": "Theoretical Computer Science",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/tcs/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "APAL",
+            "fullName": "Annals of Pure and Applied Logic",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/apal/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "ACTA",
+            "fullName": "Acta Informatica",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/acta/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "DAM",
+            "fullName": "Discrete Applied Mathematics",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/dam/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "FUIN",
+            "fullName": "Fundamenta Informaticae",
+            "publisher": "IOS Press",
+            "url": "dblp.org/db/journals/fuin/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "LISP",
+            "fullName": "Higher-Order and Symbolic Computation",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/lisp/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "IPL",
+            "fullName": "Information Processing Letters",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/ipl/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "JCOMPLEXITY",
+            "fullName": "Journal of Complexity",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/jc/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "LOGCOM",
+            "fullName": "Journal of Logic and Computation",
+            "publisher": "Oxford University Press",
+            "url": "dblp.org/db/journals/logcom/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "Journal of Symbolic Logic",
+            "publisher": "Association for Symbolic Logic",
+            "url": "dblp.org/db/journals/jsyml/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "LMCS",
+            "fullName": "Logical Methods in Computer Science",
+            "publisher": "LMCS",
+            "url": "dblp.org/db/journals/lmcs/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "SIDMA",
+            "fullName": "SIAM Journal on Discrete Mathematics",
+            "publisher": "SIAM",
+            "url": "dblp.org/db/journals/siamdm/"
+        },
+        {
+            "domain": "Theory",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "Theory of Computing Systems",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/mst/"
+        },
+        {
+            "domain": "Database",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "SIGMOD",
+            "fullName": "ACM Conference on Management of Data",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/sigmod/"
+        },
+        {
+            "domain": "Database",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "SIGKDD",
+            "fullName": "ACM Knowledge Discovery and Data Mining",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/kdd/"
+        },
+        {
+            "domain": "Database",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "SIGIR",
+            "fullName": "International Conference on Research on Development in Information Retrieval",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/sigir/"
+        },
+        {
+            "domain": "Database",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "VLDB",
+            "fullName": "International Conference on Very Large Data Bases",
+            "publisher": "Morgan Kaufmann /ACM",
+            "url": "dblp.org/db/conf/vldb/"
+        },
+        {
+            "domain": "Database",
+            "rank": "A",
+            "type": "Conference",
+            "abbreviation": "ICDE",
+            "fullName": "IEEE International Conference on Data Engineering",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/icde/"
+        },
+        {
+            "domain": "Database",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "CIKM",
+            "fullName": "ACM International Conference on Information and Knowledge Management",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/cikm/"
+        },
+        {
+            "domain": "Database",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "PODS",
+            "fullName": "ACM SIGMOD Conference on Principles of DB Systems",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/pods/"
+        },
+        {
+            "domain": "Database",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "DASFAA",
+            "fullName": "Database Systems for Advanced Applications",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/dasfaa/"
+        },
+        {
+            "domain": "Database",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "ECML-PKDD",
+            "fullName": "European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/ecml/ dblp.org/db/conf/pkdd/ ]"
+        },
+        {
+            "domain": "Database",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "ISWC",
+            "fullName": "IEEE International Semantic Web Conference",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/semweb/"
+        },
+        {
+            "domain": "Database",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "ICDM",
+            "fullName": "International Conference on Data Mining",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/icdm/"
+        },
+        {
+            "domain": "Database",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "ICDT",
+            "fullName": "International Conference on Database Theory",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/icdt/"
+        },
+        {
+            "domain": "Database",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "EDBT",
+            "fullName": "International Conference on Extending DB Technology",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/edbt/"
+        },
+        {
+            "domain": "Database",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "CIDR",
+            "fullName": "International Conference on Innovation Database Research",
+            "publisher": "Online Proceeding",
+            "url": "dblp.org/db/conf/cidr/"
+        },
+        {
+            "domain": "Database",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "SDM",
+            "fullName": "SIAM International Conference on Data Mining",
+            "publisher": "SIAM",
+            "url": "dblp.org/db/conf/sdm/"
+        },
+        {
+            "domain": "Database",
+            "rank": "B",
+            "type": "Conference",
+            "abbreviation": "WSDM",
+            "fullName": "ACM International Conference on Web Search and Data Mining",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/wsdm/"
+        },
+        {
+            "domain": "Database",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "DEXA",
+            "fullName": "Database and Expert System Applications",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/dexa/"
+        },
+        {
+            "domain": "Database",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ECIR",
+            "fullName": "European Conference on IR Research",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/ecir/"
+        },
+        {
+            "domain": "Database",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "WebDB",
+            "fullName": "International ACM Workshop on Web and Databases",
+            "publisher": "ACM",
+            "url": "dblp.org/db/conf/webdb/"
+        },
+        {
+            "domain": "Database",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ER",
+            "fullName": "International Conference on Conceptual Modeling",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/er/"
+        },
+        {
+            "domain": "Database",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "MDM",
+            "fullName": "International Conference on Mobile Data Management",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/mdm/"
+        },
+        {
+            "domain": "Database",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "SSDBM",
+            "fullName": "International Conference on Scientific and Statistical DB Management",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/conf/ssdbm/"
+        },
+        {
+            "domain": "Database",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "WAIM",
+            "fullName": "International Conference on Web Age Information Management",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/waim/"
+        },
+        {
+            "domain": "Database",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "SSTD",
+            "fullName": "International Symposium on Spatial and Temporal Databases",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/ssd/"
+        },
+        {
+            "domain": "Database",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "PAKDD",
+            "fullName": "Pacific-Asia Conference on Knowledge Discovery and Data Mining",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/pakdd/"
+        },
+        {
+            "domain": "Database",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "APWeb",
+            "fullName": "The Asia Pacific Web Conference",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/apweb/"
+        },
+        {
+            "domain": "Database",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "WISE",
+            "fullName": "Web Information Systems Engineering",
+            "publisher": "Springer",
+            "url": "dblp.org/db/conf/wise/"
+        },
+        {
+            "domain": "Database",
+            "rank": "C",
+            "type": "Conference",
+            "abbreviation": "ESWC",
+            "fullName": "Extended Semantic Web Conference",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/conf/esws/"
+        },
+        {
+            "domain": "Database",
+            "rank": "A",
+            "type": "Journal",
+            "abbreviation": "TODS",
+            "fullName": "ACM Transactions on Database Systems",
+            "publisher": "ACM",
+            "url": "dblp.org/db/journals/tods/"
+        },
+        {
+            "domain": "Database",
+            "rank": "A",
+            "type": "Journal",
+            "abbreviation": "TOIS",
+            "fullName": "ACM Transactions on Information Systems",
+            "publisher": "ACM",
+            "url": "dblp.org/db/journals/tois/"
+        },
+        {
+            "domain": "Database",
+            "rank": "A",
+            "type": "Journal",
+            "abbreviation": "TKDE",
+            "fullName": "IEEE Transactions on Knowledge and Data Engineering",
+            "publisher": "IEEE",
+            "url": "dblp.org/db/journals/tkde/"
+        },
+        {
+            "domain": "Database",
+            "rank": "A",
+            "type": "Journal",
+            "abbreviation": "VLDBJ",
+            "fullName": "VLDB Journal",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/vldb/"
+        },
+        {
+            "domain": "Database",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "TKDD",
+            "fullName": "ACM Transactions on Knowledge Discovery from Data",
+            "publisher": "ACM",
+            "url": "dblp.org/db/journals/tkdd/"
+        },
+        {
+            "domain": "Database",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "AEI",
+            "fullName": "Advanced Engineering Informatics",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/aei/"
+        },
+        {
+            "domain": "Database",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "DKE",
+            "fullName": "Data and Knowledge Engineering",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/dke/"
+        },
+        {
+            "domain": "Database",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "DMKD",
+            "fullName": "Data Mining and Knowledge Discovery",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/datamine/"
+        },
+        {
+            "domain": "Database",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "EJIS",
+            "fullName": "European Journal of Information Systems",
+            "publisher": "The OR Society",
+            "url": "dblp.org/db/journals/ejis/"
+        },
+        {
+            "domain": "Database",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "GeoInformatica",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/geoinformatica/"
+        },
+        {
+            "domain": "Database",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "IPM",
+            "fullName": "Information Processing and Management",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/ipm/"
+        },
+        {
+            "domain": "Database",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "",
+            "fullName": "Information Sciences",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/isci/"
+        },
+        {
+            "domain": "Database",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "IS",
+            "fullName": "Information Systems",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/is/"
+        },
+        {
+            "domain": "Database",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "JASIST",
+            "fullName": "Journal of the American Society for Information Science and Technology",
+            "publisher": "American Society for Information Science and Technology",
+            "url": "dblp.org/db/journals/jasis/"
+        },
+        {
+            "domain": "Database",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "JWS",
+            "fullName": "Journal of Web Semantics",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/ws/"
+        },
+        {
+            "domain": "Database",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "KIS",
+            "fullName": "Knowledge and Information Systems",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/kais/"
+        },
+        {
+            "domain": "Database",
+            "rank": "B",
+            "type": "Journal",
+            "abbreviation": "TWEB",
+            "fullName": "ACM Transactions on the Web",
+            "publisher": "ACM",
+            "url": "dblp.org/db/journals/tweb/"
+        },
+        {
+            "domain": "Database",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "DPD",
+            "fullName": "Distributed and Parallel Databases",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/dpd/"
+        },
+        {
+            "domain": "Database",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "I&M",
+            "fullName": "Information and Management",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/iam/"
+        },
+        {
+            "domain": "Database",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "IPL",
+            "fullName": "Information Processing Letters",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/ipl/"
+        },
+        {
+            "domain": "Database",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "IR",
+            "fullName": "Information Retrieval",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/ir/"
+        },
+        {
+            "domain": "Database",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "IJCIS",
+            "fullName": "International Journal of Cooperative Information Systems",
+            "publisher": "World Scientific",
+            "url": "dblp.org/db/journals/ijcis/"
+        },
+        {
+            "domain": "Database",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "IJGIS",
+            "fullName": "International Journal of Geographical Information Science",
+            "publisher": "Taylor & Francis",
+            "url": "dblp.org/db/journals/gis/"
+        },
+        {
+            "domain": "Database",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "IJIS",
+            "fullName": "International Journal of Intelligent Systems",
+            "publisher": "Wiley",
+            "url": "dblp.org/db/journals/ijis/"
+        },
+        {
+            "domain": "Database",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "IJKM",
+            "fullName": "International Journal of Knowledge Management",
+            "publisher": "IGI",
+            "url": "dblp.org/db/journals/ijkm/"
+        },
+        {
+            "domain": "Database",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "IJSWIS",
+            "fullName": "International Journal on Semantic Web and Information Systems",
+            "publisher": "IGI",
+            "url": "dblp.org/db/journals/ijswis/"
+        },
+        {
+            "domain": "Database",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "JCIS",
+            "fullName": "Journal of Computer Information Systems",
+            "publisher": "IACIS",
+            "url": "dblp.org/db/journals/jcis/"
+        },
+        {
+            "domain": "Database",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "JDM",
+            "fullName": "Journal of Database Management",
+            "publisher": "IGI-Global",
+            "url": "dblp.org/db/journals/jdm/"
+        },
+        {
+            "domain": "Database",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "JGITM",
+            "fullName": "Journal of Global Information Technology Management",
+            "publisher": "Ivy League Publishing",
+            "url": "www.tandfonline.com/loi/ugit20#.Vnv35pN97rI"
+        },
+        {
+            "domain": "Database",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "JIIS",
+            "fullName": "Journal of Intelligent Information Systems",
+            "publisher": "Springer",
+            "url": "dblp.org/db/journals/jiis/"
+        },
+        {
+            "domain": "Database",
+            "rank": "C",
+            "type": "Journal",
+            "abbreviation": "JSIS",
+            "fullName": "Journal of Strategic Information Systems",
+            "publisher": "Elsevier",
+            "url": "dblp.org/db/journals/jsis/"
+        }
+    ],
     "conferenceAbbreviations": {
         "ICML": "International Conference on Machine Learning",
         "NeurIPS": "Neural Information Processing Systems",

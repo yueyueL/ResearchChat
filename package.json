@@ -135,6 +135,8 @@
         "@testing-library/jest-dom": "^5.16.5",
         "@testing-library/react": "^13.4.0",
         "@testing-library/user-event": "^13.5.0",
+        "axios": "^1.7.7",
+        "cheerio": "^1.0.0",
         "clsx": "^2.0.0",
         "copy-to-clipboard": "^3.3.3",
         "dexie": "^3.2.2",
