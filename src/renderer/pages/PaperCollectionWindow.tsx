@@ -91,7 +91,7 @@ export default function PaperCollectionWindow(props: Props) {
                                 <TextField
                                     fullWidth
                                     variant="outlined"
-                                    placeholder={t('Search papers...')}
+                                    placeholder={t('Search papers...') || ''}
                                     value={searchQuery}
                                     onChange={(e) => setSearchQuery(e.target.value)}
                                     InputProps={{
@@ -109,7 +109,7 @@ export default function PaperCollectionWindow(props: Props) {
                                 <TextField
                                     fullWidth
                                     variant="outlined"
-                                    placeholder={t('Enter DBLP link...')}
+                                    placeholder={t('Enter DBLP link...') || ''}
                                     value={dblpLink}
                                     onChange={(e) => setDblpLink(e.target.value)}
                                     InputProps={{
