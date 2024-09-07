@@ -1,11 +1,11 @@
 import { atom, SetStateAction } from 'jotai'
-import { Session, Toast, Settings, CopilotDetail, Message, SettingWindowTab
-} from '../../shared/types'
+import { Session, Toast, Settings, CopilotDetail, Message, SettingWindowTab, Paper } from '../../shared/types'
 import { selectAtom, atomWithStorage } from 'jotai/utils'
 import { focusAtom } from 'jotai-optics'
 import * as defaults from '../../shared/defaults'
 import storage, { StorageKey } from '../storage'
 import platform from '../packages/platform'
+import * as paperActions from './paperActions'
 
 const _settingsAtom = atomWithStorage<Settings>(StorageKey.Settings, defaults.settings(), storage)
 export const settingsAtom = atom(
@@ -120,3 +120,51 @@ export const messageListRefAtom = atom<null | React.MutableRefObject<HTMLDivElem
 export const openSettingDialogAtom = atom<SettingWindowTab | null>(null)
 export const sessionCleanDialogAtom = atom<Session | null>(null)
 export const chatConfigDialogAtom = atom<Session | null>(null)
+
+// Paper-related atoms
+export const papersAtom = atom<Paper[]>([])
+
+export const currentPaperIdAtom = atom<number | null>(null)
+
+export const currentPaperAtom = atom(
+  (get) => {
+    const currentPaperId = get(currentPaperIdAtom)
+    const papers = get(papersAtom)
+    return papers.find(paper => paper.id === currentPaperId) || null
+  }
+)
+
+export const paperFilterAtom = atom<{ year?: number; venue?: string }>({})
+
+export const filteredPapersAtom = atom(
+  async (get) => {
+    const filter = get(paperFilterAtom)
+    return await paperActions.filterPapers(filter)
+  }
+)
+
+export const paperSearchQueryAtom = atom('')
+
+export const searchedPapersAtom = atom(
+  async (get) => {
+    const query = get(paperSearchQueryAtom)
+    return await paperActions.searchPapers(query)
+  }
+)
+
+// Utility function to update the papersAtom
+export const updatePapersAtom = atom(
+  null,
+  async (get, set) => {
+    const papers = await paperActions.fetchAllPapers()
+    set(papersAtom, papers)
+  }
+)
+
+export const initializePapersAtom = atom(
+    null,
+    async (_get, set) => {
+        const papers = await paperActions.initializePaperStorage()
+        set(papersAtom, papers)
+    }
+)

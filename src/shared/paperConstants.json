@@ -1,0 +1,19 @@
+{
+  "paperKeyMappings": {
+    "title": ["title", "paper_title", "article_title"],
+    "authors": ["authors", "author", "paper_authors", "article_authors"],
+    "publisher": ["publisher", "publication", "published_by"],
+    "year": ["year", "publication_year", "published_year", "issued"],
+    "source": ["source", "paper_source", "article_source"],
+    "venue": ["venue", "event-title", "conference", "journal", "published_in"],
+    "url": ["url", "link", "paper_url", "article_url"],
+    "abstract": ["abstract", "summary", "paper_abstract"],
+    "doi": ["doi", "digital_object_identifier"]
+  },
+  "conferenceAbbreviations": {
+    "ICML": "International Conference on Machine Learning",
+    "NeurIPS": "Neural Information Processing Systems",
+    "ICLR": "International Conference on Learning Representations",
+    "CVPR": "Conference on Computer Vision and Pattern Recognition"
+  }
+}

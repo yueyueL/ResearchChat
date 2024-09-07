@@ -95,7 +95,10 @@ export default function Sidebar(props: Props) {
                             </Typography>
                         </MenuItem>
 
-                        <MenuItem onClick={props.openPaperCollectionWindow} sx={{ padding: '0.2rem 0.1rem', margin: '0.1rem' }}>
+                        <MenuItem
+                            onClick={props.openPaperCollectionWindow}
+                            sx={{ padding: '0.2rem 0.1rem', margin: '0.1rem' }}
+                        >
                             <ListItemIcon>
                                 <IconButton>
                                     <LibraryBooksIcon fontSize="small" />
@@ -106,7 +109,10 @@ export default function Sidebar(props: Props) {
                             </ListItemText>
                         </MenuItem>
 
-                        <MenuItem onClick={props.openPaperLibraryWindow} sx={{ padding: '0.2rem 0.1rem', margin: '0.1rem' }}>
+                        <MenuItem
+                            onClick={props.openPaperLibraryWindow}
+                            sx={{ padding: '0.2rem 0.1rem', margin: '0.1rem' }}
+                        >
                             <ListItemIcon>
                                 <IconButton>
                                     <MenuBookIcon fontSize="small" />
@@ -127,7 +133,6 @@ export default function Sidebar(props: Props) {
                                 <Typography>{t('My Copilots')}</Typography>
                             </ListItemText>
                         </MenuItem>
-
 
                         <MenuItem
                             onClick={() => {
@@ -166,8 +171,6 @@ export default function Sidebar(props: Props) {
                                 </Badge>
                             </ListItemText>
                         </MenuItem>
-
-
                     </MenuList>
                 </Stack>
             </div>

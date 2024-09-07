@@ -127,7 +127,7 @@ export interface Settings extends ModelSettings {
     enableMarkdownRendering: boolean
 }
 
-export type Language = 'en' | 'zh-Hans' 
+export type Language = 'en' | 'zh-Hans'
 
 export interface Config {
     uuid: string
@@ -189,3 +189,17 @@ export interface ChatboxAILicenseDetail {
 }
 
 export type ChatboxAIModel = 'chatboxai-3.5' | 'chatboxai-4'
+
+export interface Paper {
+    id?: number
+    title: string
+    authors: string[]
+    year: number
+    venue: string
+    publisher: string
+    source: string
+    url: string
+    abstract: string
+    doi: string
+    uniqueId?: string // Add this line
+}

@@ -1,4 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useCallback } from 'react'
+import { useAtom } from 'jotai'
+import { papersAtom } from '../stores/atoms'
+import * as paperActions from '../stores/paperActions'
 import {
     Dialog,
     DialogContent,
@@ -18,6 +21,7 @@ import { useTranslation } from 'react-i18next'
 import SearchIcon from '@mui/icons-material/Search'
 import LinkIcon from '@mui/icons-material/Link'
 import FileUploadIcon from '@mui/icons-material/FileUpload'
+import { Paper as PaperType } from '../../shared/types'
 
 interface Props {
     open: boolean
@@ -26,10 +30,12 @@ interface Props {
 
 export default function PaperCollectionWindow(props: Props) {
     const { t } = useTranslation()
+    const [, setPapers] = useAtom(papersAtom)
     const [activeTab, setActiveTab] = useState(0)
     const [searchQuery, setSearchQuery] = useState('')
     const [dblpLink, setDblpLink] = useState('')
     const [selectedFile, setSelectedFile] = useState<File | null>(null)
+    const [uploadStatus, setUploadStatus] = useState<string>('')
 
     const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
         setActiveTab(newValue)
@@ -45,17 +51,39 @@ export default function PaperCollectionWindow(props: Props) {
         // Implement DBLP link addition here
     }
 
-    const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleFileUpload = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
         const file = event.target.files?.[0] || null
         setSelectedFile(file)
-        if (file) {
-            console.log('File selected:', file.name)
-            // Implement file upload functionality here
+        setUploadStatus('')
+    }, [])
+
+    const processUploadedFile = useCallback(async () => {
+        if (!selectedFile) {
+            setUploadStatus(t('No file selected') || 'No file selected')
+            return
         }
-    }
+
+        try {
+            const fileContent = await selectedFile.text()
+            const parsedData = JSON.parse(fileContent)
+
+            if (!Array.isArray(parsedData)) {
+                setUploadStatus(t('Invalid file format. Expected an array of papers.') || 'Invalid file format. Expected an array of papers.')
+                return
+            }
+
+            const importedPapers = await paperActions.importPapers(parsedData)
+            setPapers(await paperActions.fetchAllPapers())
+            setUploadStatus(t('Successfully imported {{count}} papers', { count: importedPapers.length }) || `Successfully imported ${importedPapers.length} papers`)
+            setSelectedFile(null)
+        } catch (error) {
+            console.error('Error processing file:', error)
+            setUploadStatus(t('Error processing file. Please check the file format.') || 'Error processing file. Please check the file format.')
+        }
+    }, [selectedFile, setPapers, t])
 
     return (
-        <Dialog open={props.open} onClose={props.close} fullWidth maxWidth="md" classes={{ paper: 'h-4/5' }}>
+        <Dialog open={props.open} onClose={props.close} fullWidth maxWidth="md">
             <DialogTitle>{t('Paper Collection')}</DialogTitle>
             <DialogContent>
                 <Box sx={{ mb: 3 }}>
@@ -125,7 +153,7 @@ export default function PaperCollectionWindow(props: Props) {
                         {activeTab === 2 && (
                             <Box sx={{ textAlign: 'center' }}>
                                 <input
-                                    accept="application/pdf"
+                                    accept="application/json"
                                     style={{ display: 'none' }}
                                     id="raised-button-file"
                                     type="file"
@@ -133,9 +161,19 @@ export default function PaperCollectionWindow(props: Props) {
                                 />
                                 <label htmlFor="raised-button-file">
                                     <Button variant="contained" component="span" startIcon={<FileUploadIcon />}>
-                                        {selectedFile ? selectedFile.name : t('Upload PDF')}
+                                        {selectedFile ? selectedFile.name : t('Upload JSON')}
                                     </Button>
                                 </label>
+                                {selectedFile && (
+                                    <Button
+                                        variant="contained"
+                                        color="primary"
+                                        onClick={processUploadedFile}
+                                        sx={{ ml: 2 }}
+                                    >
+                                        {t('Process File')}
+                                    </Button>
+                                )}
                             </Box>
                         )}
                     </Box>
@@ -145,6 +183,11 @@ export default function PaperCollectionWindow(props: Props) {
                 <Paper elevation={2} sx={{ p: 2, mb: 2 }}>
                     <Typography variant="body2">{t('No recent papers')}</Typography>
                 </Paper>
+                {uploadStatus && (
+                    <Typography color={uploadStatus.includes('Error') ? 'error' : 'success'}>
+                        {uploadStatus}
+                    </Typography>
+                )}
             </DialogContent>
             <DialogActions>
                 <Button onClick={props.close}>{t('Close')}</Button>

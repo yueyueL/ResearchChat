@@ -1,0 +1,157 @@
+import Dexie from 'dexie'
+import { Paper } from '../../shared/types'
+
+class PaperDatabase extends Dexie {
+    papers!: Dexie.Table<Paper, number>
+
+    constructor() {
+        super('PaperDatabase')
+        this.version(1).stores({
+            papers: '++id, title, year, venue, uniqueId'
+        })
+    }
+}
+
+const db = new PaperDatabase()
+
+function generateUniqueId(paper: Paper): string {
+    return `${paper.title.charAt(0).toLowerCase()}${paper.year}`
+}
+
+export const paperStorage = {
+    async addPaper(paper: Paper) {
+        const uniqueId = generateUniqueId(paper)
+        console.log(`Adding paper with uniqueId: ${uniqueId}`)
+        const existingPaper = await db.papers.where('uniqueId').equals(uniqueId).first()
+
+        if (existingPaper) {
+            console.log(`Paper with uniqueId ${uniqueId} already exists, updating...`)
+            const updatedPaper = { ...existingPaper, ...paper, uniqueId }
+            await db.papers.update(existingPaper.id!, updatedPaper)
+            return existingPaper.id
+        } else {
+            console.log(`Adding new paper with uniqueId ${uniqueId}`)
+            return db.papers.add({ ...paper, uniqueId })
+        }
+    },
+
+    async getPaper(id: number) {
+        return db.papers.get(id)
+    },
+
+    async getAllPapers() {
+        return db.papers.toArray()
+    },
+
+    async updatePaper(id: number, updates: Partial<Paper>) {
+        const paper = await this.getPaper(id)
+        if (paper) {
+            const updatedPaper = { ...paper, ...updates }
+            updatedPaper.uniqueId = generateUniqueId(updatedPaper)
+            return db.papers.update(id, updatedPaper)
+        }
+        return 0
+    },
+
+    async deletePaper(id: number) {
+        return db.papers.delete(id)
+    },
+
+    async searchPapers(query: string) {
+        return db.papers.filter(paper =>
+            paper.title.toLowerCase().includes(query.toLowerCase()) ||
+            paper.abstract.toLowerCase().includes(query.toLowerCase())
+        ).toArray()
+    },
+
+    async filterPapers({ year, venue }: { year?: number, venue?: string }) {
+        let collection = db.papers.toCollection()
+        if (year) {
+            collection = collection.and(paper => paper.year === year)
+        }
+        if (venue) {
+            collection = collection.and(paper => paper.venue.toLowerCase().includes(venue.toLowerCase()))
+        }
+        return collection.toArray()
+    },
+
+    async importPapers(papers: Paper[]) {
+        console.log("Importing papers:", papers)
+        const result = await db.papers.bulkAdd(papers.map(paper => ({ ...paper, uniqueId: generateUniqueId(paper) })))
+        console.log("Import result:", result)
+        return result
+    },
+
+    async exportPapers() {
+        return db.papers.toArray()
+    },
+
+    async createSubcollection(name: string, paperIds: number[]) {
+        // This is a placeholder. You might want to implement subcollections differently
+        // depending on your specific requirements.
+        console.log(`Creating subcollection ${name} with papers:`, paperIds)
+    },
+
+    async checkDuplication(paper: Paper): Promise<{ isDuplicate: boolean; existingPaper?: Paper }> {
+        const uniqueId = generateUniqueId(paper)
+        const existingPaper = await db.papers.where('uniqueId').equals(uniqueId).first()
+        return { isDuplicate: !!existingPaper, existingPaper }
+    },
+
+    async initializeWithDefaultPapers() {
+        console.log("Initializing paper storage...")
+        const existingPapers = await this.getAllPapers()
+        console.log("Existing papers:", existingPapers)
+
+        // Remove the initialization with default papers
+        if (existingPapers.length === 0) {
+            console.log("No existing papers. Starting with an empty library.")
+        } else {
+            console.log("Papers already exist in the library.")
+        }
+
+        return existingPapers
+    },
+
+    async clearAllPapers() {
+        return db.papers.clear()
+    },
+
+    async getPapersPaginated(
+        page: number,
+        limit: number,
+        searchQuery: string,
+        yearFilter: { start: string, end: string },
+        venueFilter: string
+    ): Promise<{ papers: Paper[], total: number }> {
+        let collection = db.papers.toCollection()
+
+        if (searchQuery) {
+            collection = collection.filter(paper => 
+                paper.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                paper.abstract.toLowerCase().includes(searchQuery.toLowerCase())
+            )
+        }
+
+        if (yearFilter.start || yearFilter.end) {
+            collection = collection.filter(paper => {
+                const year = paper.year
+                const start = yearFilter.start ? parseInt(yearFilter.start) : -Infinity
+                const end = yearFilter.end ? parseInt(yearFilter.end) : Infinity
+                return year >= start && year <= end
+            })
+        }
+
+        if (venueFilter) {
+            collection = collection.filter(paper => paper.venue.toLowerCase().includes(venueFilter.toLowerCase()))
+        }
+
+        const total = await collection.count()
+        const papers = await collection
+            .offset((page - 1) * limit)
+            .limit(limit)
+            .toArray()
+
+        return { papers, total }
+    }
+}
