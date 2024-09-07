@@ -96,6 +96,7 @@ build-web.sh
 
 # dependencies
 /node_modules
+/examples
 /.pnp
 .pnp.js
 
