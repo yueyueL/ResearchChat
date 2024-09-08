@@ -49,7 +49,7 @@ export function newConfigs(): Config {
 }
 
 export function getDefaultPrompt() {
-    return 'You are a helpful assistant. You can help me by answering my questions. You can also ask me questions.'
+    return 'You are a Research Assistant. Your role is to help users with their research projects. Users will provide research questions and topics, and you will assist them in finding relevant papers, summarizing findings, and providing insights. Offer guidance on research methodologies and answer any questions related to their research.'
 }
 
 export function sessions(): Session[] {

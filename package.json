@@ -26,12 +26,12 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/Bin-Huang/chatbox.git"
+        "url": "https://github.com/yueyueL/ResearchChat"
     },
     "keywords": [],
     "author": {
-        "name": "bennhuang",
-        "email": "tohuangbin@gmail.com"
+        "name": "knox",
+        "email": "yuehhhliu@gmail.com"
     },
     "devDependencies": {
         "@electron/notarize": "^2.0.0",

@@ -243,21 +243,25 @@ export default function PaperCollectionWindow(props: Props) {
         }
     };
 
+    const handleImportDialogClose = () => {
+        setShowImportDialog(false);
+        // Reset the crawl progress and DBLP link when the import dialog is closed
+        setCrawlProgress(null);
+        setDblpLink('');
+    };
+
     const handleImportComplete = async (importedCount: number, newCount: number, newTags: string[]) => {
         setUploadStatus(t('Imported {{total}} papers ({{new}} new)', { total: importedCount, new: newCount }) || '');
         setSelectedFile(null);
         setImportedPapers([]);
-        setCrawlProgress(100);
+        setCrawlProgress(null);
+        setDblpLink('');
         // Refresh the paper list and tags
         const papers = await paperActions.fetchAllPapers();
         setPapers(papers);
         const tags = await paperActions.getAllTags();
         setAllTags(prevTags => [...new Set([...prevTags, ...newTags.map(tag => tag)])]);
         setStatsRefreshTrigger(prev => prev + 1);
-        setTimeout(() => {
-            setCrawlProgress(null);
-            setDblpLink('');
-        }, 2000);
     }
 
     const handleArxivSearchComplete = (papers: PaperType[]) => {
@@ -379,7 +383,7 @@ export default function PaperCollectionWindow(props: Props) {
                                             color="primary"
                                             onClick={handleAddByDblp}
                                             fullWidth
-                                            disabled={crawlProgress !== null}
+                                            disabled={crawlProgress !== null || showImportDialog}
                                         >
                                             {crawlProgress !== null ? (
                                                 <CircularProgress size={24} color="inherit" />
@@ -451,7 +455,7 @@ export default function PaperCollectionWindow(props: Props) {
             </Snackbar>
             <ImportPapersDialog
                 open={showImportDialog}
-                onClose={() => setShowImportDialog(false)}
+                onClose={handleImportDialogClose}
                 papers={importedPapers}
                 allTags={allTags}
                 onImportComplete={handleImportComplete}

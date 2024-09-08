@@ -28,10 +28,9 @@ async function makeRateLimitedRequest(url: string) {
 }
 
 export async function validateDblpLink(link: string): Promise<{ isValid: boolean; error?: string }> {
-    const conferenceRegex = /^https?:\/\/(dblp\.org|dblp\.uni-trier\.de)\/db\/conf\/[a-zA-Z0-9]+\/[a-zA-Z0-9]+(\d{4})\.html$/;
-    const journalRegex = /^https?:\/\/(dblp\.org|dblp\.uni-trier\.de)\/db\/journals\/[a-zA-Z0-9]+\/[a-zA-Z0-9]+\d+\.html$/;
+    const dblpRegex = /^https?:\/\/(dblp\.org|dblp\.uni-trier\.de)\/db\/(conf|journals)\/[^/]+\/.*\.html$/;
 
-    if (!conferenceRegex.test(link) && !journalRegex.test(link)) {
+    if (!dblpRegex.test(link)) {
         return { isValid: false, error: 'Invalid DBLP link format' };
     }
 

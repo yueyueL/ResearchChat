@@ -37,6 +37,7 @@ import * as sessionActions from '../stores/sessionActions'
 import { useAtomValue } from 'jotai'
 import platform from '../packages/platform'
 import { trackingEvent } from '@/packages/event'
+import { defaultResearchCopilots } from '../packages/initial_data'
 
 interface Props {
     open: boolean
@@ -50,6 +51,12 @@ export default function CopilotWindow(props: Props) {
 
     const store = useMyCopilots()
     const remoteStore = useRemoteCopilots(language, props.open)
+    const [defaultCopilots, setDefaultCopilots] = useState<CopilotDetail[]>([])
+
+    useEffect(() => {
+        // Load default research copilots
+        setDefaultCopilots(defaultResearchCopilots)
+    }, [])
 
     const createChatSessionWithCopilot = (copilot: CopilotDetail) => {
         const msgs: Message[] = []
@@ -130,23 +137,32 @@ export default function CopilotWindow(props: Props) {
                     </Button>
                 )}
                 <ScrollableTabsButtonAuto
-                    values={[{ value: 'my', label: t('My Copilots') }]}
-                    currentValue="my"
+                    values={[
+                        {
+                            value: 'my-copilots',
+                            label: t('My Copilots'),
+                        },
+                        {
+                            value: 'featured-copilots',
+                            label: t('Featured Copilots'),
+                        },
+                    ]}
+                    currentValue="my-copilots"
                     onChange={() => { }}
                 />
-                <div
-                    style={{
-                        display: 'flex',
-                        flexDirection: 'row',
-                        flexWrap: 'wrap',
-                        width: '100%',
-                        overflowY: 'auto',
-                        overflowX: 'hidden',
-                    }}
-                >
+                
+                {/* My Copilots section */}
+                <div style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    flexWrap: 'wrap',
+                    width: '100%',
+                    overflowY: 'auto',
+                    overflowX: 'hidden',
+                }}>
                     {list.map((item, ix) => (
                         <MiniItem
-                            key={`${item.id}_${ix}`}
+                            key={`my_${item.id}_${ix}`}
                             mode="local"
                             detail={item}
                             useMe={() => useCopilot(item)}
@@ -166,28 +182,32 @@ export default function CopilotWindow(props: Props) {
                     ))}
                 </div>
 
-                <ScrollableTabsButtonAuto
-                    values={[
-                        {
-                            value: 'chatbox-featured',
-                            label: t('Chatbox Featured'),
-                        },
-                    ]}
-                    currentValue="chatbox-featured"
-                    onChange={() => { }}
-                />
-                <div
-                    style={{
-                        display: 'flex',
-                        flexDirection: 'row',
-                        flexWrap: 'wrap',
-                        width: '100%',
-                        overflowY: 'auto',
-                        overflowX: 'hidden',
-                    }}
-                >
-                    {remoteStore.copilots.map((item, ix) => (
-                        <MiniItem key={`${item.id}_${ix}`} mode="remote" detail={item} useMe={() => useCopilot(item)} />
+                {/* Featured Copilots section */}
+                <Typography variant="h6" style={{ marginTop: '20px' }}>{t('Chatbox Featured')}</Typography>
+                <div style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    flexWrap: 'wrap',
+                    width: '100%',
+                    overflowY: 'auto',
+                    overflowX: 'hidden',
+                }}>
+                    {remoteStore.copilots.slice(0, 8).map((item, ix) => (
+                        <MiniItem key={`remote_${item.id}_${ix}`} mode="remote" detail={item} useMe={() => useCopilot(item)} />
+                    ))}
+                </div>
+
+                <Typography variant="h6" style={{ marginTop: '20px' }}>{t('Research Copilots')}</Typography>
+                <div style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    flexWrap: 'wrap',
+                    width: '100%',
+                    overflowY: 'auto',
+                    overflowX: 'hidden',
+                }}>
+                    {defaultCopilots.map((item, ix) => (
+                        <MiniItem key={`default_${item.id}_${ix}`} mode="remote" detail={item} useMe={() => useCopilot(item)} />
                     ))}
                 </div>
             </DialogContent>

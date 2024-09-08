@@ -169,13 +169,13 @@ export default class MenuBuilder {
                 {
                     label: 'Learn More',
                     click() {
-                        shell.openExternal('https://chatboxai.app')
+                        shell.openExternal('https://github.com/yueyueL/ResearchChat')
                     },
                 },
                 {
                     label: 'Github Repo',
                     click() {
-                        shell.openExternal('https://github.com/Bin-Huang/chatbox')
+                        shell.openExternal('https://github.com/yueyueL/ResearchChat')
                     },
                 },
                 // {
@@ -187,7 +187,7 @@ export default class MenuBuilder {
                 {
                     label: 'Search Issues',
                     click() {
-                        shell.openExternal('https://github.com/Bin-Huang/chatbox/issues?q=is%3Aissue')
+                        shell.openExternal('https://github.com/yueyueL/ResearchChat/issues?q=is%3Aissue')
                     },
                 },
             ],
@@ -262,13 +262,13 @@ export default class MenuBuilder {
                     {
                         label: 'Learn More',
                         click() {
-                            shell.openExternal('https://chatboxai.app')
+                            shell.openExternal('https://github.com/yueyueL/ResearchChat')
                         },
                     },
                     {
                         label: 'Github Repo',
                         click() {
-                            shell.openExternal('https://github.com/Bin-Huang/chatbox')
+                            shell.openExternal('https://github.com/yueyueL/ResearchChat')
                         },
                     },
                     // {
@@ -280,7 +280,7 @@ export default class MenuBuilder {
                     {
                         label: 'Search Issues',
                         click() {
-                            shell.openExternal('https://github.com/Bin-Huang/chatbox/issues?q=is%3Aissue')
+                            shell.openExternal('https://github.com/yueyueL/ResearchChat/issues?q=is%3Aissue')
                         },
                     },
                 ],
