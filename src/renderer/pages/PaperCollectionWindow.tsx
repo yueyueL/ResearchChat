@@ -110,8 +110,13 @@ export default function PaperCollectionWindow(props: Props) {
                         return;
                     }
                 } else {
-                    // For journals, we'll use the current year as a placeholder
-                    year = new Date().getFullYear();
+                    // For journals, pass the volume number as the year
+                    year = parseInt(volumeNumber, 10);
+                    if (isNaN(year)) {
+                        setDblpLinkError(t('Please enter a valid volume number for the journal'));
+                        setCrawlProgress(null);
+                        return;
+                    }
                 }
 
                 setCrawlProgress(25);

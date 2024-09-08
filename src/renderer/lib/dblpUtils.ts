@@ -71,8 +71,30 @@ export async function extractPapersFromDblpPage(link: string, venueName: string,
             
             const doi = paperLink.startsWith('https://doi.org/') ? paperLink.slice(16) : '';
 
-            // For journals, extract the year from the DBLP page
-            const paperYear = isConference ? year : parseInt($element.find('span.year').text().trim(), 10);
+            // Extract individual paper year
+            let paperYear: number;
+            const yearElement = $element.find('meta[itemprop="datePublished"]');
+            if (yearElement.length > 0) {
+                const yearContent = yearElement.attr('content');
+                if (yearContent) {
+                    paperYear = parseInt(yearContent, 10);
+                } else {
+                    paperYear = year; // Fallback to the provided year
+                }
+            } else {
+                // If meta tag is not found, try to find year in span.year
+                const yearSpan = $element.find('span.year');
+                if (yearSpan.length > 0) {
+                    const yearMatch = yearSpan.text().match(/\d{4}/);
+                    if (yearMatch) {
+                        paperYear = parseInt(yearMatch[0], 10);
+                    } else {
+                        paperYear = year; // Fallback to the provided year
+                    }
+                } else {
+                    paperYear = year; // Fallback to the provided year
+                }
+            }
 
             papers.push({
                 title,
