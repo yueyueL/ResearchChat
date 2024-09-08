@@ -217,13 +217,13 @@ export default function PaperCollectionWindow(props: Props) {
         }
     }
 
-    const handleVenueChange = (event: React.ChangeEvent<{ value: unknown }>) => {
-        const selectedAbbreviation = event.target.value as string
-        setSelectedVenue(selectedAbbreviation)
+    const handleVenueChange = (event: React.ChangeEvent<{    value: unknown;}>) => {
+        const selectedAbbreviation = event.target.value as string;
+        setSelectedVenue(selectedAbbreviation);
         // Reset year/volume when venue changes
-        setSelectedYear(new Date().getFullYear().toString())
-        setVolumeNumber('')
-    }
+        setSelectedYear(new Date().getFullYear().toString());
+        setVolumeNumber('');
+    };
 
     return (
         <Dialog open={props.open} onClose={props.close} fullWidth maxWidth="md">

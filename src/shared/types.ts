@@ -191,18 +191,17 @@ export interface ChatboxAILicenseDetail {
 export type ChatboxAIModel = 'chatboxai-3.5' | 'chatboxai-4'
 
 export interface Paper {
-    id?: number
-    title: string
-    authors: string[]
-    year: number
-    venue: string
-    publisher: string
-    source: string
-    url: string
-    abstract: string
-    doi: string
-    uniqueId?: string
-    tags: string[] // Add this line
+    id?: number;
+    title: string;
+    authors: string[];
+    url: string;
+    venue: string;
+    year: number;
+    source: string;
+    doi: string;
+    publisher?: string;
+    abstract?: string;
+    tags?: string[];
 }
 
 // Add this new interface
