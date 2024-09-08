@@ -325,8 +325,7 @@ export default function PaperLibraryWindow(props: Props) {
             );
 
             // Filter out any undefined results (in case a paper was deleted)
-            const validPapersData = selectedPapersData.filter((paper): paper is Paper => paper !== undefined);
-
+            const validPapersData = selectedPapersData.filter((paper): paper is PaperType => paper !== undefined);
             let exportContent: string;
 
             if (exportType === 'json') {

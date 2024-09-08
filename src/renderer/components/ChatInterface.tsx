@@ -38,7 +38,7 @@ export default function ChatInterface() {
                 rows={4}
                 value={message}
                 onChange={handleMessageChange}
-                placeholder={t('Type your message here...')}
+                placeholder={t('Type your message here...') || ''}
                 sx={{ mt: 2 }}
             />
             <Button 

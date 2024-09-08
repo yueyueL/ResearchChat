@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { 
     Box, 
     Chip, 
@@ -32,11 +32,12 @@ export default function PaperSelector({ onPaperInfoSelected }: PaperSelectorProp
     const [selectedTags, setSelectedTags] = useState<string[]>([]);
     const [selectedPapers, setSelectedPapers] = useState<Paper[]>([]);
     const [selectedInfo, setSelectedInfo] = useState<string[]>([]);
-    const [paperLimit, setPaperLimit] = useState<number | 'all'>(10);
-    const [customLimit, setCustomLimit] = useState<string>('');
+    const [paperLimit, setPaperLimit] = useState<number | 'all' | 'custom'>(10);
+    const [customLimit, setCustomLimit] = useState<string>('10');
     const [totalPapers, setTotalPapers] = useState<number>(0);
     const [wordCount, setWordCount] = useState<number>(0);
     const [infoSize, setInfoSize] = useState<number>(0);
+    const [allPapers, setAllPapers] = useState<Paper[]>([]);
 
     useEffect(() => {
         const loadTags = async () => {
@@ -46,53 +47,65 @@ export default function PaperSelector({ onPaperInfoSelected }: PaperSelectorProp
         loadTags();
     }, []);
 
-    const handleTagChange = async (event: SelectChangeEvent<string[]>) => {
+    const handleTagChange = useCallback(async (event: SelectChangeEvent<string[]>) => {
         const tags = event.target.value as string[];
         setSelectedTags(tags);
         const papers = await refreshPapers(tags);
         setTotalPapers(papers.length);
-    };
+        applyPaperLimit(papers);
+    }, []);
 
-    const refreshPapers = async (tags: string[]): Promise<Paper[]> => {
+    const refreshPapers = useCallback(async (tags: string[]): Promise<Paper[]> => {
         const papers = await paperActions.filterPapers({ tags });
-        if (paperLimit === 'all') {
-            setSelectedPapers(papers);
-        } else {
-            setSelectedPapers(papers.slice(0, paperLimit));
-        }
+        setAllPapers(papers);
         return papers;
-    };
+    }, []);
 
-    const handleInfoChange = (event: SelectChangeEvent<string[]>) => {
-        setSelectedInfo(event.target.value as string[]);
-        updateWordCountAndSize(selectedPapers, event.target.value as string[]);
-    };
+    const applyPaperLimit = useCallback((papers: Paper[]) => {
+        const limit = paperLimit === 'all' ? papers.length : 
+                      paperLimit === 'custom' ? parseInt(customLimit, 10) || papers.length : 
+                      paperLimit;
+        const selectedPapers = papers.slice(0, limit);
+        setSelectedPapers(selectedPapers);
+        updateWordCountAndSize(selectedPapers, selectedInfo);
+    }, [paperLimit, customLimit, selectedInfo]);
 
-    const handleLimitChange = async (event: SelectChangeEvent<number | string>) => {
+    const handleInfoChange = useCallback((event: SelectChangeEvent<string[]>) => {
+        const newSelectedInfo = event.target.value as string[];
+        setSelectedInfo(newSelectedInfo);
+        updateWordCountAndSize(selectedPapers, newSelectedInfo);
+    }, [selectedPapers]);
+
+    const handleLimitChange = useCallback((event: SelectChangeEvent<number | string>) => {
         const value = event.target.value;
         if (value === 'all') {
             setPaperLimit('all');
             setCustomLimit('');
+        } else if (value === 'custom') {
+            setPaperLimit('custom');
         } else {
-            setPaperLimit(Number(value));
-            setCustomLimit(value.toString());
+            const numValue = Number(value);
+            setPaperLimit(numValue);
+            setCustomLimit(numValue.toString());
         }
-        const papers = await refreshPapers(selectedTags);
-        updateWordCountAndSize(papers, selectedInfo);
-    };
+    }, []);
 
-    const handleCustomLimitChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleCustomLimitChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
         const value = event.target.value;
         setCustomLimit(value);
         const numValue = parseInt(value, 10);
         if (!isNaN(numValue) && numValue > 0) {
-            setPaperLimit(numValue);
-            const papers = await refreshPapers(selectedTags);
-            updateWordCountAndSize(papers, selectedInfo);
+            setPaperLimit('custom');
+        } else if (value === '') {
+            setPaperLimit('all');
         }
-    };
+    }, []);
 
-    const updateWordCountAndSize = (papers: Paper[], info: string[]) => {
+    useEffect(() => {
+        applyPaperLimit(allPapers);
+    }, [paperLimit, allPapers, applyPaperLimit]);
+
+    const updateWordCountAndSize = useCallback((papers: Paper[], info: string[]) => {
         let totalText = '';
         papers.forEach(paper => {
             info.forEach(field => {
@@ -107,9 +120,9 @@ export default function PaperSelector({ onPaperInfoSelected }: PaperSelectorProp
         });
         setWordCount(totalText.split(/\s+/).filter(word => word.length > 0).length);
         setInfoSize(new Blob([totalText]).size / 1024); // Size in KB
-    };
+    }, []);
 
-    const handleAddPaperInfo = () => {
+    const handleAddPaperInfo = useCallback(() => {
         const paperInfo = selectedPapers.map(paper => {
             return selectedInfo.map(info => {
                 switch (info) {
@@ -124,7 +137,7 @@ export default function PaperSelector({ onPaperInfoSelected }: PaperSelectorProp
         }).join('\n\n');
 
         onPaperInfoSelected(paperInfo);
-    };
+    }, [selectedPapers, selectedInfo, onPaperInfoSelected]);
 
     return (
         <Box>
@@ -192,6 +205,7 @@ export default function PaperSelector({ onPaperInfoSelected }: PaperSelectorProp
                             {presetLimits.map((limit) => (
                                 <MenuItem key={limit} value={limit}>{limit}</MenuItem>
                             ))}
+                            <MenuItem value="custom">{t('Custom')}</MenuItem>
                         </Select>
                     </FormControl>
                 </Grid>
@@ -203,6 +217,7 @@ export default function PaperSelector({ onPaperInfoSelected }: PaperSelectorProp
                         value={customLimit}
                         onChange={handleCustomLimitChange}
                         InputProps={{ inputProps: { min: 1 } }}
+                        disabled={paperLimit !== 'custom'}
                     />
                 </Grid>
             </Grid>
