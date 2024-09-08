@@ -12,6 +12,9 @@
     <em>您的AI驱动的学者和学生研究助手</em>
 </p>
 
+<a href="./doc/demo1.png"><img src="./doc/demo1.png" width="400"/></a>
+<a href="./doc/demo2.png"><img src="./doc/demo2.png" width="400"/></a>
+
 ## 关于 ChatResearch
 
 ChatResearch 是一款为期刊学生和研究人员设计的AI驱动桌面应用程序，旨在协助他们的学术追求。目前处于预览版阶段，展示了AI辅助研究的未来前景。

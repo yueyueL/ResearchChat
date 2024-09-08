@@ -4,9 +4,6 @@
 </p>
 
 
-
-
-
 <h1 align="center">
 <img src='./doc/icon.png' width='30'>
 <span>ChatResearch</span>
@@ -15,6 +12,10 @@
 <p align="center">
     <em>Your AI-Powered Research Assistant for Scholars and Students</em>
 </p>
+
+
+<a href="./doc/demo1.png"><img src="./doc/demo1.png" width="400"/></a>
+<a href="./doc/demo2.png"><img src="./doc/demo2.png" width="400"/></a>
 
 ## About ChatResearch
 
@@ -33,7 +34,7 @@ ChatResearch is designed to answer these questions and more, leveraging the powe
 
 ## Features
 
-- **AI-Powered Chat**: Engage in research discussions with advanced AI models.
+- **AI-Powered Chat**: Engage in research discussions with advanced AI models (e.g., GPT-4, LLama, Deepseek).
 - **Paper Library Management**: Organize and manage your research papers efficiently.
 - **AI-Assisted Paper Analysis**: Get quick summaries and insights from papers.
 - **Arxiv Integration**: Stay updated with the latest papers in your field.

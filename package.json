@@ -3,7 +3,7 @@
     "productName": "kknox.chatresearch.app",
     "version": "0.0.1",
     "license": "GPL-3.0 license",
-    "description": "A desktop client for multiple cutting-edge AI models",
+    "description": "A desktop client for multiple cutting-edge AI models for research",
     "main": "./src/main/main.ts",
     "scripts": {
         "build": "concurrently \"npm run build:main\" \"npm run build:renderer\"",
@@ -283,15 +283,9 @@
         ],
         "publish": [
             {
-                "provider": "s3",
-                "bucket": "chatbox",
-                "endpoint": "https://323943171e765db4cc94a7f640e57cb0.r2.cloudflarestorage.com",
-                "path": "/releases"
-            },
-            {
                 "provider": "github",
-                "owner": "Bin-Huang",
-                "repo": "chatbox"
+                "owner": "yueyueL",
+                "repo": "ResearchChat"
             }
         ]
     },
