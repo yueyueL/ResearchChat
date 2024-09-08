@@ -66,7 +66,7 @@ export const paperStorage = {
     async searchPapers(query: string) {
         return db.papers.filter(paper =>
             paper.title.toLowerCase().includes(query.toLowerCase()) ||
-            paper.abstract.toLowerCase().includes(query.toLowerCase())
+            (paper.abstract ?? '').toLowerCase().includes(query.toLowerCase())
         ).toArray()
     },
 
@@ -178,7 +178,7 @@ export const paperStorage = {
         if (searchQuery) {
             collection = collection.filter(paper => 
                 paper.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                paper.abstract.toLowerCase().includes(searchQuery.toLowerCase())
+                (paper.abstract ?? '').toLowerCase().includes(searchQuery.toLowerCase())
             )
         }
 
@@ -197,7 +197,7 @@ export const paperStorage = {
 
         if (tagFilter && tagFilter.length > 0) {
             collection = collection.filter(paper => 
-                paper.tags && tagFilter.every(tag => paper.tags.includes(tag))
+                paper.tags !== undefined && tagFilter.every(tag => paper.tags!.includes(tag))
             )
         }
 
@@ -227,7 +227,7 @@ export const paperStorage = {
             // Remove the tag from all papers
             const papers = await db.papers.where('tags').anyOf(tag.name).toArray()
             for (const paper of papers) {
-                const updatedTags = paper.tags.filter(t => t !== tag.name)
+                const updatedTags = paper.tags?.filter(t => t !== tag.name) ?? []
                 await db.papers.update(paper.id!, { tags: updatedTags })
             }
         })
@@ -239,7 +239,7 @@ export const paperStorage = {
 
         const papers = await db.papers.where('tags').anyOf(tag.name).toArray()
         for (const paper of papers) {
-            const updatedTags = paper.tags.filter(t => t !== tag.name)
+            const updatedTags = paper.tags?.filter(t => t !== tag.name) ?? []
             await db.papers.update(paper.id!, { tags: updatedTags })
         }
     }
