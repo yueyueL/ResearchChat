@@ -35,6 +35,7 @@ import LibraryStats from '../components/LibraryStats'
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'
 import paperConstants from '../../shared/paperConstants.json'
 import { validateDblpLink, extractPapersFromDblpPage } from '../lib/dblpUtils'
+import { SelectChangeEvent } from '@mui/material/Select';
 
 interface Props {
     open: boolean
@@ -58,6 +59,7 @@ export default function PaperCollectionWindow(props: Props) {
     const [volumeNumber, setVolumeNumber] = useState<string>('')
     const [dblpLinkError, setDblpLinkError] = useState<string | null>(null)
     const [crawlProgress, setCrawlProgress] = useState<number | null>(null)
+    const [inputLabel, setInputLabel] = useState(t('Year'))
 
     const filteredVenues = useMemo(() => {
         return paperConstants.venues.filter(venue => 
@@ -99,11 +101,17 @@ export default function PaperCollectionWindow(props: Props) {
                     return;
                 }
 
-                const year = parseInt(selectedYear, 10);
-                if (isNaN(year)) {
-                    setDblpLinkError(t('Please enter a valid year'));
-                    setCrawlProgress(null);
-                    return;
+                let year: number;
+                if (venue.type === 'Conference') {
+                    year = parseInt(selectedYear, 10);
+                    if (isNaN(year)) {
+                        setDblpLinkError(t('Please enter a valid year for the conference'));
+                        setCrawlProgress(null);
+                        return;
+                    }
+                } else {
+                    // For journals, we'll use the current year as a placeholder
+                    year = new Date().getFullYear();
                 }
 
                 setCrawlProgress(25);
@@ -204,25 +212,32 @@ export default function PaperCollectionWindow(props: Props) {
     }, [generateDblpLink, selectedVenue, selectedYear, volumeNumber])
 
     const handleYearVolumeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const value = event.target.value
+        const value = event.target.value;
         if (selectedVenue) {
-            const venue = paperConstants.venues.find(v => v.abbreviation === selectedVenue)
+            const venue = paperConstants.venues.find(v => v.abbreviation === selectedVenue);
             if (venue?.type === 'Conference') {
-                setSelectedYear(value)
-                setVolumeNumber('')  // Clear volume number for conferences
+                setSelectedYear(value);
+                setVolumeNumber('');
             } else if (venue?.type === 'Journal') {
-                setVolumeNumber(value)
-                setSelectedYear('')  // Clear year for journals
+                setVolumeNumber(value);
+                setSelectedYear('');
             }
         }
     }
 
-    const handleVenueChange = (event: React.ChangeEvent<{    value: unknown;}>) => {
-        const selectedAbbreviation = event.target.value as string;
+    const handleVenueChange = (event: SelectChangeEvent<string>) => {
+        const selectedAbbreviation = event.target.value;
         setSelectedVenue(selectedAbbreviation);
-        // Reset year/volume when venue changes
-        setSelectedYear(new Date().getFullYear().toString());
-        setVolumeNumber('');
+        const venue = paperConstants.venues.find(v => v.abbreviation === selectedAbbreviation);
+        if (venue?.type === 'Conference') {
+            setInputLabel(t('Year'));
+            setSelectedYear(new Date().getFullYear().toString());
+            setVolumeNumber('');
+        } else if (venue?.type === 'Journal') {
+            setInputLabel(t('Volume'));
+            setSelectedYear('');
+            setVolumeNumber('1'); // Default to volume 1 for journals
+        }
     };
 
     return (
@@ -330,7 +345,7 @@ export default function PaperCollectionWindow(props: Props) {
                                     <Grid item xs={2}>
                                         <TextField
                                             fullWidth
-                                            label={selectedVenue && paperConstants.venues.find(v => v.abbreviation === selectedVenue)?.type === 'Journal' ? t('Volume') : t('Year')}
+                                            label={inputLabel}
                                             type="number"
                                             value={selectedVenue && paperConstants.venues.find(v => v.abbreviation === selectedVenue)?.type === 'Journal' ? volumeNumber : selectedYear}
                                             onChange={handleYearVolumeChange}

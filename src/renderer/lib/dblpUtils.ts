@@ -28,8 +28,10 @@ async function makeRateLimitedRequest(url: string) {
 }
 
 export async function validateDblpLink(link: string): Promise<{ isValid: boolean; error?: string }> {
-    const dblpRegex = /^https?:\/\/(dblp\.org|dblp\.uni-trier\.de)\/db\/(conf|journals)\/[a-zA-Z0-9]+\/[a-zA-Z0-9]+(\d{4})\.html$/;
-    if (!dblpRegex.test(link)) {
+    const conferenceRegex = /^https?:\/\/(dblp\.org|dblp\.uni-trier\.de)\/db\/conf\/[a-zA-Z0-9]+\/[a-zA-Z0-9]+(\d{4})\.html$/;
+    const journalRegex = /^https?:\/\/(dblp\.org|dblp\.uni-trier\.de)\/db\/journals\/[a-zA-Z0-9]+\/[a-zA-Z0-9]+\d+\.html$/;
+
+    if (!conferenceRegex.test(link) && !journalRegex.test(link)) {
         return { isValid: false, error: 'Invalid DBLP link format' };
     }
 
@@ -69,12 +71,15 @@ export async function extractPapersFromDblpPage(link: string, venueName: string,
             
             const doi = paperLink.startsWith('https://doi.org/') ? paperLink.slice(16) : '';
 
+            // For journals, extract the year from the DBLP page
+            const paperYear = isConference ? year : parseInt($element.find('span.year').text().trim(), 10);
+
             papers.push({
                 title,
                 authors,
                 url: paperLink,
                 venue: venueName,
-                year: year,
+                year: paperYear,
                 source: 'DBLP',
                 doi,
             });
