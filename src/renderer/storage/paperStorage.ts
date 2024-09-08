@@ -1,5 +1,6 @@
 import Dexie from 'dexie'
 import { Paper, Tag } from '../../shared/types'
+import paperConstants from '../../shared/paperConstants.json'
 
 class PaperDatabase extends Dexie {
     papers!: Dexie.Table<Paper, number>
@@ -210,7 +211,9 @@ export const paperStorage = {
         }
 
         if (venueFilter) {
-            collection = collection.filter(paper => paper.venue.toLowerCase().includes(venueFilter.toLowerCase()))
+            collection = collection.filter(paper => 
+                paper.venue.toLowerCase().includes(venueFilter.toLowerCase())
+            )
         }
 
         if (tagFilter && tagFilter.length > 0) {
@@ -260,5 +263,42 @@ export const paperStorage = {
             const updatedTags = paper.tags?.filter(t => t !== tag.name) ?? []
             await db.papers.update(paper.id!, { tags: updatedTags })
         }
+    },
+
+    async getAllPaperIds(
+        searchQuery: string,
+        yearFilter: { start: string, end: string },
+        venueFilter: string,
+        tagFilter: string[]
+    ): Promise<number[]> {
+        let query = db.papers.toCollection()
+
+        if (searchQuery) {
+            query = query.filter(paper => 
+                paper.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                paper.authors.some(author => author.toLowerCase().includes(searchQuery.toLowerCase()))
+            )
+        }
+
+        if (yearFilter.start) {
+            query = query.filter(paper => paper.year >= parseInt(yearFilter.start))
+        }
+
+        if (yearFilter.end) {
+            query = query.filter(paper => paper.year <= parseInt(yearFilter.end))
+        }
+
+        if (venueFilter) {
+            query = query.filter(paper => paper.venue.toLowerCase().includes(venueFilter.toLowerCase()))
+        }
+
+        if (tagFilter.length > 0) {
+            query = query.filter(paper => 
+                paper.tags !== undefined && tagFilter.every(tag => paper.tags!.includes(tag))
+            )
+        }
+
+        const papers = await query.toArray()
+        return papers.map(paper => paper.id!)
     }
 }

@@ -4,10 +4,11 @@ import { useTranslation } from 'react-i18next'
 import * as paperActions from '../stores/paperActions'
 
 interface LibraryStatsProps {
-    className?: string
+    className?: string;
+    refreshTrigger?: number;
 }
 
-export default function LibraryStats({ className }: LibraryStatsProps) {
+export default function LibraryStats({ className, refreshTrigger }: LibraryStatsProps) {
     const { t } = useTranslation()
     const [totalPapers, setTotalPapers] = useState(0)
     const [totalTags, setTotalTags] = useState(0)
@@ -27,7 +28,7 @@ export default function LibraryStats({ className }: LibraryStatsProps) {
         }
 
         fetchLibraryStats()
-    }, [])
+    }, [refreshTrigger])
 
     return (
         <Box className={className} sx={{ mb: 3 }}>

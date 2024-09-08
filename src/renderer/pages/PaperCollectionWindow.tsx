@@ -36,6 +36,7 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'
 import paperConstants from '../../shared/paperConstants.json'
 import { validateDblpLink, extractPapersFromDblpPage } from '../lib/dblpUtils'
 import { SelectChangeEvent } from '@mui/material/Select';
+import ImportPapersDialog from '../components/ImportPapersDialog'
 
 interface Props {
     open: boolean
@@ -60,6 +61,19 @@ export default function PaperCollectionWindow(props: Props) {
     const [dblpLinkError, setDblpLinkError] = useState<string | null>(null)
     const [crawlProgress, setCrawlProgress] = useState<number | null>(null)
     const [inputLabel, setInputLabel] = useState(t('Year'))
+
+    const [importedPapers, setImportedPapers] = useState<PaperType[]>([])
+    const [allTags, setAllTags] = useState<string[]>([])
+    const [showImportDialog, setShowImportDialog] = useState(false)
+    const [statsRefreshTrigger, setStatsRefreshTrigger] = useState(0);
+
+    useEffect(() => {
+        const loadTags = async () => {
+            const tags = await paperActions.getAllTags()
+            setAllTags(tags.map(tag => tag.name))
+        }
+        loadTags()
+    }, [])
 
     const filteredVenues = useMemo(() => {
         return paperConstants.venues.filter(venue => 
@@ -133,24 +147,9 @@ export default function PaperCollectionWindow(props: Props) {
                     return;
                 }
 
-                setCrawlProgress(50);
-                const { importedPapers, newPapers } = await paperActions.importPapers(papers);
-                console.log('Imported papers:', importedPapers);
-                console.log('New papers:', newPapers);
-
-                setCrawlProgress(100);
-                setDblpLinkError(t('Successfully imported {{count}} papers. {{newCount}} new papers added.', { 
-                    count: importedPapers.length, 
-                    newCount: newPapers.length 
-                }));
-
-                // Clear the DBLP link input
-                setDblpLink('');
-
-                // Optionally, update the paper list in the UI here
-                setPapers(prevPapers => [...prevPapers, ...newPapers]);
-
-                setTimeout(() => setCrawlProgress(null), 2000); // Hide progress bar after 2 seconds
+                setCrawlProgress(50)
+                setImportedPapers(papers)
+                setShowImportDialog(true)
 
             } catch (error) {
                 console.error('Error processing DBLP page:', error);
@@ -184,15 +183,13 @@ export default function PaperCollectionWindow(props: Props) {
                 return
             }
 
-            const { importedPapers, newPapers } = await paperActions.importPapers(parsedData)
-            setPapers(await paperActions.fetchAllPapers())
-            setUploadStatus(t('Imported {{total}} papers ({{new}} new)', { total: importedPapers.length, new: newPapers.length }) || `Imported ${importedPapers.length} papers (${newPapers.length} new)`)
-            setSelectedFile(null)
+            setImportedPapers(parsedData)
+            setShowImportDialog(true)
         } catch (error) {
             console.error('Error processing file:', error)
             setUploadStatus(t('Error processing file. Please check the file format.') || 'Error processing file. Please check the file format.')
         }
-    }, [selectedFile, setPapers, t])
+    }, [selectedFile, t])
 
     const generateDblpLink = useCallback(() => {
         const venue = paperConstants.venues.find(v => v.abbreviation === selectedVenue)
@@ -245,11 +242,28 @@ export default function PaperCollectionWindow(props: Props) {
         }
     };
 
+    const handleImportComplete = async (importedCount: number, newCount: number) => {
+        setUploadStatus(t('Imported {{total}} papers ({{new}} new)', { total: importedCount, new: newCount }) || '');
+        setSelectedFile(null);
+        setImportedPapers([]);
+        setCrawlProgress(100);
+        // Refresh the paper list and tags
+        const papers = await paperActions.fetchAllPapers();
+        setPapers(papers);
+        const tags = await paperActions.getAllTags();
+        setAllTags(tags.map(tag => tag.name));
+        setStatsRefreshTrigger(prev => prev + 1);
+        setTimeout(() => {
+            setCrawlProgress(null);
+            setDblpLink('');
+        }, 2000);
+    }
+
     return (
         <Dialog open={props.open} onClose={props.close} fullWidth maxWidth="md">
             <DialogTitle>{t('Paper Collection')}</DialogTitle>
             <DialogContent>
-                <LibraryStats />
+                <LibraryStats refreshTrigger={statsRefreshTrigger} />
 
                 <Paper elevation={3} sx={{ mb: 3 }}>
                     <Tabs value={activeTab} onChange={handleTabChange} variant="fullWidth">
@@ -428,10 +442,6 @@ export default function PaperCollectionWindow(props: Props) {
                     </Box>
                 </Paper>
 
-                <Typography variant="h6" sx={{ mb: 2 }}>{t('Recent Papers')}</Typography>
-                <Paper elevation={2} sx={{ p: 2, mb: 2 }}>
-                    <Typography variant="body2">{t('No recent papers')}</Typography>
-                </Paper>
                 {uploadStatus && (
                     <Typography color={uploadStatus.includes('Error') ? 'error' : 'success'}>
                         {uploadStatus}
@@ -446,6 +456,13 @@ export default function PaperCollectionWindow(props: Props) {
                     {dblpLinkError}
                 </Alert>
             </Snackbar>
+            <ImportPapersDialog
+                open={showImportDialog}
+                onClose={() => setShowImportDialog(false)}
+                papers={importedPapers}
+                allTags={allTags}
+                onImportComplete={handleImportComplete}
+            />
         </Dialog>
     )
 }

@@ -59,8 +59,12 @@ export async function importPapers(rawPapers: any[]): Promise<{ importedPapers: 
       }
       const { isDuplicate, existingPaper } = await paperStorage.checkDuplication(paper)
       if (isDuplicate && existingPaper) {
-        // Merge the new paper info with the existing paper
-        const updatedPaper = { ...existingPaper, ...paper }
+        // Merge the new paper info with the existing paper, including tags
+        const updatedPaper = { 
+          ...existingPaper, 
+          ...paper, 
+          tags: [...new Set([...existingPaper.tags || [], ...paper.tags])]
+        }
         await paperStorage.updatePaper(existingPaper.id!, updatedPaper)
         importedPapers.push(updatedPaper)
       } else {
@@ -116,8 +120,9 @@ export async function createTag(tagName: string) {
     return await paperStorage.createTag(tagName)
 }
 
-export async function addTagsToPapers(paperIds: number[], tags: string[]) {
-    return await paperStorage.addTagsToPapers(paperIds, tags)
+export async function addTagsToPapers(paperIds: (number | undefined)[], tags: string[]) {
+    const validPaperIds = paperIds.filter((id): id is number => id !== undefined)
+    return await paperStorage.addTagsToPapers(validPaperIds, tags)
 }
 
 export async function removeTagsFromPapers(paperIds: number[], tags: string[]) {
@@ -139,4 +144,19 @@ export async function getLibrarySize(): Promise<number> {
         return total + JSON.stringify(paper).length
     }, 0)
     return sizeInBytes
+}
+
+export async function deletePapers(paperIds: number[]): Promise<void> {
+    for (const id of paperIds) {
+        await paperStorage.deletePaper(id);
+    }
+}
+
+export async function getAllPaperIds(
+    searchQuery: string,
+    yearFilter: { start: string, end: string },
+    venueFilter: string,
+    tagFilter: string[]
+): Promise<number[]> {
+    return await paperStorage.getAllPaperIds(searchQuery, yearFilter, venueFilter, tagFilter)
 }

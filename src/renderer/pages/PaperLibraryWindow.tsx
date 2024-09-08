@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { useAtom } from 'jotai'
 import { papersAtom, initializePapersAtom } from '../stores/atoms'
 import * as paperActions from '../stores/paperActions'
@@ -25,6 +25,10 @@ import {
     Chip,
     Autocomplete,
     InputAdornment,
+    FormGroup,
+    FormControlLabel,
+    RadioGroup,
+    Radio,
 } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import SearchIcon from '@mui/icons-material/Search'
@@ -33,6 +37,15 @@ import { FixedSizeList as List } from 'react-window'
 import { Paper as PaperType, Tag } from '../../shared/types'
 import AddIcon from '@mui/icons-material/Add';
 import LibraryStats from '../components/LibraryStats'
+import { 
+    ExportAttribute, 
+    formatPaperForExport, 
+    exportPapersAsString, 
+    exportPapersAsJson, 
+    copyToClipboard, 
+    downloadAsFile 
+} from '../lib/exportUtils'
+import paperConstants from '../../shared/paperConstants.json'
 
 interface Props {
     open: boolean
@@ -57,6 +70,22 @@ export default function PaperLibraryWindow(props: Props) {
     const [allTags, setAllTags] = useState<Tag[]>([])
     const [selectedPapers, setSelectedPapers] = useState<number[]>([])
     const [selectedTag, setSelectedTag] = useState<string | null>(null)
+    const [isAllSelected, setIsAllSelected] = useState(false)
+    const [exportAttributes, setExportAttributes] = useState<ExportAttribute[]>(['title', 'authors', 'year'])
+    const [exportType, setExportType] = useState<'clipboard' | 'txt' | 'json'>('clipboard')
+    const [exportDialogOpen, setExportDialogOpen] = useState(false)
+
+    const matchVenue = useCallback((paper: PaperType, venueFilter: string) => {
+        const lowercaseFilter = venueFilter.toLowerCase();
+        if (paper.venue.toLowerCase().includes(lowercaseFilter)) {
+            return true;
+        }
+        // Check if the venue matches any abbreviation
+        return paperConstants.venues.some(venue => 
+            venue.abbreviation.toLowerCase() === lowercaseFilter &&
+            paper.venue.toLowerCase().includes(venue.fullName.toLowerCase())
+        );
+    }, []);
 
     useEffect(() => {
         const loadPapers = async () => {
@@ -92,8 +121,9 @@ export default function PaperLibraryWindow(props: Props) {
     }
 
     const handleVenueFilter = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setVenueFilter(event.target.value)
-        setCurrentPage(1)
+        const newVenueFilter = event.target.value;
+        setVenueFilter(newVenueFilter);
+        setCurrentPage(1);
     }
 
     const handleDisplayLimitChange = (event: SelectChangeEvent<number>) => {
@@ -140,13 +170,31 @@ export default function PaperLibraryWindow(props: Props) {
         )
     }
 
-    const handleSelectAll = () => {
-        if (selectedPapers.length === displayedPapers.length) {
+    const handleSelectAll = useCallback(async () => {
+        if (isAllSelected) {
             setSelectedPapers([])
+            setIsAllSelected(false)
         } else {
-            setSelectedPapers(displayedPapers.map(paper => paper.id!))
+            try {
+                const allPaperIds = await paperActions.getAllPaperIds(
+                    searchQuery,
+                    { start: yearFilterStart, end: yearFilterEnd },
+                    venueFilter,
+                    tagFilter
+                )
+                setSelectedPapers(allPaperIds)
+                setIsAllSelected(true)
+            } catch (error) {
+                console.error('Error selecting all papers:', error)
+                setError(`Failed to select all papers. Error: ${error instanceof Error ? error.message : String(error)}`)
+            }
         }
-    }
+    }, [isAllSelected, searchQuery, yearFilterStart, yearFilterEnd, venueFilter, tagFilter])
+
+    useEffect(() => {
+        // Reset isAllSelected when filters change
+        setIsAllSelected(false)
+    }, [searchQuery, yearFilterStart, yearFilterEnd, venueFilter, tagFilter])
 
     const handleTagSelection = (event: React.SyntheticEvent, value: string | null) => {
         setSelectedTag(value)
@@ -170,7 +218,7 @@ export default function PaperLibraryWindow(props: Props) {
         }
     }
 
-    const refreshPapers = async () => {
+    const refreshPapers = useCallback(async () => {
         try {
             const { papers, total } = await paperActions.fetchPapersPaginated(
                 currentPage, 
@@ -180,23 +228,28 @@ export default function PaperLibraryWindow(props: Props) {
                 venueFilter,
                 tagFilter
             )
-            setDisplayedPapers(papers)
-            setTotalPapers(total)
-            const tags = await paperActions.getAllTags()
-            setAllTags(tags)
+            // Filter papers based on venue (including abbreviations)
+            const filteredPapers = venueFilter
+                ? papers.filter(paper => matchVenue(paper, venueFilter))
+                : papers;
+            setDisplayedPapers(filteredPapers);
+            setTotalPapers(total);
+            const tags = await paperActions.getAllTags();
+            setAllTags(tags);
         } catch (error) {
-            console.error('Error refreshing papers:', error)
-            setError(`Failed to refresh papers. Error: ${error instanceof Error ? error.message : String(error)}`)
+            console.error('Error refreshing papers:', error);
+            setError(`Failed to refresh papers. Error: ${error instanceof Error ? error.message : String(error)}`);
         }
-    }
+    }, [currentPage, displayLimit, searchQuery, yearFilterStart, yearFilterEnd, venueFilter, tagFilter, matchVenue]);
+
+    useEffect(() => {
+        refreshPapers()
+    }, [refreshPapers])
 
     const handleDeleteTag = async (tagId: number) => {
         try {
             await paperActions.deleteTag(tagId)
             await refreshPapers()
-            // Also update allTags
-            const tags = await paperActions.getAllTags()
-            setAllTags(tags)
         } catch (error) {
             console.error('Error deleting tag:', error)
             setError(`Failed to delete tag. Error: ${error instanceof Error ? error.message : String(error)}`)
@@ -213,8 +266,71 @@ export default function PaperLibraryWindow(props: Props) {
         }
     }
 
+    const handleDeleteSelectedPapers = async () => {
+        if (selectedPapers.length === 0) return;
+
+        const confirmDelete = window.confirm(t('Are you sure you want to delete the selected papers?') || '');
+        if (!confirmDelete) return;
+
+        try {
+            await paperActions.deletePapers(selectedPapers);
+            setSelectedPapers([]);
+            await refreshPapers();
+        } catch (error) {
+            console.error('Error deleting papers:', error);
+            setError(`Failed to delete papers. Error: ${error instanceof Error ? error.message : String(error)}`);
+        }
+    }
+
+    const handleExportAttributeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const attribute = event.target.name as ExportAttribute
+        setExportAttributes(prev => 
+            event.target.checked
+                ? [...prev, attribute]
+                : prev.filter(attr => attr !== attribute)
+        )
+    }
+
+    const handleExportTypeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setExportType(event.target.value as 'clipboard' | 'txt' | 'json')
+    }
+
+    const handleExport = async () => {
+        const selectedPapersData = displayedPapers.filter(paper => selectedPapers.includes(paper.id!))
+        let exportContent: string
+
+        if (exportType === 'json') {
+            exportContent = exportPapersAsJson(selectedPapersData, exportAttributes)
+        } else {
+            exportContent = exportPapersAsString(selectedPapersData, exportAttributes)
+        }
+
+        try {
+            if (exportType === 'clipboard') {
+                await copyToClipboard(exportContent)
+                // Show a success message
+            } else {
+                const fileName = `exported_papers.${exportType}`
+                const fileType = exportType === 'json' ? 'application/json' : 'text/plain'
+                downloadAsFile(exportContent, fileName, fileType)
+            }
+            setExportDialogOpen(false)
+        } catch (error) {
+            console.error('Export failed:', error)
+            setError(`Export failed: ${error instanceof Error ? error.message : String(error)}`)
+        }
+    }
+
     const PaperRow = ({ index, style }: { index: number; style: React.CSSProperties }) => {
         const paper = displayedPapers[index]
+        
+        const handleTitleClick = () => {
+            if (paper.url) {
+                // Use window.open instead of shell.openExternal
+                window.open(paper.url, '_blank', 'noopener,noreferrer')
+            }
+        }
+
         return (
             <Paper key={paper.id} elevation={2} style={{ ...style, display: 'flex', alignItems: 'center' }}>
                 <Checkbox
@@ -223,7 +339,19 @@ export default function PaperLibraryWindow(props: Props) {
                     sx={{ mr: 2 }}
                 />
                 <Box sx={{ flexGrow: 1 }}>
-                    <Typography variant="h6">{paper.title}</Typography>
+                    <Typography 
+                        variant="h6" 
+                        onClick={handleTitleClick}
+                        sx={{
+                            cursor: paper.url ? 'pointer' : 'default',
+                            '&:hover': {
+                                textDecoration: paper.url ? 'underline' : 'none',
+                            },
+                            color: paper.url ? 'primary.main' : 'text.primary',
+                        }}
+                    >
+                        {paper.title}
+                    </Typography>
                     <Typography variant="body2">{paper.authors.join(', ')}</Typography>
                     <Typography variant="body2">{paper.year} - {paper.venue}</Typography>
                     {Array.isArray(paper.tags) && paper.tags.map(tag => (
@@ -241,6 +369,12 @@ export default function PaperLibraryWindow(props: Props) {
     }
 
     const pageCount = Math.ceil(totalPapers / displayLimit)
+
+    useEffect(() => {
+        if (props.open) {
+            refreshPapers();
+        }
+    }, [props.open, refreshPapers]);
 
     return (
         <Dialog open={props.open} onClose={props.close} fullWidth maxWidth="md" classes={{ paper: 'h-4/5' }}>
@@ -293,6 +427,7 @@ export default function PaperLibraryWindow(props: Props) {
                                 label={t('Venue')}
                                 value={venueFilter}
                                 onChange={handleVenueFilter}
+                                placeholder={t('Enter venue name or abbreviation') || ''}
                             />
                         </Grid>
                         <Grid item xs={12} sm={5}>
@@ -356,7 +491,7 @@ export default function PaperLibraryWindow(props: Props) {
                         onClick={handleSelectAll}
                         sx={{ whiteSpace: 'nowrap' }}
                     >
-                        {selectedPapers.length === displayedPapers.length ? t('Deselect All') : t('Select All')}
+                        {isAllSelected ? t('Deselect All') : t('Select All')}
                     </Button>
                     <Autocomplete
                         freeSolo
@@ -376,6 +511,22 @@ export default function PaperLibraryWindow(props: Props) {
                         startIcon={<AddIcon />}
                     >
                         {t('Add Tag')}
+                    </Button>
+                    <Button 
+                        variant="contained" 
+                        color="error"
+                        onClick={handleDeleteSelectedPapers} 
+                        disabled={selectedPapers.length === 0}
+                        startIcon={<DeleteIcon />}
+                    >
+                        {t('Delete Selected')}
+                    </Button>
+                    <Button 
+                        variant="contained" 
+                        onClick={() => setExportDialogOpen(true)} 
+                        disabled={selectedPapers.length === 0}
+                    >
+                        {t('Export Selected')}
                     </Button>
                 </Box>
 
@@ -401,6 +552,40 @@ export default function PaperLibraryWindow(props: Props) {
                 </Button>
                 <Button onClick={props.close}>{t('Close')}</Button>
             </DialogActions>
+
+            <Dialog open={exportDialogOpen} onClose={() => setExportDialogOpen(false)}>
+                <DialogTitle>{t('Export Papers')}</DialogTitle>
+                <DialogContent>
+                    <FormGroup>
+                        <Typography variant="subtitle1">{t('Select attributes to export:')}</Typography>
+                        {(['title', 'authors', 'year', 'venue', 'url', 'abstract', 'doi'] as ExportAttribute[]).map(attr => (
+                            <FormControlLabel
+                                key={attr}
+                                control={
+                                    <Checkbox
+                                        checked={exportAttributes.includes(attr)}
+                                        onChange={handleExportAttributeChange}
+                                        name={attr}
+                                    />
+                                }
+                                label={t(attr.charAt(0).toUpperCase() + attr.slice(1))}
+                            />
+                        ))}
+                    </FormGroup>
+                    <RadioGroup
+                        value={exportType}
+                        onChange={handleExportTypeChange}
+                    >
+                        <FormControlLabel value="clipboard" control={<Radio />} label={t('Copy to Clipboard')} />
+                        <FormControlLabel value="txt" control={<Radio />} label={t('Export as TXT')} />
+                        <FormControlLabel value="json" control={<Radio />} label={t('Export as JSON')} />
+                    </RadioGroup>
+                </DialogContent>
+                <DialogActions>
+                    <Button onClick={() => setExportDialogOpen(false)}>{t('Cancel')}</Button>
+                    <Button onClick={handleExport} variant="contained">{t('Export')}</Button>
+                </DialogActions>
+            </Dialog>
         </Dialog>
     )
 }
