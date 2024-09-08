@@ -74,6 +74,8 @@ export default function PaperLibraryWindow(props: Props) {
     const [exportAttributes, setExportAttributes] = useState<ExportAttribute[]>(['title', 'authors', 'year'])
     const [exportType, setExportType] = useState<'clipboard' | 'txt' | 'json'>('clipboard')
     const [exportDialogOpen, setExportDialogOpen] = useState(false)
+    const [venueOptions, setVenueOptions] = useState<string[]>([])
+    const [allFilteredPaperIds, setAllFilteredPaperIds] = useState<number[]>([])
 
     const matchVenue = useCallback((paper: PaperType, venueFilter: string) => {
         const lowercaseFilter = venueFilter.toLowerCase();
@@ -103,6 +105,15 @@ export default function PaperLibraryWindow(props: Props) {
                 setDisplayedPapers(papers)
                 setTotalPapers(total)
 
+                // Fetch all paper IDs that match the current filters
+                const allIds = await paperActions.getAllPaperIds(
+                    searchQuery,
+                    { start: yearFilterStart, end: yearFilterEnd },
+                    venueFilter,
+                    tagFilter
+                )
+                setAllFilteredPaperIds(allIds)
+
                 const tags = await paperActions.getAllTags()
                 setAllTags(tags)
 
@@ -120,11 +131,10 @@ export default function PaperLibraryWindow(props: Props) {
         setCurrentPage(1)
     }
 
-    const handleVenueFilter = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const newVenueFilter = event.target.value;
-        setVenueFilter(newVenueFilter);
+    const handleVenueFilterChange = (event: React.ChangeEvent<{}>, value: string | null) => {
+        setVenueFilter(value || '');
         setCurrentPage(1);
-    }
+    };
 
     const handleDisplayLimitChange = (event: SelectChangeEvent<number>) => {
         setDisplayLimit(Number(event.target.value))
@@ -176,7 +186,7 @@ export default function PaperLibraryWindow(props: Props) {
             setIsAllSelected(false)
         } else {
             try {
-                const allPaperIds = await paperActions.getAllPaperIds(
+                const allPaperIds = await paperActions.getAllFilteredPaperIds(
                     searchQuery,
                     { start: yearFilterStart, end: yearFilterEnd },
                     venueFilter,
@@ -194,6 +204,7 @@ export default function PaperLibraryWindow(props: Props) {
     useEffect(() => {
         // Reset isAllSelected when filters change
         setIsAllSelected(false)
+        setSelectedPapers([])
     }, [searchQuery, yearFilterStart, yearFilterEnd, venueFilter, tagFilter])
 
     const handleTagSelection = (event: React.SyntheticEvent, value: string | null) => {
@@ -296,28 +307,46 @@ export default function PaperLibraryWindow(props: Props) {
     }
 
     const handleExport = async () => {
-        const selectedPapersData = displayedPapers.filter(paper => selectedPapers.includes(paper.id!))
-        let exportContent: string
-
-        if (exportType === 'json') {
-            exportContent = exportPapersAsJson(selectedPapersData, exportAttributes)
-        } else {
-            exportContent = exportPapersAsString(selectedPapersData, exportAttributes)
-        }
-
         try {
+            // Fetch all selected paper IDs
+            const allSelectedPaperIds = await paperActions.getAllFilteredPaperIds(
+                searchQuery,
+                { start: yearFilterStart, end: yearFilterEnd },
+                venueFilter,
+                tagFilter
+            );
+
+            // Filter to only include the selected papers
+            const selectedPaperIds = allSelectedPaperIds.filter(id => selectedPapers.includes(id));
+
+            // Fetch the full paper data for all selected papers
+            const selectedPapersData = await Promise.all(
+                selectedPaperIds.map(id => paperActions.getPaper(id))
+            );
+
+            // Filter out any undefined results (in case a paper was deleted)
+            const validPapersData = selectedPapersData.filter((paper): paper is Paper => paper !== undefined);
+
+            let exportContent: string;
+
+            if (exportType === 'json') {
+                exportContent = exportPapersAsJson(validPapersData, exportAttributes);
+            } else {
+                exportContent = exportPapersAsString(validPapersData, exportAttributes);
+            }
+
             if (exportType === 'clipboard') {
-                await copyToClipboard(exportContent)
+                await copyToClipboard(exportContent);
                 // Show a success message
             } else {
-                const fileName = `exported_papers.${exportType}`
-                const fileType = exportType === 'json' ? 'application/json' : 'text/plain'
-                downloadAsFile(exportContent, fileName, fileType)
+                const fileName = `exported_papers.${exportType}`;
+                const fileType = exportType === 'json' ? 'application/json' : 'text/plain';
+                downloadAsFile(exportContent, fileName, fileType);
             }
-            setExportDialogOpen(false)
+            setExportDialogOpen(false);
         } catch (error) {
-            console.error('Export failed:', error)
-            setError(`Export failed: ${error instanceof Error ? error.message : String(error)}`)
+            console.error('Export failed:', error);
+            setError(`Export failed: ${error instanceof Error ? error.message : String(error)}`);
         }
     }
 
@@ -326,43 +355,65 @@ export default function PaperLibraryWindow(props: Props) {
         
         const handleTitleClick = () => {
             if (paper.url) {
-                // Use window.open instead of shell.openExternal
                 window.open(paper.url, '_blank', 'noopener,noreferrer')
             }
         }
 
         return (
-            <Paper key={paper.id} elevation={2} style={{ ...style, display: 'flex', alignItems: 'center' }}>
-                <Checkbox
-                    checked={selectedPapers.includes(paper.id!)}
-                    onChange={() => handleSelectPaper(paper.id!)}
-                    sx={{ mr: 2 }}
-                />
-                <Box sx={{ flexGrow: 1 }}>
-                    <Typography 
-                        variant="h6" 
-                        onClick={handleTitleClick}
-                        sx={{
-                            cursor: paper.url ? 'pointer' : 'default',
-                            '&:hover': {
-                                textDecoration: paper.url ? 'underline' : 'none',
-                            },
-                            color: paper.url ? 'primary.main' : 'text.primary',
-                        }}
-                    >
-                        {paper.title}
-                    </Typography>
-                    <Typography variant="body2">{paper.authors.join(', ')}</Typography>
-                    <Typography variant="body2">{paper.year} - {paper.venue}</Typography>
-                    {Array.isArray(paper.tags) && paper.tags.map(tag => (
-                        <Chip 
-                            key={tag} 
-                            label={tag} 
-                            size="small" 
-                            onDelete={() => handleRemoveTagFromPaper(paper.id!, tag)}
-                            style={{ margin: '2px' }} 
-                        />
-                    ))}
+            <Paper 
+                key={paper.id} 
+                elevation={2} 
+                style={{ 
+                    ...style, 
+                    display: 'flex', 
+                    flexDirection: 'column',
+                    padding: '10px',
+                    marginBottom: '10px',
+                    overflow: 'hidden'
+                }}
+            >
+                <Box sx={{ display: 'flex', alignItems: 'flex-start', mb: 1 }}>
+                    <Checkbox
+                        checked={selectedPapers.includes(paper.id!)}
+                        onChange={() => handleSelectPaper(paper.id!)}
+                        sx={{ mr: 2, mt: 0.5 }}
+                    />
+                    <Box sx={{ flexGrow: 1, overflow: 'hidden' }}>
+                        <Typography 
+                            variant="subtitle1" 
+                            onClick={handleTitleClick}
+                            sx={{
+                                cursor: paper.url ? 'pointer' : 'default',
+                                '&:hover': {
+                                    textDecoration: paper.url ? 'underline' : 'none',
+                                },
+                                color: paper.url ? 'primary.main' : 'text.primary',
+                                fontWeight: 'bold',
+                                overflow: 'hidden',
+                                textOverflow: 'ellipsis',
+                                whiteSpace: 'nowrap',
+                            }}
+                        >
+                            {paper.title}
+                        </Typography>
+                        <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', mt: 0.5, mb: 0.5 }}>
+                            <Typography variant="body2" sx={{ color: 'text.secondary', mr: 1 }}>
+                                {paper.year} - {paper.venue}
+                            </Typography>
+                            {Array.isArray(paper.tags) && paper.tags.map(tag => (
+                                <Chip 
+                                    key={tag} 
+                                    label={tag} 
+                                    size="small" 
+                                    onDelete={() => handleRemoveTagFromPaper(paper.id!, tag)}
+                                    style={{ margin: '2px' }} 
+                                />
+                            ))}
+                        </Box>
+                        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                            {paper.authors.join(', ')}
+                        </Typography>
+                    </Box>
                 </Box>
             </Paper>
         )
@@ -373,8 +424,24 @@ export default function PaperLibraryWindow(props: Props) {
     useEffect(() => {
         if (props.open) {
             refreshPapers();
+            refreshTags();
         }
     }, [props.open, refreshPapers]);
+
+    const refreshTags = async () => {
+        try {
+            const tags = await paperActions.getAllTags();
+            setAllTags(tags);
+        } catch (error) {
+            console.error('Error refreshing tags:', error);
+            setError(`Failed to refresh tags. Error: ${error instanceof Error ? error.message : String(error)}`);
+        }
+    };
+
+    useEffect(() => {
+        const options = paperConstants.venues.flatMap(venue => [venue.abbreviation, venue.fullName]);
+        setVenueOptions([...new Set(options)]);
+    }, []);
 
     return (
         <Dialog open={props.open} onClose={props.close} fullWidth maxWidth="md" classes={{ paper: 'h-4/5' }}>
@@ -422,12 +489,18 @@ export default function PaperLibraryWindow(props: Props) {
 
                         {/* Second Line */}
                         <Grid item xs={12} sm={4}>
-                            <TextField
-                                fullWidth
-                                label={t('Venue')}
+                            <Autocomplete
+                                freeSolo
+                                options={venueOptions}
                                 value={venueFilter}
-                                onChange={handleVenueFilter}
-                                placeholder={t('Enter venue name or abbreviation') || ''}
+                                onChange={handleVenueFilterChange}
+                                renderInput={(params) => (
+                                    <TextField
+                                        {...params}
+                                        label={t('Venue')}
+                                        placeholder={t('Enter venue name or abbreviation') || ''}
+                                    />
+                                )}
                             />
                         </Grid>
                         <Grid item xs={12} sm={5}>
@@ -470,7 +543,7 @@ export default function PaperLibraryWindow(props: Props) {
                     <List
                         height={400}
                         itemCount={displayedPapers.length}
-                        itemSize={100}
+                        itemSize={120}
                         width="100%"
                     >
                         {PaperRow}

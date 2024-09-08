@@ -43,6 +43,31 @@ function generateUniqueId(paper: Paper): string {
     return uniqueId;
 }
 
+function matchVenue(paperVenue: string, filterVenue: string): boolean {
+    const lowercasePaperVenue = paperVenue.toLowerCase();
+    const lowercaseFilterVenue = filterVenue.toLowerCase();
+
+    // Direct match (case-insensitive)
+    if (lowercasePaperVenue.includes(lowercaseFilterVenue)) {
+        return true;
+    }
+
+    // Check for abbreviation or full name match in paperConstants
+    const matchingVenue = paperConstants.venues.find(venue => 
+        venue.abbreviation.toLowerCase() === lowercaseFilterVenue ||
+        venue.fullName.toLowerCase().includes(lowercaseFilterVenue)
+    );
+
+    if (matchingVenue) {
+        return lowercasePaperVenue.includes(matchingVenue.abbreviation.toLowerCase()) ||
+               lowercasePaperVenue.includes(matchingVenue.fullName.toLowerCase());
+    }
+
+    // Check for partial matches
+    const filterWords = lowercaseFilterVenue.split(/\s+/);
+    return filterWords.every(word => lowercasePaperVenue.includes(word));
+}
+
 export const paperStorage = {
     async addPaper(paper: Paper) {
         const uniqueId = generateUniqueId(paper)
@@ -89,13 +114,18 @@ export const paperStorage = {
         ).toArray()
     },
 
-    async filterPapers({ year, venue }: { year?: number, venue?: string }) {
+    async filterPapers({ year, venue, tags }: { year?: number, venue?: string, tags?: string[] }) {
         let collection = db.papers.toCollection()
         if (year) {
             collection = collection.and(paper => paper.year === year)
         }
         if (venue) {
-            collection = collection.and(paper => paper.venue.toLowerCase().includes(venue.toLowerCase()))
+            collection = collection.and(paper => matchVenue(paper.venue, venue))
+        }
+        if (tags && tags.length > 0) {
+            collection = collection.filter(paper => 
+                paper.tags !== undefined && tags.every(tag => paper.tags!.includes(tag))
+            );
         }
         return collection.toArray()
     },
@@ -197,7 +227,8 @@ export const paperStorage = {
         if (searchQuery) {
             collection = collection.filter(paper => 
                 paper.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                (paper.abstract ?? '').toLowerCase().includes(searchQuery.toLowerCase())
+                (paper.abstract ?? '').toLowerCase().includes(searchQuery.toLowerCase()) ||
+                paper.authors.some(author => author.toLowerCase().includes(searchQuery.toLowerCase()))
             )
         }
 
@@ -211,9 +242,7 @@ export const paperStorage = {
         }
 
         if (venueFilter) {
-            collection = collection.filter(paper => 
-                paper.venue.toLowerCase().includes(venueFilter.toLowerCase())
-            )
+            collection = collection.filter(paper => matchVenue(paper.venue, venueFilter))
         }
 
         if (tagFilter && tagFilter.length > 0) {
@@ -228,7 +257,6 @@ export const paperStorage = {
             .limit(limit)
             .toArray()
 
-        // Ensure tags are initialized for all papers
         const papersWithTags = papers.map(paper => ({
             ...paper,
             tags: paper.tags || []
@@ -289,7 +317,45 @@ export const paperStorage = {
         }
 
         if (venueFilter) {
-            query = query.filter(paper => paper.venue.toLowerCase().includes(venueFilter.toLowerCase()))
+            query = query.filter(paper => matchVenue(paper.venue, venueFilter))
+        }
+
+        if (tagFilter.length > 0) {
+            query = query.filter(paper => 
+                paper.tags !== undefined && tagFilter.every(tag => paper.tags!.includes(tag))
+            )
+        }
+
+        const papers = await query.toArray()
+        return papers.map(paper => paper.id!)
+    },
+
+    async getAllFilteredPaperIds(
+        searchQuery: string,
+        yearFilter: { start: string, end: string },
+        venueFilter: string,
+        tagFilter: string[]
+    ): Promise<number[]> {
+        let query = db.papers.toCollection()
+
+        if (searchQuery) {
+            query = query.filter(paper => 
+                paper.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                paper.authors.some(author => author.toLowerCase().includes(searchQuery.toLowerCase())) ||
+                (paper.abstract ?? '').toLowerCase().includes(searchQuery.toLowerCase())
+            )
+        }
+
+        if (yearFilter.start) {
+            query = query.filter(paper => paper.year >= parseInt(yearFilter.start))
+        }
+
+        if (yearFilter.end) {
+            query = query.filter(paper => paper.year <= parseInt(yearFilter.end))
+        }
+
+        if (venueFilter) {
+            query = query.filter(paper => matchVenue(paper.venue, venueFilter))
         }
 
         if (tagFilter.length > 0) {

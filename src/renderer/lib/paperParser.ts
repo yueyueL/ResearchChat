@@ -36,11 +36,6 @@ export function parsePaper(rawData: RawPaperData): Partial<Paper> {
         paper.year = parseInt(paper.year as unknown as string, 10)
     }
 
-    // // Expand conference abbreviations if applicable
-    // if (paper.venue && paperConstants.conferenceAbbreviations[paper.venue as keyof typeof paperConstants.conferenceAbbreviations]) {
-    //     paper.venue = paperConstants.conferenceAbbreviations[paper.venue as keyof typeof paperConstants.conferenceAbbreviations]
-    // }
-
     return paper
 }
 

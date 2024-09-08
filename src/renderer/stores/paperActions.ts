@@ -33,8 +33,8 @@ export async function searchPapers(query: string) {
   return await paperStorage.searchPapers(query)
 }
 
-export async function filterPapers(filters: { year?: number, venue?: string }) {
-  return await paperStorage.filterPapers(filters)
+export async function filterPapers({ year, venue, tags }: { year?: number, venue?: string, tags?: string[] }): Promise<Paper[]> {
+  return await paperStorage.filterPapers({ year, venue, tags });
 }
 
 export async function importPapers(rawPapers: any[]): Promise<{ importedPapers: Paper[], newPapers: Paper[] }> {
@@ -63,7 +63,7 @@ export async function importPapers(rawPapers: any[]): Promise<{ importedPapers: 
         const updatedPaper = { 
           ...existingPaper, 
           ...paper, 
-          tags: [...new Set([...existingPaper.tags || [], ...paper.tags])]
+          tags: [...new Set([...(existingPaper.tags || []), ...(paper.tags || [])])]
         }
         await paperStorage.updatePaper(existingPaper.id!, updatedPaper)
         importedPapers.push(updatedPaper)
@@ -101,14 +101,14 @@ export async function clearAllPapers() {
   await paperStorage.clearAllPapers()
 }
 
-export async function fetchPapersPaginated(
+export const fetchPapersPaginated = async (
     page: number,
     limit: number,
     searchQuery: string,
     yearFilter: { start: string, end: string },
     venueFilter: string,
     tagFilter: string[]
-): Promise<{ papers: Paper[], total: number }> {
+) => {
     return await paperStorage.getPapersPaginated(page, limit, searchQuery, yearFilter, venueFilter, tagFilter)
 }
 
@@ -159,4 +159,17 @@ export async function getAllPaperIds(
     tagFilter: string[]
 ): Promise<number[]> {
     return await paperStorage.getAllPaperIds(searchQuery, yearFilter, venueFilter, tagFilter)
+}
+
+export async function getAllFilteredPaperIds(
+    searchQuery: string,
+    yearFilter: { start: string, end: string },
+    venueFilter: string,
+    tagFilter: string[]
+): Promise<number[]> {
+    return await paperStorage.getAllFilteredPaperIds(searchQuery, yearFilter, venueFilter, tagFilter)
+}
+
+export async function getPaper(id: number): Promise<Paper | undefined> {
+    return await paperStorage.getPaper(id);
 }

@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import { Typography, useTheme } from '@mui/material'
+import { Typography, useTheme, Button, Dialog, DialogTitle, DialogContent, DialogActions } from '@mui/material'
 import { SessionType, createMessage } from '../../shared/types'
 import { useTranslation } from 'react-i18next'
 import * as atoms from '../stores/atoms'
@@ -8,12 +8,13 @@ import * as sessionActions from '../stores/sessionActions'
 import {
     SendHorizontal,
     Settings2,
+    BookOpen, // New icon for paper selection
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import icon from '../static/icon.png'
 import { trackingEvent } from '@/packages/event'
 import MiniButton from './MiniButton'
-import _ from 'lodash'
+import PaperSelector from './PaperSelector' // Import the PaperSelector component
 
 export interface Props {
     currentSessionId: string
@@ -26,6 +27,7 @@ export default function InputBox(props: Props) {
     const { t } = useTranslation()
     const [messageInput, setMessageInput] = useState('')
     const inputRef = useRef<HTMLTextAreaElement | null>(null)
+    const [isPaperSelectorOpen, setIsPaperSelectorOpen] = useState(false)
 
     const handleSubmit = (needGenerating = true) => {
         if (messageInput.trim() === '') {
@@ -70,6 +72,11 @@ export default function InputBox(props: Props) {
 
     const [easterEgg, setEasterEgg] = useState(false)
 
+    const handlePaperInfoSelected = (paperInfo: string) => {
+        setMessageInput(prev => `${prev}\n\nSelected Paper Information:\n${paperInfo}`)
+        setIsPaperSelectorOpen(false)
+    }
+
     return (
         <div className='pl-2 pr-4'
             style={{
@@ -99,6 +106,17 @@ export default function InputBox(props: Props) {
                             tooltipPlacement='top'
                         >
                             <Settings2 size='22' strokeWidth={1} />
+                        </MiniButton>
+                        <MiniButton className='mr-2' style={{ color: theme.palette.text.primary }}
+                            onClick={() => setIsPaperSelectorOpen(true)}
+                            tooltipTitle={
+                                <div className='text-center inline-block'>
+                                    <span>{t('Select papers from your library')}</span>
+                                </div>
+                            }
+                            tooltipPlacement='top'
+                        >
+                            <BookOpen size='22' strokeWidth={1} />
                         </MiniButton>
                     </div>
                     <div className='flex flex-row items-center'>
@@ -142,6 +160,15 @@ export default function InputBox(props: Props) {
                     </div>
                 </div>
             </div>
+            <Dialog open={isPaperSelectorOpen} onClose={() => setIsPaperSelectorOpen(false)}>
+                <DialogTitle>{t('Select Papers')}</DialogTitle>
+                <DialogContent>
+                    <PaperSelector onPaperInfoSelected={handlePaperInfoSelected} />
+                </DialogContent>
+                <DialogActions>
+                    <Button onClick={() => setIsPaperSelectorOpen(false)}>{t('Cancel')}</Button>
+                </DialogActions>
+            </Dialog>
         </div>
     )
 }

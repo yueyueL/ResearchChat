@@ -27,9 +27,9 @@ import {
     CircularProgress,
 } from '@mui/material'
 import { useTranslation } from 'react-i18next'
-import SearchIcon from '@mui/icons-material/Search'
 import LinkIcon from '@mui/icons-material/Link'
 import FileUploadIcon from '@mui/icons-material/FileUpload'
+import ArticleIcon from '@mui/icons-material/Article'
 import { Paper as PaperType } from '../../shared/types'
 import LibraryStats from '../components/LibraryStats'
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'
@@ -37,6 +37,7 @@ import paperConstants from '../../shared/paperConstants.json'
 import { validateDblpLink, extractPapersFromDblpPage } from '../lib/dblpUtils'
 import { SelectChangeEvent } from '@mui/material/Select';
 import ImportPapersDialog from '../components/ImportPapersDialog'
+import ArxivSearch from '../components/ArxivSearch'
 
 interface Props {
     open: boolean
@@ -242,7 +243,7 @@ export default function PaperCollectionWindow(props: Props) {
         }
     };
 
-    const handleImportComplete = async (importedCount: number, newCount: number) => {
+    const handleImportComplete = async (importedCount: number, newCount: number, newTags: string[]) => {
         setUploadStatus(t('Imported {{total}} papers ({{new}} new)', { total: importedCount, new: newCount }) || '');
         setSelectedFile(null);
         setImportedPapers([]);
@@ -251,13 +252,18 @@ export default function PaperCollectionWindow(props: Props) {
         const papers = await paperActions.fetchAllPapers();
         setPapers(papers);
         const tags = await paperActions.getAllTags();
-        setAllTags(tags.map(tag => tag.name));
+        setAllTags(prevTags => [...new Set([...prevTags, ...newTags.map(tag => tag)])]);
         setStatsRefreshTrigger(prev => prev + 1);
         setTimeout(() => {
             setCrawlProgress(null);
             setDblpLink('');
         }, 2000);
     }
+
+    const handleArxivSearchComplete = (papers: PaperType[]) => {
+        setImportedPapers(papers);
+        setShowImportDialog(true);
+    };
 
     return (
         <Dialog open={props.open} onClose={props.close} fullWidth maxWidth="md">
@@ -267,31 +273,13 @@ export default function PaperCollectionWindow(props: Props) {
 
                 <Paper elevation={3} sx={{ mb: 3 }}>
                     <Tabs value={activeTab} onChange={handleTabChange} variant="fullWidth">
-                        <Tab icon={<SearchIcon />} label={t('Search Semantic Scholar')} />
                         <Tab icon={<LinkIcon />} label={t('Add by DBLP Link')} />
                         <Tab icon={<FileUploadIcon />} label={t('Upload File')} />
+                        <Tab icon={<ArticleIcon />} label={t('Search arXiv')} />
                     </Tabs>
 
                     <Box sx={{ p: 3 }}>
                         {activeTab === 0 && (
-                            <Box>
-                                <TextField
-                                    fullWidth
-                                    variant="outlined"
-                                    placeholder={t('Search papers...') || ''}
-                                    value={searchQuery}
-                                    onChange={(e) => setSearchQuery(e.target.value)}
-                                    InputProps={{
-                                        endAdornment: (
-                                            <IconButton onClick={handleSearch}>
-                                                <SearchIcon />
-                                            </IconButton>
-                                        ),
-                                    }}
-                                />
-                            </Box>
-                        )}
-                        {activeTab === 1 && (
                             <Box>
                                 <Typography variant="body2" sx={{ mb: 2 }}>
                                     {t('You can filter venues using the options above or directly paste a DBLP link from the DBLP website.')}
@@ -410,7 +398,7 @@ export default function PaperCollectionWindow(props: Props) {
                                 )}
                             </Box>
                         )}
-                        {activeTab === 2 && (
+                        {activeTab === 1 && (
                             <Box sx={{ textAlign: 'center' }}>
                                 <Typography variant="body2" sx={{ mb: 2 }}>
                                     {t('Export paper from Zotero: Open Zotero -> Select paper -> Right-click -> Choose \'Export Items\' -> Select \'CSL JSON\' format')}
@@ -438,6 +426,11 @@ export default function PaperCollectionWindow(props: Props) {
                                     </Button>
                                 )}
                             </Box>
+                        )}
+                        {activeTab === 2 && (
+                            <ArxivSearch
+                                onSearchComplete={handleArxivSearchComplete}
+                            />
                         )}
                     </Box>
                 </Paper>

@@ -20,7 +20,7 @@ interface Props {
     onClose: () => void
     papers: Paper[]
     allTags: string[]
-    onImportComplete: (importedCount: number, newCount: number) => void
+    onImportComplete: (importedCount: number, newCount: number, newTags: string[]) => void
 }
 
 export default function ImportPapersDialog({ open, onClose, papers, allTags, onImportComplete }: Props) {
@@ -38,7 +38,7 @@ export default function ImportPapersDialog({ open, onClose, papers, allTags, onI
                     selectedTags
                 )
             }
-            onImportComplete(importedPapers.length, newPapers.length)
+            onImportComplete(importedPapers.length, newPapers.length, selectedTags)
             onClose()
         } catch (error) {
             console.error('Error importing papers:', error)
@@ -70,6 +70,7 @@ export default function ImportPapersDialog({ open, onClose, papers, allTags, onI
                             variant="outlined"
                             label={t('Select or create tags')}
                             placeholder={t('Type to add new tag') || ''}
+                            helperText={t('Press "Enter" to confirm creating a new tag')}
                         />
                     )}
                     value={selectedTags}
