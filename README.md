@@ -19,7 +19,7 @@
 
 ## About ChatResearch
 
-ChatResearch is an AI-powered desktop application designed to assist journal students and researchers in their academic pursuits. It's currently in its preview version, offering a glimpse into the future of AI-assisted research.
+ChatResearch is an AI-powered desktop application designed to assist early-career research students and exprienced researchers in their academic pursuits. It's currently in its preview version, offering a glimpse into the future of AI-assisted research.
 
 ### Why ChatResearch?
 
