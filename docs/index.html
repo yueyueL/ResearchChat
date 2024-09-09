@@ -11,9 +11,6 @@
         .navbar-brand img { margin-right: 10px; }
         h1 { color: #007bff; }
     </style>
-    <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=QotcFwm7OxVBf_SzRH7WSweafSHYEeYLIPZX-H625Js&cl=ffffff&w=a"></script>
-
-
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -364,12 +361,24 @@
     </section>
 
     <footer class="bg-light py-3 mt-5">
-        <div class="container text-center">
-            <p>&copy; 2024 ChatResearch. All rights reserved.</p>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p>&copy; 2024 ChatResearch. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <div id="clustrmaps-widget" style="width: 200px; height: 100px; display: inline-block;"></div>
+                </div>
+            </div>
         </div>
     </footer>
-
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=QotcFwm7OxVBf_SzRH7WSweafSHYEeYLIPZX-H625Js"></script>
+    <script>
+        var el = document.getElementById('clustrmaps-widget');
+        var globe = Clstr.Globe(el);
+    </script>
 
 </body>
 </html>
