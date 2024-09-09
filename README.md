@@ -6,7 +6,7 @@
 
 <h1 align="center">
 <img src='./docs/pic/icon.png' width='30'>
-<span>ChatResearch</span>
+<span><a href="https://yueyuel.github.io/ResearchChat/">ChatResearch</a></span>
 </h1>
 
 <p align="center">
@@ -19,7 +19,7 @@
 
 ## About ChatResearch
 
-ChatResearch is an AI-powered desktop application designed to assist early-career research students and exprienced researchers in their academic pursuits. It's currently in its preview version, offering a glimpse into the future of AI-assisted research.
+ChatResearch is an AI-powered desktop application designed to assist early-career research students and exprienced researchers in their academic pursuits. It's currently in its preview version, offering a glimpse into the future of AI-assisted research. You can access this [link](https://yueyuel.github.io/ResearchChat/) for more information. 
 
 ### Why ChatResearch?
 

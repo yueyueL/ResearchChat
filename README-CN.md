@@ -5,7 +5,7 @@
 
 <h1 align="center">
 <img src='./docs/pic/icon.png' width='30'>
-<span>ChatResearch</span>
+<span><a href="https://yueyuel.github.io/ResearchChat/">ChatResearch</a></span>
 </h1>
 
 <p align="center">
