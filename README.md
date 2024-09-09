@@ -5,7 +5,7 @@
 
 
 <h1 align="center">
-<img src='./doc/icon.png' width='30'>
+<img src='./docs/pic/icon.png' width='30'>
 <span>ChatResearch</span>
 </h1>
 
@@ -14,8 +14,8 @@
 </p>
 
 
-<a href="./doc/demo1.png"><img src="./doc/demo1.png" width="400"/></a>
-<a href="./doc/demo2.png"><img src="./doc/demo2.png" width="400"/></a>
+<a href="./docs/pic/demo1.png"><img src="./docs/pic/demo1.png" width="400"/></a>
+<a href="./docs/pic/demo2.png"><img src="./docs/pic/demo2.png" width="400"/></a>
 
 ## About ChatResearch
 
@@ -65,28 +65,28 @@ As a researcher, I often found myself overwhelmed by the sheer volume of papers 
   <tr style="text-align: center">
     <td align="center" valign="middle">
       <a href='https://github.com/yueyueL/ResearchChat/releases/download/v0.10.0/ChatResearch-0.10.0-Setup.exe'>
-        <img src='./doc/windows.png' style="height:24px; width: 24px" />
+        <img src='./docs/pic/windows.png' style="height:24px; width: 24px" />
         <br />
         <b>Setup.exe</b>
       </a>
     </td>
     <td align="center" valign="middle">
       <a href='https://github.com/yueyueL/ResearchChat/releases/download/v0.10.0/ChatResearch-0.10.0.dmg'>
-        <img src='./doc/mac.png' style="height:24px; width: 24px" />
+        <img src='./docs/pic/mac.png' style="height:24px; width: 24px" />
         <br />
         <b>Intel</b>
       </a>
     </td>
     <td align="center" valign="middle">
       <a href='https://github.com/yueyueL/ResearchChat/releases/download/v0.10.0/ChatResearch-0.10.0-arm64.dmg'>
-        <img src='./doc/mac.png' style="height:24px; width: 24px" />
+        <img src='./docs/pic/mac.png' style="height:24px; width: 24px" />
         <br />
         <b>M1/M2</b>
       </a>
     </td>
     <td align="center" valign="middle">
       <a href='https://github.com/yueyueL/ResearchChat/releases/download/v0.10.0/ChatResearch-0.10.0-arm64.AppImage'>
-        <img src='./doc/linux.png' style="height:24px; width: 24px" />
+        <img src='./docs/pic/linux.png' style="height:24px; width: 24px" />
         <br />
         <b>AppImage</b>
       </a>
