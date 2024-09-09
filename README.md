@@ -47,6 +47,77 @@ ChatResearch is designed to answer these questions and more, leveraging the powe
 
 As a researcher, I often found myself overwhelmed by the sheer volume of papers and the rapid pace of advancements in my field. I created ChatResearch to address these challenges, providing a tool that could quickly parse through information, offer insights, and help researchers stay on top of their fields more efficiently.
 
+
+## Download for Desktop
+
+<table style="width: 100%">
+  <tr>
+    <td width="25%" align="center">
+      <b>Windows</b>
+    </td>
+    <td width="25%" align="center" colspan="2">
+      <b>MacOS</b>
+    </td>
+    <td width="25%" align="center">
+      <b>Linux</b>
+    </td>
+  </tr>
+  <tr style="text-align: center">
+    <td align="center" valign="middle">
+      <a href='https://github.com/yueyueL/ResearchChat/releases/download/v0.10.0/ChatResearch-0.10.0-Setup.exe'>
+        <img src='./doc/windows.png' style="height:24px; width: 24px" />
+        <br />
+        <b>Setup.exe</b>
+      </a>
+    </td>
+    <td align="center" valign="middle">
+      <a href='https://github.com/yueyueL/ResearchChat/releases/download/v0.10.0/ChatResearch-0.10.0.dmg'>
+        <img src='./doc/mac.png' style="height:24px; width: 24px" />
+        <br />
+        <b>Intel</b>
+      </a>
+    </td>
+    <td align="center" valign="middle">
+      <a href='https://github.com/yueyueL/ResearchChat/releases/download/v0.10.0/ChatResearch-0.10.0-arm64.dmg'>
+        <img src='./doc/mac.png' style="height:24px; width: 24px" />
+        <br />
+        <b>M1/M2</b>
+      </a>
+    </td>
+    <td align="center" valign="middle">
+      <a href='https://github.com/yueyueL/ResearchChat/releases/download/v0.10.0/ChatResearch-0.10.0-arm64.AppImage'>
+        <img src='./doc/linux.png' style="height:24px; width: 24px" />
+        <br />
+        <b>AppImage</b>
+      </a>
+    </td>
+  </tr>
+</table>
+
+## Download Instructions
+You can download ChatResearch from the [official GitHub releases page](https://github.com/yueyueL/ResearchChat/releases/).
+
+### On Windows
+
+- Download the *-win.exe file from the [releases page](https://github.com/yueyueL/ResearchChat/releases/).
+- Run the downloaded file to proceed with the setup.
+
+### On macOS
+
+- For M1, M2, and other Apple Silicon Macs, download the arm64.dmg file.
+- For Intel-based Macs, download the regular .dmg file.
+- When opening the application for the first time, macOS may show a security warning about installing third-party software. To allow installation, follow the instructions in [this blog post](https://helpcenter.trendmicro.com/en-us/article/tmka-20627).
+
+### On Linux
+- Debian-based Distributions: Download the .deb file from the releases page.
+- Other Distributions: Download the .AppImage file from the releases page.
+
+
+## Privacy
+All chat history, settings and paper library data are saved locally on your computer.
+
+
+
 ## How to Contribute
 
 We welcome contributions of all forms:

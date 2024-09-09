@@ -45,6 +45,73 @@ ChatResearch 旨在回答这些问题，并利用AI的力量在几分钟内（�
 
 作为一名研究人员，我经常被大量的论文和领域内快速的进展所淹没。我创建ChatResearch是为了应对这些挑战，提供一个工具，可以快速解析信息，提供见解，并帮助研究人员更高效地掌握他们的研究领域。
 
+## 下载桌面版
+
+<table style="width: 100%">
+  <tr>
+    <td width="25%" align="center">
+      <b>Windows</b>
+    </td>
+    <td width="25%" align="center" colspan="2">
+      <b>MacOS</b>
+    </td>
+    <td width="25%" align="center">
+      <b>Linux</b>
+    </td>
+  </tr>
+  <tr style="text-align: center">
+    <td align="center" valign="middle">
+      <a href='https://github.com/yueyueL/ResearchChat/releases/download/v0.10.0/ChatResearch-0.10.0-Setup.exe'>
+        <img src='./doc/windows.png' style="height:24px; width: 24px" />
+        <br />
+        <b>Setup.exe</b>
+      </a>
+    </td>
+    <td align="center" valign="middle">
+      <a href='https://github.com/yueyueL/ResearchChat/releases/download/v0.10.0/ChatResearch-0.10.0.dmg'>
+        <img src='./doc/mac.png' style="height:24px; width: 24px" />
+        <br />
+        <b>Intel</b>
+      </a>
+    </td>
+    <td align="center" valign="middle">
+      <a href='https://github.com/yueyueL/ResearchChat/releases/download/v0.10.0/ChatResearch-0.10.0-arm64.dmg'>
+        <img src='./doc/mac.png' style="height:24px; width: 24px" />
+        <br />
+        <b>M1/M2</b>
+      </a>
+    </td>
+    <td align="center" valign="middle">
+      <a href='https://github.com/yueyueL/ResearchChat/releases/download/v0.10.0/ChatResearch-0.10.0-arm64.AppImage'>
+        <img src='./doc/linux.png' style="height:24px; width: 24px" />
+        <br />
+        <b>AppImage</b>
+      </a>
+    </td>
+  </tr>
+</table>
+
+## 下载说明
+您可以从[官方GitHub发布页面](https://github.com/yueyueL/ResearchChat/releases/)下载ChatResearch。
+
+### Windows系统
+
+- 从[发布页面](https://github.com/yueyueL/ResearchChat/releases/)下载 *-win.exe 文件。
+- 运行下载的文件以进行安装。
+
+### macOS系统
+
+- 对于M1、M2和其他Apple Silicon Mac，下载arm64.dmg文件。
+- 对于基于Intel的Mac，下载常规.dmg文件。
+- 首次打开应用程序时，macOS可能会显示有关安装第三方软件的安全警告。要允许安装，请按照[此博客文章](https://helpcenter.trendmicro.com/en-us/article/tmka-20627)中的说明操作。
+
+### Linux系统
+- 基于Debian的发行版：从发布页面下载.deb文件。
+- 其他发行版：从发布页面下载.AppImage文件。
+
+## 隐私
+所有聊天历史记录、设置和论文库数据都保存在您的计算机本地。
+
 ## 如何贡献
 
 我们欢迎各种形式的贡献：
