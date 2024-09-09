@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features - ChatResearch</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="css/custom.css" rel="stylesheet">
+    <style>
+        #feature-nav {
+            position: sticky;
+            top: 20px;
+        }
+        #feature-nav .nav-link {
+            color: #495057;
+            border-left: 2px solid transparent;
+            padding: 0.5rem 1rem;
+        }
+        #feature-nav .nav-link:hover,
+        #feature-nav .nav-link.active {
+            color: #007bff;
+            border-left-color: #007bff;
+            background-color: #f8f9fa;
+        }
+        .feature-section {
+            padding-top: 60px;
+            margin-top: -60px;
+        }
+        .feature-image {
+            border: 1px solid #dee2e6;
+            border-radius: 0.25rem;
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        }
+        .section-title {
+            background-color: #f8f9fa;
+            padding: 10px 15px;
+            border-radius: 5px;
+            color: #007bff;
+            font-weight: bold;
+        }
+        h3 {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #495057;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="pic/icon.png" alt="ChatResearch Logo" width="30" height="30" class="d-inline-block align-top">
+                ChatResearch
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="features.html">Features</a>
+                    </li>
+                </ul>
+                <div class="navbar-nav">
+                    <a class="nav-link" href="https://github.com/yueyueL/ResearchChat" target="_blank" rel="noopener noreferrer">
+                        <i class="bi bi-github" style="font-size: 1.2rem;"></i>
+                    </a>
+                    <a class="nav-link" href="https://yueyuel.github.io" target="_blank" rel="noopener noreferrer">
+                        <i class="bi bi-globe" style="font-size: 1.2rem;"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    
+    <div class="container mt-5">
+        <h1 class="text-center mb-5">ChatResearch Features Guide</h1>
+    
+        <div class="row mb-5">
+            <div class="col-lg-3">
+                <nav id="feature-nav" class="sticky-top pt-4">
+                    <ul class="nav flex-column">
+                        <li class="nav-item"><a class="nav-link" href="#ai-models">AI Models</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#dblp-collection">DBLP Collection</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#zotero-import">Zotero Import</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#arxiv-search">arXiv Search</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#paper-library">Paper Library</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#my-copilots">My Copilots</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#research-chat">Research Chat</a></li>
+                        <!-- Add more nav items for other features -->
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-lg-9">
+                <section id="ai-models" class="feature-section mb-5">
+                    <h2 class="section-title mb-4">AI Models Integration</h2>
+                    <div class="row">
+                        <div class="col-md-7">
+                            <p class="lead">ChatResearch supports multiple AI models to power your research assistant. Here's how to set them up:</p>
+                            
+                            <h3 class="mt-4">Supported AI Providers</h3>
+                            <ul class="list-unstyled">
+                                <li class="mb-3">
+                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                    <strong>OpenAI:</strong> Access GPT-4, GPT-4o, and GPT-3.5
+                                    <br>
+                                    <small class="text-muted">Get your API key from <a href="https://help.openai.com/en/articles/4936850-where-do-i-find-my-openai-api-key" target="_blank" rel="noopener noreferrer">OpenAI's website</a></small>
+                                </li>
+                                <li class="mb-3">
+                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                    <strong>SiliconCloud:</strong> Utilize Deepseek, Qwen, Chatglm, LLama, and Mistralai
+                                    <br>
+                                    <small class="text-muted">Obtain your API key from <a href="https://cloud.siliconflow.cn" target="_blank" rel="noopener noreferrer">SiliconCloud's portal</a></small>
+                                </li>
+                            </ul>
+    
+                            <h3 class="mt-4">Setting Up Your API Key</h3>
+                            <ol>
+                                <li>Open ChatResearch and go to the Settings menu.</li>
+                                <li>Select "Models" from the settings block.</li>
+                                <li>Choose your preferred AI provider (OpenAI or SiliconCloud, with future support for more providers).</li>
+                                <li>Enter your API key in the designated field.</li>
+                                <li>Adjust settings such as temperature, maximum message context, and top probability.</li>
+                                <li>Click "Save" to apply your settings.</li>
+                            </ol>
+    
+                        </div>
+                        <div class="col-md-5">
+                            <img src="pic/features/ai-models-setup.jpg" alt="AI Models Setup" class="img-fluid rounded feature-image mt-4">
+                            <p class="text-center mt-2"><em>AI Models setup interface in ChatResearch</em></p>
+                        </div>
+                    </div>
+                </section>
+
+
+                <section id="dblp-collection" class="feature-section mb-5">
+                    <h2 class="section-title mb-4">Collect Papers from DBLP</h2>
+                    <div class="row">
+                        <div class="col-md-7">
+                            <p class="lead">
+                                DBLP (Digital Bibliography & Library Project) is a comprehensive bibliographic database for computer science literature. 
+                                You can access DBLP at <a href="https://dblp.org/" target="_blank" rel="noopener noreferrer">https://dblp.org/</a>. 
+                                This feature allows you to collect papers from specific venues using DBLP links.
+                            </p>
+                            
+                            <h3 class="mt-4">How to Collect Papers</h3>
+                            <ol class="list-group list-group-numbered">
+                                <li class="list-group-item">Input a DBLP link for a specific venue or use our guided selection process</li>
+                                <li class="list-group-item">Choose your research domain (e.g., AI, Security, Database)</li>
+                                <li class="list-group-item">Filter by conference level using CCF rankings</li>
+                                <li class="list-group-item">Select venue type (journal or conference)</li>
+                                <li class="list-group-item">Choose the venue name and year/volume</li>
+                                <li class="list-group-item">Verify the generated DBLP URL</li>
+                                <li class="list-group-item">Import papers and organize with tags</li>
+                            </ol>
+    
+                            <p class="mt-4">
+                                The system generates DBLP links for specific conferences and journals. For example:
+                            </p>
+                            <ul>
+                                <li>For The IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), a link might look like: "https://dblp.org/db/conf/cvpr/cvpr2023.html"</li>
+                                <li>For IEEE Transactions on Pattern Analysis and Machine Intelligence, a link might be: "https://dblp.org/db/journals/pami/pami22.html"</li>
+                            </ul>
+                            <p>
+                                Always verify the URL's correctness before crawling, as DBLP's structure may vary for different venues.
+                            </p>
+                        </div>
+                        <div class="col-md-5">
+                            <img src="pic/features/dblp-collection-1.png" alt="DBLP Collection Interface" class="img-fluid rounded feature-image mt-4 mb-4">
+                            <p class="text-center mt-2 mb-4"><em>DBLP Collection Interface in ChatResearch</em></p>
+                            
+                            <img src="pic/features/dblp-collection-2.png" alt="Paper Import and Tagging" class="img-fluid rounded feature-image">
+                            <p class="text-center mt-2"><em>Paper Import and Tagging Process</em></p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="zotero-import" class="feature-section mb-5">
+                    <h2 class="section-title mb-4">Import Papers from Zotero</h2>
+                    <div class="row">
+                        <div class="col-md-7">
+                            <p class="lead">
+                                ChatResearch allows you to seamlessly import your paper collection from Zotero, a popular reference management software. This feature enables you to quickly populate your ChatResearch library with papers you've already organized in Zotero.
+                            </p>
+                            
+                            <h3 class="mt-4">How to Import Papers from Zotero</h3>
+                            <ol class="list-group list-group-numbered">
+                                <li class="list-group-item">Open Zotero on your computer</li>
+                                <li class="list-group-item">Select the papers you want to export</li>
+                                <li class="list-group-item">Right-click on the selected papers</li>
+                                <li class="list-group-item">Choose 'Export Items' from the context menu</li>
+                                <li class="list-group-item">In the export dialog, select 'CSL JSON' as the export format</li>
+                                <li class="list-group-item">Save the exported JSON file to your computer</li>
+                                <li class="list-group-item">In ChatResearch, click the 'Upload JSON' button</li>
+                                <li class="list-group-item">Select the saved JSON file from your computer</li>
+                                <li class="list-group-item">Import the papers and organize them with tags in ChatResearch</li>
+                            </ol>
+                
+                            <p class="mt-4">
+                                This process allows you to quickly transfer your curated paper collection from Zotero to ChatResearch, maintaining your existing organization and making your research materials immediately accessible for AI-powered analysis and chat interactions.
+                            </p>
+                        </div>
+                        <div class="col-md-5">
+                            <img src="pic/features/zotero-import.png" alt="Zotero Import Process" class="img-fluid rounded feature-image mt-4">
+                            <p class="text-center mt-2"><em>Importing papers from Zotero to ChatResearch</em></p>
+                        </div>
+                    </div>
+                </section>
+
+
+                <section id="arxiv-search" class="feature-section mb-5">
+                    <h2 class="section-title mb-4">Search and Import Papers from arXiv</h2>
+                    <div class="row">
+                        <div class="col-md-7">
+                            <p class="lead">
+                                arXiv is a free distribution service and an open-access archive for scholarly articles in various fields, including physics, mathematics, computer science, and more. ChatResearch allows you to search and import papers directly from arXiv, keeping you up-to-date with the latest research in your field.
+                            </p>
+                            
+                            <h3 class="mt-4">How to Search and Import Papers</h3>
+                            <ol class="list-group list-group-numbered">
+                                <li class="list-group-item">Write your own query based on the <a href="https://info.arxiv.org/help/api/user-manual.html#_query_interface" target="_blank">arXiv API User Manual</a></li>
+                                <li class="list-group-item">Or simply enter keywords and set a date range for your search</li>
+                                <li class="list-group-item">Alternatively, browse recent papers by category (e.g., Machine Learning papers from the last 7 days)</li>
+
+                                <li class="list-group-item">Organize the imported papers with tags for easy retrieval</li>
+                            </ol>
+                
+                            <div class="alert alert-info mt-4" role="alert">
+                                <i class="bi bi-info-circle-fill me-2"></i>
+                                <strong>Tip:</strong> Use the category-based search to quickly find the most recent papers in your field without crafting complex queries.
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <img src="pic/features/arxiv-search.png" alt="arXiv Search Interface" class="img-fluid rounded feature-image mt-4">
+                            <p class="text-center mt-2"><em>arXiv Search and Import Interface in ChatResearch</em></p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="paper-library" class="feature-section mb-5">
+                    <h2 class="section-title mb-4">Paper Library</h2>
+                    <div class="row">
+                        <div class="col-md-7">
+                            <p class="lead">
+                                In the side menu, you can access your paper library. It shows the total number of papers, total tags you have, and the size of the library.
+                            </p>
+                            
+                            <h3 class="mt-4">Paper Management</h3>
+                            <ul class="list-unstyled">
+                                <li class="mb-3">
+                                    <i class="bi bi-search text-primary me-2"></i>
+                                    <strong>Search Papers:</strong> Search papers by keywords.
+                                </li>
+                                <li class="mb-3">
+                                    <i class="bi bi-filter text-primary me-2"></i>
+                                    <strong>Filter Papers:</strong> Filter papers by year, by venue, and by tags.
+                                </li>
+                                <li class="mb-3">
+                                    <i class="bi bi-file-earmark-text text-primary me-2"></i>
+                                    <strong>Paper Details:</strong> View detailed information about each paper.
+                                </li>
+                                <li class="mb-3">
+                                    <i class="bi bi-tags text-primary me-2"></i>
+                                    <strong>Tag Management:</strong> Select papers to add to an existing tag or create a new tag. You can also delete or add tags.
+                                </li>
+                                <li class="mb-3">
+                                    <i class="bi bi-file-earmark-arrow-down text-primary me-2"></i>
+                                    <strong>Export Papers:</strong> Export papers in TXT and JSON formats, or copy to clipboard for usage.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-5">
+                            <img src="pic/features/paper-library.png" alt="Paper Library Interface" class="img-fluid rounded feature-image mt-4 mb-4">
+                            <p class="text-center mt-2 mb-4"><em>Paper Library Interface in ChatResearch</em></p>
+                            
+                            <img src="pic/features/paper-export.png" alt="Paper Export Options" class="img-fluid rounded feature-image">
+                            <p class="text-center mt-2"><em>Paper Export Options in ChatResearch</em></p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="my-copilots" class="feature-section mb-5">
+                    <h2 class="section-title mb-4">My Copilots</h2>
+                    <div class="row">
+                        <div class="col-md-7">
+                            <p class="lead">
+                                In the side menu, choose "My Copilots". The "My Copilots" feature allows you to access and create specialized AI assistants tailored for various research scenarios. These copilots come with pre-configured prompts to enhance your research experience.
+                            </p>
+                            
+                            <h3 class="mt-4">Copilot Management</h3>
+                            <ul class="list-unstyled">
+                                <li class="mb-3">
+                                    <i class="bi bi-robot text-primary me-2"></i>
+                                    <strong>Default Copilot:</strong> View and use the default copilot with the default prompt.
+                                </li>
+                                <li class="mb-3">
+                                    <i class="bi bi-journal-text text-primary me-2"></i>
+                                    <strong>Research Copilots:</strong> Use copilots like "arXiv Scholar" and "Venue Navigator" for specific research scenarios.
+                                </li>
+                                <li class="mb-3">
+                                    <i class="bi bi-plus-circle text-primary me-2"></i>
+                                    <strong>Create New Copilot:</strong> Create and store new copilots with custom system prompts for future usage.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-5">
+                            <img src="pic/features/my-copilots.png" alt="My Copilots Interface" class="img-fluid rounded feature-image mt-4 mb-4">
+                            <p class="text-center mt-2 mb-4"><em>My Copilots Interface in ChatResearch</em></p>
+                        
+                        </div>
+                    </div>
+                </section>
+
+
+                <section id="research-chat" class="feature-section mb-5">
+                    <h2 class="section-title mb-4">Research Chat</h2>
+                    <div class="row">
+                        <div class="col-md-7">
+                            <p class="lead">
+                                The Research Chat feature allows you to engage in AI-powered discussions about your research papers. You can select specific papers, choose what information to include, and interact with your chosen copilot for insightful conversations.
+                            </p>
+                            
+                            <h3 class="mt-4">Starting a Research Chat</h3>
+                            <ol class="list-group list-group-numbered">
+                                <li class="list-group-item">On the main page, select a copilot or start a new chat</li>
+                                <li class="list-group-item">Choose papers from your library to discuss</li>
+                                <li class="list-group-item">Filter papers by specific tags if needed</li>
+                                <li class="list-group-item">Select which paper information to include:
+                                    <ul>
+                                        <li>Title</li>
+                                        <li>Authors</li>
+                                        <li>Venue</li>
+                                        <li>Abstract</li>
+                                        <li>Published Year</li>
+                                    </ul>
+                                </li>
+                                <li class="list-group-item">Add selected papers to your chat</li>
+                                <li class="list-group-item">Begin your research discussion with the AI</li>
+                            </ol>
+                
+                            <h3 class="mt-4">Exporting Chat Information</h3>
+                            <p>
+                                You can export paper information to your clipboard for use outside of ChatResearch. This is particularly useful if you're a paid user of services like ChatGPT or Claude and want to continue your research discussions there.
+                            </p>
+                
+                            <div class="alert alert-info mt-4" role="alert">
+                                <i class="bi bi-lightbulb-fill me-2"></i>
+                                <strong>Tip:</strong> Use different copilots for various aspects of your research to get specialized insights and recommendations.
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <img src="pic/features/research-chat-1.png" alt="Research Chat Interface" class="img-fluid rounded feature-image mt-4 mb-4">
+                            <p class="text-center mt-2 mb-4"><em>Selecting Papers and Information for Chat</em></p>
+                            
+                            <img src="pic/features/research-chat-2.png" alt="Paper Selection for Chat" class="img-fluid rounded feature-image">
+                            <p class="text-center mt-2"><em>Example of Research Chat</em></p>
+                        </div>
+                    </div>
+                </section>
+                <!-- Add more sections for other features -->
+    
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Add smooth scrolling and active state to navigation
+        document.querySelectorAll('#feature-nav .nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                let section = document.querySelector(this.getAttribute('href'));
+                window.scrollTo({
+                    top: section.offsetTop - 60,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    
+        // Update active state on scroll
+        window.addEventListener('scroll', function() {
+            let fromTop = window.scrollY + 62;
+            document.querySelectorAll('.feature-section').forEach(section => {
+                if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
+                    document.querySelector('#feature-nav .nav-link[href="#' + section.id + '"]').classList.add('active');
+                } else {
+                    document.querySelector('#feature-nav .nav-link[href="#' + section.id + '"]').classList.remove('active');
+                }
+            });
+        });
+    </script>
+
+    <footer class="bg-light py-3 mt-5">
+        <div class="container text-center">
+            <p>&copy; 2024 ChatResearch. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

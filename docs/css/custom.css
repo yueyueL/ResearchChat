@@ -1,0 +1,21 @@
+/* Add any custom styles here */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar-brand img {
+    margin-right: 10px;
+}
+
+h1 {
+    color: #007bff;
+}
+
+.navbar-nav .nav-link i {
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover i {
+    opacity: 1;
+}
