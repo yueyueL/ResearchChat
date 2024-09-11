@@ -41,6 +41,15 @@ ChatResearch 旨在回答这些问题，并利用AI的力量在几分钟内（�
 - **多语言支持**：使用您偏好的语言进行交流。
 - **跨平台可用性**：可在Windows、Mac和Linux上使用。
 
+## 未来版本
+
+我将不断努力增强 ChatResearch 的功能和改进。以下是您可以在未来版本中期待的一些令人兴奋的更新：
+
+- **新模型的 AI 支持**：集成 Claude、Gemini、Groq 和 Cohence 等先进的 AI 模型。
+- **扩展的论文收集**：增强的论文爬虫支持 Google Scholar、Semantic Scholar、Scopus、PubMed 和 Crossref，以提供更全面的论文收集。
+
+请继续关注这些更新及更多内容，因为我致力于将 ChatResearch 打造成终极的 AI 驱动的学术研究助手。
+
 ## 为什么我创建了 ChatResearch
 
 作为一名研究人员，我经常被大量的论文和领域内快速的进展所淹没。我创建ChatResearch是为了应对这些挑战，提供一个工具，可以快速解析信息，提供见解，并帮助研究人员更高效地掌握他们的研究领域。

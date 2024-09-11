@@ -43,6 +43,16 @@ ChatResearch is designed to answer these questions and more, leveraging the powe
 - **Multi-Language Support**: Communicate in your preferred language.
 - **Cross-Platform Availability**: Use on Windows, Mac, or Linux.
 
+## Future Versions
+
+I am continuously working to enhance ChatResearch with new features and improvements. Here are some of the exciting updates you can expect in future versions:
+
+- **AI Support for New Models**: Integration with advanced AI models such as Claude, Gemini, Groq, and Cohence.
+- **Expanded Paper Collection**: Enhanced paper crawler support for Google Scholar, Semantic Scholar, Scopus, PubMed, and Crossref to provide a more comprehensive paper collection.
+
+Stay tuned for these updates and more as I strive to make ChatResearch the ultimate AI-powered research assistant for scholars and students.
+
+
 ## Why I Made ChatResearch
 
 As a researcher, I often found myself overwhelmed by the sheer volume of papers and the rapid pace of advancements in my field. I created ChatResearch to address these challenges, providing a tool that could quickly parse through information, offer insights, and help researchers stay on top of their fields more efficiently.
@@ -120,7 +130,7 @@ All chat history, settings and paper library data are saved locally on your comp
 
 ## How to Contribute
 
-We welcome contributions of all forms:
+I welcome contributions of all forms:
 
 1. **Submit Issues**: Report bugs or suggest features.
 2. **Pull Requests**: Contribute code or documentation improvements.
